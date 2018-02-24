@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5CC5237D-F3B4-460B-832D-C52DCECB0F62}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DNTest</RootNamespace>
+    <AssemblyName>DNTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="FormDoiMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoiMK.Designer.cs">
+      <DependentUpon>FormDoiMK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfo.Designer.cs">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQLCD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQLCD.Designer.cs">
+      <DependentUpon>FormQLCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQLCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQLCH.Designer.cs">
+      <DependentUpon>FormQLCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQLMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQLMH.Designer.cs">
+      <DependentUpon>FormQLMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuaCD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuaCD.Designer.cs">
+      <DependentUpon>FormSuaCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuaMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuaMH.Designer.cs">
+      <DependentUpon>FormSuaMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemCD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemCD.Designer.cs">
+      <DependentUpon>FormThemCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormThemMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemMH.Designer.cs">
+      <DependentUpon>FormThemMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UcCapNhatCauHoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcCapNhatCauHoi.Designer.cs">
+      <DependentUpon>UcCapNhatCauHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcQuanLyDuLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcQuanLyDuLieu.Designer.cs">
+      <DependentUpon>UcQuanLyDuLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcRaDeThi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcRaDeThi.Designer.cs">
+      <DependentUpon>UcRaDeThi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormDoiMK.resx">
+      <DependentUpon>FormDoiMK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInfo.resx">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQLCD.resx">
+      <DependentUpon>FormQLCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQLCH.resx">
+      <DependentUpon>FormQLCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQLMH.resx">
+      <DependentUpon>FormQLMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuaCD.resx">
+      <DependentUpon>FormSuaCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuaMH.resx">
+      <DependentUpon>FormSuaMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemCD.resx">
+      <DependentUpon>FormThemCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemMH.resx">
+      <DependentUpon>FormThemMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UcCapNhatCauHoi.resx">
+      <DependentUpon>UcCapNhatCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcQuanLyDuLieu.resx">
+      <DependentUpon>UcQuanLyDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcRaDeThi.resx">
+      <DependentUpon>UcRaDeThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DNTest.BUS\DNTest.BUS.csproj">
+      <Project>{50ade58d-01e2-4d8a-aba0-fbc5ac6329fc}</Project>
+      <Name>DNTest.BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DNTest.Entity\DNTest.Entity.csproj">
+      <Project>{b404e955-a2f4-44e4-afa0-ef2e51ef8eab}</Project>
+      <Name>DNTest.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

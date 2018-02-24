@@ -1,0 +1,5 @@
+E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.Entity\bin\Debug\DNTest.Entity.dll
+E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.Entity\bin\Debug\DNTest.Entity.pdb
+E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.Entity\obj\Debug\DNTest.Entity.csprojResolveAssemblyReference.cache
+E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.Entity\obj\Debug\DNTest.Entity.dll
+E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.Entity\obj\Debug\DNTest.Entity.pdb
