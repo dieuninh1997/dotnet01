@@ -7,3 +7,12 @@ E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.BUS\bin\Debug\DNTest.Entity.pdb
 E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.BUS\obj\Debug\DNTest.BUS.csprojResolveAssemblyReference.cache
 E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.BUS\obj\Debug\DNTest.BUS.dll
 E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.BUS\obj\Debug\DNTest.BUS.pdb
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\bin\Debug\DNTest.BUS.dll
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\bin\Debug\DNTest.BUS.pdb
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\bin\Debug\DNTest.DAL.dll
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\bin\Debug\DNTest.Entity.dll
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\bin\Debug\DNTest.DAL.pdb
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\bin\Debug\DNTest.Entity.pdb
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\obj\Debug\DNTest.BUS.csprojResolveAssemblyReference.cache
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\obj\Debug\DNTest.BUS.dll
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\obj\Debug\DNTest.BUS.pdb

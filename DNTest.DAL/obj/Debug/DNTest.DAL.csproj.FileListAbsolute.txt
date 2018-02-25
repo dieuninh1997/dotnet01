@@ -5,3 +5,10 @@ E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.DAL\bin\Debug\DNTest.Entity.pdb
 E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.DAL\obj\Debug\DNTest.DAL.csprojResolveAssemblyReference.cache
 E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.DAL\obj\Debug\DNTest.DAL.dll
 E:\ProjectDotNetNHCH\DNTest\DNTest\DNTest.DAL\obj\Debug\DNTest.DAL.pdb
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\bin\Debug\DNTest.DAL.dll
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\bin\Debug\DNTest.DAL.pdb
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\bin\Debug\DNTest.Entity.dll
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\bin\Debug\DNTest.Entity.pdb
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\obj\Debug\DNTest.DAL.csprojResolveAssemblyReference.cache
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\obj\Debug\DNTest.DAL.dll
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\obj\Debug\DNTest.DAL.pdb
