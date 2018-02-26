@@ -82,3 +82,4 @@ E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.UcRaDeThi.resources
 E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.csproj.GenerateResource.Cache
 E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.exe
 E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormLogin.resources
