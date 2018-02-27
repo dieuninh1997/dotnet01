@@ -32,5 +32,40 @@ namespace DNTest.Properties {
                 return ((string)(this["QuestionnaireBankConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Pass {
+            get {
+                return ((string)(this["Pass"]));
+            }
+            set {
+                this["Pass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ID_User {
+            get {
+                return ((string)(this["ID_User"]));
+            }
+            set {
+                this["ID_User"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::DNTest.Entity.Teacher objTeacher {
+            get {
+                return ((global::DNTest.Entity.Teacher)(this["objTeacher"]));
+            }
+            set {
+                this["objTeacher"] = value;
+            }
+        }
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="SqlDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubjectDAL.cs" />
+    <Compile Include="TeacherDAL.cs" />
     <Compile Include="TopicDAL.cs" />
   </ItemGroup>
   <ItemGroup>

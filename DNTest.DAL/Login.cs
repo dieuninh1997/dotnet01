@@ -10,7 +10,7 @@ namespace DNTest.DAL
 {
  public class Login: SqlDataProvider
     {
-        public int Get_Login(string User, string Password)
+        public DataTable Get_Login(string User, string Password)
         {
             DataTable dt = new DataTable();
             using (SqlCommand cmd = new SqlCommand("sp_Login", openConnection()))
@@ -21,7 +21,7 @@ namespace DNTest.DAL
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
             }
-            return dt.Rows.Count;
+            return dt;
         }
     }
 }

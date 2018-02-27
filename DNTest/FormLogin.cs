@@ -1,4 +1,5 @@
 ﻿using DNTest.BUS;
+using DNTest.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,15 +27,29 @@ namespace DNTest
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string User = txtUser.Text;
-            string Pass = txtPass.Text;
-            if(login.Get_LoginBUS(User, Pass) == 1)
+            string User = txtUser.Text.Trim();
+            string Pass = txtPass.Text.Trim();
+            Teacher obj = new Teacher();
+            DataTable dt = new DataTable();
+            dt = login.Get_LoginBUS(User, Pass);
+            if (dt.Rows.Count == 1)
             {
-                this.Visible = false;
-                FormHome frm = new FormHome();
+                Properties.Settings.Default.Pass = Pass;
+                Properties.Settings.Default.ID_User = dt.Rows[0]["id"].ToString();
+                 obj.Id =dt.Rows[0]["id"].ToString();
+                obj.Name = dt.Rows[0]["name"].ToString();
+                obj.User = dt.Rows[0]["username"].ToString();
+                obj.Password = dt.Rows[0]["password"].ToString();
+                obj.Avatar = dt.Rows[0]["avatar"].ToString();
+                Properties.Settings.Default.objTeacher = obj;
+              this.Visible = false;
+              FormHome frm = new FormHome();
                 frm.ShowDialog();
+                
+                
             }
-            else lbloi.Text = "Bạn nhập sai tên hoăc mật khẩu"; 
+            else lbloi.Text = "Bạn nhập sai tên hoăc mật khẩu";
+           // lbloi.Text = login.Get_LoginBUS(User, Pass).Rows[0]["id"].ToString(); ;
         }
     }
 }
