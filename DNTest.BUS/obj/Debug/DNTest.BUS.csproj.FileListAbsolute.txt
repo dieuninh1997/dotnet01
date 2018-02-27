@@ -16,3 +16,12 @@ E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\bin\Debug\DNTest.Entity.p
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\obj\Debug\DNTest.BUS.csprojResolveAssemblyReference.cache
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\obj\Debug\DNTest.BUS.dll
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.BUS\obj\Debug\DNTest.BUS.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest.BUS\bin\Debug\DNTest.BUS.dll
+E:\EPU Project\Ninh\dotnet01\DNTest.BUS\bin\Debug\DNTest.BUS.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest.BUS\bin\Debug\DNTest.DAL.dll
+E:\EPU Project\Ninh\dotnet01\DNTest.BUS\bin\Debug\DNTest.Entity.dll
+E:\EPU Project\Ninh\dotnet01\DNTest.BUS\bin\Debug\DNTest.DAL.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest.BUS\bin\Debug\DNTest.Entity.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest.BUS\obj\Debug\DNTest.BUS.csprojResolveAssemblyReference.cache
+E:\EPU Project\Ninh\dotnet01\DNTest.BUS\obj\Debug\DNTest.BUS.dll
+E:\EPU Project\Ninh\dotnet01\DNTest.BUS\obj\Debug\DNTest.BUS.pdb

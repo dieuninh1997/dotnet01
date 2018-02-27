@@ -10,7 +10,7 @@ namespace DNTest.DAL
 {
     public class SqlDataProvider
     {
-        private static String strcon = "Data Source=NINH;Initial Catalog=QuestionnaireBank;Integrated Security=True";
+        private static String strcon = "Data Source=.;Initial Catalog=QuestionnaireBank;Integrated Security=True";
         protected static SqlConnection conn;
         public SqlDataProvider()
         {

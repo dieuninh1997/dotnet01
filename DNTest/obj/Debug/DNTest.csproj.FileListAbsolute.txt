@@ -54,3 +54,32 @@ E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest\obj\Debug\DNTest.UcCapNhatCau
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest\obj\Debug\DNTest.UcQuanLyDuLieu.resources
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest\obj\Debug\DNTest.UcRaDeThi.resources
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest\obj\Debug\DNTest.csproj.GenerateResource.Cache
+E:\EPU Project\Ninh\dotnet01\DNTest\bin\Debug\DNTest.exe.config
+E:\EPU Project\Ninh\dotnet01\DNTest\bin\Debug\DNTest.exe
+E:\EPU Project\Ninh\dotnet01\DNTest\bin\Debug\DNTest.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest\bin\Debug\DNTest.BUS.dll
+E:\EPU Project\Ninh\dotnet01\DNTest\bin\Debug\DNTest.Entity.dll
+E:\EPU Project\Ninh\dotnet01\DNTest\bin\Debug\DNTest.DAL.dll
+E:\EPU Project\Ninh\dotnet01\DNTest\bin\Debug\DNTest.BUS.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest\bin\Debug\DNTest.Entity.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest\bin\Debug\DNTest.DAL.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.csprojResolveAssemblyReference.cache
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormDoiMK.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormHelp.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormHome.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormInfo.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormQLCD.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormQLCH.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormQLMH.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormSuaCD.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormSuaMH.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormThemCD.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormThemMH.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.Properties.Resources.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.UcCapNhatCauHoi.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.UcQuanLyDuLieu.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.UcRaDeThi.resources
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.csproj.GenerateResource.Cache
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.exe
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormLogin.resources

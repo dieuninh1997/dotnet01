@@ -12,3 +12,10 @@ E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\bin\Debug\DNTest.Entity.p
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\obj\Debug\DNTest.DAL.csprojResolveAssemblyReference.cache
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\obj\Debug\DNTest.DAL.dll
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.DAL\obj\Debug\DNTest.DAL.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest.DAL\bin\Debug\DNTest.DAL.dll
+E:\EPU Project\Ninh\dotnet01\DNTest.DAL\bin\Debug\DNTest.DAL.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest.DAL\bin\Debug\DNTest.Entity.dll
+E:\EPU Project\Ninh\dotnet01\DNTest.DAL\bin\Debug\DNTest.Entity.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest.DAL\obj\Debug\DNTest.DAL.csprojResolveAssemblyReference.cache
+E:\EPU Project\Ninh\dotnet01\DNTest.DAL\obj\Debug\DNTest.DAL.dll
+E:\EPU Project\Ninh\dotnet01\DNTest.DAL\obj\Debug\DNTest.DAL.pdb

@@ -8,3 +8,7 @@ E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.Entity\bin\Debug\DNTest.Entit
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.Entity\obj\Debug\DNTest.Entity.csprojResolveAssemblyReference.cache
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.Entity\obj\Debug\DNTest.Entity.dll
 E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest.Entity\obj\Debug\DNTest.Entity.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest.Entity\bin\Debug\DNTest.Entity.dll
+E:\EPU Project\Ninh\dotnet01\DNTest.Entity\bin\Debug\DNTest.Entity.pdb
+E:\EPU Project\Ninh\dotnet01\DNTest.Entity\obj\Debug\DNTest.Entity.dll
+E:\EPU Project\Ninh\dotnet01\DNTest.Entity\obj\Debug\DNTest.Entity.pdb
