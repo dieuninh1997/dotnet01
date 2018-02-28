@@ -83,3 +83,4 @@ E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.csproj.GenerateResource.Cac
 E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.exe
 E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.pdb
 E:\EPU Project\Ninh\dotnet01\DNTest\obj\Debug\DNTest.FormLogin.resources
+E:\ProjectDotNetNHCH\DNTest\DNTest\dotnet01\DNTest\obj\Debug\DNTest.FormLogin.resources
