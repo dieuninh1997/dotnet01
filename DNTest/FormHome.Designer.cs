@@ -41,6 +41,7 @@
             this.btnHelp = new System.Windows.Forms.Button();
             this.pnContainer = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -124,6 +125,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.btnThongTinPM);
             this.panel3.Controls.Add(this.btnDoiMatKhau);
             this.panel3.Controls.Add(this.btnHelp);
@@ -138,7 +140,7 @@
             this.btnThongTinPM.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnThongTinPM.Image = ((System.Drawing.Image)(resources.GetObject("btnThongTinPM.Image")));
             this.btnThongTinPM.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThongTinPM.Location = new System.Drawing.Point(690, -1);
+            this.btnThongTinPM.Location = new System.Drawing.Point(607, -1);
             this.btnThongTinPM.Name = "btnThongTinPM";
             this.btnThongTinPM.Size = new System.Drawing.Size(84, 69);
             this.btnThongTinPM.TabIndex = 5;
@@ -152,7 +154,7 @@
             this.btnDoiMatKhau.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(511, -1);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(428, -1);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.Size = new System.Drawing.Size(89, 69);
             this.btnDoiMatKhau.TabIndex = 4;
@@ -166,7 +168,7 @@
             this.btnHelp.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHelp.Location = new System.Drawing.Point(599, -1);
+            this.btnHelp.Location = new System.Drawing.Point(516, -1);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(92, 69);
             this.btnHelp.TabIndex = 3;
@@ -195,6 +197,20 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(691, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 69);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Đăng xuất";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormHome
             // 
@@ -232,6 +248,7 @@
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Panel pnContainer;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
