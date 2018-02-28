@@ -54,5 +54,11 @@ namespace DNTest
         {
             ucCapNhatCauHoi.BringToFront();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FormLogin().ShowDialog();
+        }
     }
 }
