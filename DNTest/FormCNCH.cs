@@ -30,6 +30,9 @@ namespace DNTest
         private void FormCNCH_Load(object sender, EventArgs e)
         {
             rtxtFileNoiDung.Text = "";
+            BindCmbFileTopic();
+            BindCmbFileSubject();
+            BindCmbFileFaculty();
         }
 
         private void btnOpenFile_Click(object sender, EventArgs e)
@@ -46,6 +49,41 @@ namespace DNTest
             {
                 GetData(fdlOpen.FileName);
             }
+        }
+
+        private void BindCmbFileSubject()
+        {
+
+            List<Subject> lst = new SubjectBUS().Subject_GetByTop("", "", "");
+            lst.Insert(0, new Subject("0", "Select an option"));
+            cmbFileSubject.DataSource = lst;
+            cmbFileSubject.DisplayMember = "subjectName";
+            cmbFileSubject.ValueMember = "Id";
+            cmbFileSubject.SelectedIndex = 0;
+
+        }
+        private void BindCmbFileFaculty()
+        {
+
+            List<Faculty> lst = new FacultyBUS().Faculty_GetByTop("", "", "");
+            lst.Insert(0, new Faculty("0", "Select an option"));
+            cmbFileFaculty.DataSource = lst;
+            cmbFileFaculty.DisplayMember = "facultyName";
+            cmbFileFaculty.ValueMember = "Id";
+            cmbFileFaculty.SelectedIndex = 0;
+
+        }
+
+        private void BindCmbFileTopic()
+        {
+
+            List<Topic> lst = new TopicBUS().Topic_GetByTop("", "", "");
+            lst.Insert(0, new Topic("0", "Select an option"));
+            cmbFileTopic.DataSource = lst;
+            cmbFileTopic.DisplayMember = "topicName";
+            cmbFileTopic.ValueMember = "Id";
+            cmbFileTopic.SelectedIndex = 0;
+
         }
 
         private void GetData(object path)
@@ -221,8 +259,82 @@ namespace DNTest
 
         private void FormCNCH_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
+            this.Close();
             new FormHome() .Show();
+        }
+
+        private void btnFileUpdate_Click(object sender, EventArgs e)
+        {
+            if (cmbFileSubject.SelectedIndex < 1)
+            {
+                MessageBox.Show("Bạn chưa chọn môn học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (cmbFileTopic.SelectedIndex < 1)
+            {
+                MessageBox.Show("Bạn chưa chọn chuyên đề!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            int success = 0, questionId = -1, subQuestionId = -1;
+            foreach (SimpleQuestion sq in lstSimple)
+            {
+                if ((questionId = questionBUS.Question_Insert(new Question(null, cmbFileTopic.SelectedValue.ToString(), cmbFileSubject.SelectedValue.ToString(),null , null, null))) > 0)
+                {
+                    if ((subQuestionId = subQuestionBUS.SubQuestion_Insert(new SubQuestion(null, questionId.ToString(), sq.question, "true"))) > 0)
+                    {
+                        int count = 0;
+                        for (int i = 0; i < sq.answer.Count; i++)
+                        {
+                            if (sq.correctAnswer == i)
+                            {
+                                if (answerBUS.Answer_Insert(new Answer(null, subQuestionId.ToString(), sq.answer.ElementAt(i), "true")))
+                                {
+                                    count++;
+                                }
+                            }
+                            else
+                            {
+                                if (answerBUS.Answer_Insert(new Answer(null, subQuestionId.ToString(), sq.answer.ElementAt(i), "false")))
+                                {
+                                    count++;
+                                }
+                            }
+                        }
+                        if (count == sq.answer.Count) success++;
+                    }
+                }
+            }
+            foreach (MultiQuestion mq in lstMulti)
+            {
+                if ((questionId = questionBUS.Question_Insert(new Question(null, cmbFileTopic.SelectedValue.ToString(), cmbFileSubject.SelectedValue.ToString(), null, mq.content, null))) > 0)
+                {
+                    foreach (SimpleQuestion sq in mq.lstQuestion)
+                    {
+                        int count = sq.answer.Count;
+                        if ((subQuestionId = subQuestionBUS.SubQuestion_Insert(new SubQuestion(null, questionId.ToString(), sq.question, "true"))) > 0)
+                        {
+                            for (int i = 0; i < sq.answer.Count; ++i)
+                            {
+                                if (sq.correctAnswer == i)
+                                {
+                                    if (answerBUS.Answer_Insert(new Answer(null, subQuestionId.ToString(), sq.answer.ElementAt(i), "true"))) count--;
+
+                                }
+                                else
+                                {
+                                    if (answerBUS.Answer_Insert(new Answer(null, subQuestionId.ToString(), sq.answer.ElementAt(i), "false"))) count--;
+                                }
+                            }
+                        }
+                        if (count != 0) MessageBox.Show("Đã xảy ra lỗi trong quá trình cập nhật");
+                    }
+                }
+                success++;
+            }
+            if (MessageBox.Show("Cập nhật thành công " + success + "/" + (lstSimple.Count + lstMulti.Count) + " câu hỏi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
     }
 }

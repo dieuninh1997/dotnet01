@@ -734,6 +734,7 @@
             this.btnFileUpdate.TabIndex = 20;
             this.btnFileUpdate.Text = "Cập nhật";
             this.btnFileUpdate.UseVisualStyleBackColor = true;
+            this.btnFileUpdate.Click += new System.EventHandler(this.btnFileUpdate_Click);
             // 
             // btnOpenFile
             // 
