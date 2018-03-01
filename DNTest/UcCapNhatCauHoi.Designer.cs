@@ -64,6 +64,7 @@
             this.btnCapNhatTuFile.TabIndex = 1;
             this.btnCapNhatTuFile.Text = "Cập nhật từ file";
             this.btnCapNhatTuFile.UseVisualStyleBackColor = true;
+            this.btnCapNhatTuFile.Click += new System.EventHandler(this.btnCapNhatTuFile_Click);
             // 
             // label1
             // 

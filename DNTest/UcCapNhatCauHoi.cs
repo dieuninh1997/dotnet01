@@ -16,5 +16,13 @@ namespace DNTest
         {
             InitializeComponent();
         }
+
+        private void btnCapNhatTuFile_Click(object sender, EventArgs e)
+        {
+
+            new FormCNCH().Show();
+           
+            this.ParentForm.Hide();
+        }
     }
 }

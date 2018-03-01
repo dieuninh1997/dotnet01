@@ -40,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Answer.cs" />
     <Compile Include="Faculty.cs" />
+    <Compile Include="MultiQuestion.cs" />
     <Compile Include="Question.cs" />
+    <Compile Include="SimpleQuestion.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubQuestion.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Topic.cs" />
   </ItemGroup>

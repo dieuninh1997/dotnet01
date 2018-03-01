@@ -40,12 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerDAL.cs" />
     <Compile Include="FacultyDAL.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="QuestionDAL.cs" />
     <Compile Include="SqlDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubjectDAL.cs" />
+    <Compile Include="SubQuestionDAL.cs" />
     <Compile Include="TeacherDAL.cs" />
     <Compile Include="TopicDAL.cs" />
   </ItemGroup>
