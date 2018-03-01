@@ -20,10 +20,10 @@ namespace DNTest.Entity
             this.SubjectName = name;
             this.FacultyID = facultyID;
         }
-        public Subject(string name, String facultyID)
+        public Subject(String id, String name)
         {
             this.SubjectName = name;
-            this.FacultyID = facultyID;
+            this.id = id;
         }
         public Subject()
         {

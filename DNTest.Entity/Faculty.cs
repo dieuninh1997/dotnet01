@@ -14,11 +14,13 @@ namespace DNTest.Entity
         {
 
         }
-        public Faculty(string id, string facultyName)
+       
+        public Faculty(String facultyID, string name)
         {
-            this.id = id;
-            this.facultyName = facultyName;
+            this.facultyName = name;
+            this.id = facultyID;
         }
+
 
         public string Id
         {

@@ -819,6 +819,7 @@
             this.cmbFileSubject.Name = "cmbFileSubject";
             this.cmbFileSubject.Size = new System.Drawing.Size(209, 21);
             this.cmbFileSubject.TabIndex = 13;
+            this.cmbFileSubject.SelectedIndexChanged += new System.EventHandler(this.cmbFileSubject_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -836,6 +837,7 @@
             this.cmbFileFaculty.Name = "cmbFileFaculty";
             this.cmbFileFaculty.Size = new System.Drawing.Size(209, 21);
             this.cmbFileFaculty.TabIndex = 11;
+            this.cmbFileFaculty.SelectedIndexChanged += new System.EventHandler(this.cmbFileFaculty_SelectedIndexChanged);
             // 
             // label12
             // 

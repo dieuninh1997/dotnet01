@@ -33,6 +33,7 @@ namespace DNTest
             BindCmbFileTopic();
             BindCmbFileSubject();
             BindCmbFileFaculty();
+            rbFileAll.Checked = true;
         }
 
         private void btnOpenFile_Click(object sender, EventArgs e)
@@ -51,10 +52,10 @@ namespace DNTest
             }
         }
 
-        private void BindCmbFileSubject()
+        private void BindCmbFileSubject(string t="", string w="", string o="")
         {
 
-            List<Subject> lst = new SubjectBUS().Subject_GetByTop("", "", "");
+            List<Subject> lst = new SubjectBUS().Subject_GetByTop(t, w, o);
             lst.Insert(0, new Subject("0", "Select an option"));
             cmbFileSubject.DataSource = lst;
             cmbFileSubject.DisplayMember = "subjectName";
@@ -62,10 +63,10 @@ namespace DNTest
             cmbFileSubject.SelectedIndex = 0;
 
         }
-        private void BindCmbFileFaculty()
+        private void BindCmbFileFaculty(string t = "", string w = "", string o = "")
         {
 
-            List<Faculty> lst = new FacultyBUS().Faculty_GetByTop("", "", "");
+            List<Faculty> lst = new FacultyBUS().Faculty_GetByTop(t, w, o);
             lst.Insert(0, new Faculty("0", "Select an option"));
             cmbFileFaculty.DataSource = lst;
             cmbFileFaculty.DisplayMember = "facultyName";
@@ -74,10 +75,10 @@ namespace DNTest
 
         }
 
-        private void BindCmbFileTopic()
+        private void BindCmbFileTopic(string t = "", string w = "", string o = "")
         {
 
-            List<Topic> lst = new TopicBUS().Topic_GetByTop("", "", "");
+            List<Topic> lst = new TopicBUS().Topic_GetByTop(t, w, o);
             lst.Insert(0, new Topic("0", "Select an option"));
             cmbFileTopic.DataSource = lst;
             cmbFileTopic.DisplayMember = "topicName";
@@ -259,7 +260,7 @@ namespace DNTest
 
         private void FormCNCH_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Close();
+            this.Hide();
             new FormHome() .Show();
         }
 
@@ -335,6 +336,18 @@ namespace DNTest
             {
                 this.Close();
             }
+        }
+
+        private void cmbFileFaculty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFileFaculty.SelectedIndex > 0)
+                BindCmbFileSubject("", "facultyID = " + cmbFileFaculty.SelectedValue.ToString(), "");
+        }
+
+        private void cmbFileSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFileSubject.SelectedIndex > 0)
+                BindCmbFileTopic("", "subjectID = " + cmbFileSubject.SelectedValue.ToString(), "");
         }
     }
 }

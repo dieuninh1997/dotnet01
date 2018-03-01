@@ -21,11 +21,13 @@ namespace DNTest.Entity
             this.topicName = name;
             this.subjectID = subjectID;
         }
-        public Topic(string name, String subjectID)
+   
+        public Topic(String topicID, string name)
         {
             this.topicName = name;
-            this.subjectID = subjectID;
+            this.id = topicID;
         }
+
         public Topic()
         {
 
