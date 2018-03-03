@@ -196,14 +196,27 @@ namespace DNTest
                         //remove question number like Câu 1, Câu 2,...
                         temp = Regex.Replace(temp, "^[0-9]+\\.[ ]*|^Câu [0-9]+:[ ]*|^Question [0-9]+:[ ]*", "", RegexOptions.IgnoreCase);
                         qItem = new SimpleQuestion();
-                        qItem.question = temp;
+                        //lọc công thức toán học
+                        if(LocCongThucToan(temp,i))
+                        {
+                            MessageBox.Show("Chen anh ");
+                        }
+                       qItem.question = temp;
                     }
                     else
                     {
                         List<string> answer = new List<string>();
                         qItem.correctAnswer = -1;
+                        int no_ans = 0;
                         while (temp != string.Empty)
                         {
+
+                            //lọc công thức toán học
+                            no_ans++;
+                            if (LocCongThucToan(temp, i, no_ans))
+                            {
+                                MessageBox.Show("Chen anh answ "+i);
+                            }
                             //remove answer key, like A,B,C,D
                             temp = Regex.Replace(temp, "[a-z1-4](\\.|\\))[ \t]+", "", RegexOptions.IgnoreCase);
                             if (temp.EndsWith("*"))
@@ -254,8 +267,27 @@ namespace DNTest
             }
             docs.Close();
             word.Quit();
-           // BindSimpleQuestion(lstSimple);
-            //BindMultiQuestion(lstMulti);
+        }
+
+        private bool LocCongThucToan(string temp, int i, int no=0)
+        {
+            int start = temp.IndexOf("[sct]");
+            int end = temp.IndexOf("[ect]");
+            MessageBox.Show("temp=" + temp+", s="+start+", e="+end);
+
+            if (start >= 0 && start < temp.Length && end > 0 && end < temp.Length)
+            {
+                string text = temp.Substring(start + 5, end - 5 - start + 1);
+                string userComputer = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last(); ;
+                MessageBox.Show("Computer Name =" + userComputer);
+                string save_img_path = "C:\\Users\\" + userComputer + "\\Desktop\\DNTest_Image\\Subject" + cmbFileSubject.SelectedValue.ToString() + "_Topic" + cmbFileTopic.SelectedValue.ToString() + "_" + i + "_"+no+".png";
+
+                Common.DrawText(text, text.Length + 100, save_img_path);
+                MessageBox.Show("Saved success");
+                return true;
+            }
+            return false;
+            
         }
 
         private void FormCNCH_FormClosed(object sender, FormClosedEventArgs e)

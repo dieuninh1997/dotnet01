@@ -3,20 +3,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Drawing.Text;
 
-namespace DNTest
+namespace DNTest.Entity
 {
-    public class Common
+   public static class Common
     {
-        //subject
-        public static String subjectID = "";
-        public static String subjectName = "";
-        public static String subject_facultyID = "";
 
-        //topic
-        public static String topicID = "";
-        public static String topicName = "";
-        public static String topic_subjectID = "";
+        public static string topicID;
+        public static string topicName;
+        public static string topic_subjectID;
+        public static string subjectID;
+        public static string subjectName;
+        public static string subject_facultyID;
+
+
+        //convert text to image png
+
+        public static void DrawText(string text, int maxWidth, String path)
+        {
+            Font font = new Font("Arial", 25, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+
+            //first, create a dummy bitmap just to get a graphics object
+            Image img = new Bitmap(1, 1);
+            Graphics drawing = Graphics.FromImage(img);
+            //measure the string to see how big the image needs to be
+            SizeF textSize = drawing.MeasureString(text, font, maxWidth);
+
+            //set the stringformat flags to rtl
+            StringFormat sf = new StringFormat();
+            //uncomment the next line for right to left languages
+            //sf.FormatFlags = StringFormatFlags.DirectionRightToLeft;
+            sf.Trimming = StringTrimming.Word;
+            //free up the dummy image and old graphics object
+            img.Dispose();
+            drawing.Dispose();
+
+            //create a new image of the right size
+            img = new Bitmap((int)textSize.Width, (int)textSize.Height);
+
+            drawing = Graphics.FromImage(img);
+            //Adjust for high quality
+            drawing.CompositingQuality = CompositingQuality.HighQuality;
+            drawing.InterpolationMode = InterpolationMode.HighQualityBilinear;
+            drawing.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            drawing.SmoothingMode = SmoothingMode.HighQuality;
+            drawing.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+
+            //paint the background
+            drawing.Clear(Color.Transparent);
+
+            Color textColor = Color.Black;
+            //create a brush for the text
+            Brush textBrush = new SolidBrush(textColor);
+
+            drawing.DrawString(text, font, textBrush, new RectangleF(0, 0, textSize.Width, textSize.Height), sf);
+
+            drawing.Save();
+
+            textBrush.Dispose();
+            drawing.Dispose();
+            img.Save(path, ImageFormat.Png);
+            img.Dispose();
+
+        }
 
     }
 }
