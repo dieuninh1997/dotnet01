@@ -11,14 +11,14 @@ namespace DNTest.Entity
     public class Answer
     {
         private string id;
-        private string questionID;
+        private string subQuestionID;
         private string answer;
         private string isCorrect;
 
-        public Answer(string id, string questionID, string answer, string isCorrect)
+        public Answer(string id, string subQuestionID, string answer, string isCorrect)
         {
             this.id = id;
-            this.questionID = questionID;
+            this.subQuestionID = subQuestionID;
             this.answer = answer;
             this.isCorrect = isCorrect;
         }
@@ -40,18 +40,19 @@ namespace DNTest.Entity
             }
         }
 
-        public string QuestionID
+        public string SubQuestionID
         {
             get
             {
-                return questionID;
+                return subQuestionID;
             }
 
             set
             {
-                questionID = value;
+                subQuestionID = value;
             }
         }
+
 
         public string Answers
         {
@@ -82,7 +83,7 @@ namespace DNTest.Entity
         public void AnswerIDataReader(SqlDataReader dr)
         {
             Id = dr["id"] is DBNull ? string.Empty : dr["id"].ToString();
-            QuestionID = dr["questionID"] is DBNull ? string.Empty : dr["questionID"].ToString();
+            SubQuestionID = dr["subQuestionID"] is DBNull ? string.Empty : dr["subQuestionID"].ToString();
             Answers = dr["answer"] is DBNull ? string.Empty : dr["answer"].ToString();
             IsCorrect = dr["isCorrect"] is DBNull ? "" : dr["isCorrect"].ToString();
         }

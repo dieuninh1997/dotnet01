@@ -37,8 +37,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lbSelectNum = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvDsXuatCauHoi = new System.Windows.Forms.DataGridView();
+            this.pcXoaHet = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.ckbHienThiTatCa = new System.Windows.Forms.CheckBox();
             this.dgvDsCauHoi = new System.Windows.Forms.DataGridView();
@@ -50,14 +49,17 @@
             this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnThemCauHoi = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gbDangCauHoi = new System.Windows.Forms.GroupBox();
+            this.rbAllType = new System.Windows.Forms.RadioButton();
             this.rbMultiple = new System.Windows.Forms.RadioButton();
             this.rbSingle = new System.Windows.Forms.RadioButton();
             this.gbMucDoKienThuc = new System.Windows.Forms.GroupBox();
+            this.rbAllLevel = new System.Windows.Forms.RadioButton();
             this.rbKho = new System.Windows.Forms.RadioButton();
             this.rbTrungBinh = new System.Windows.Forms.RadioButton();
             this.rbDe = new System.Windows.Forms.RadioButton();
@@ -67,18 +69,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbFaculty = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnThemCauHoi = new System.Windows.Forms.Button();
-            this.rbAllLevel = new System.Windows.Forms.RadioButton();
-            this.rbAllType = new System.Windows.Forms.RadioButton();
+            this.dgvDsXuatCauHoi = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcXoaHet)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbDangCauHoi.SuspendLayout();
             this.gbMucDoKienThuc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,6 +109,7 @@
             // 
             // rtxtNoiDungCauHoi
             // 
+            this.rtxtNoiDungCauHoi.Enabled = false;
             this.rtxtNoiDungCauHoi.Location = new System.Drawing.Point(267, 269);
             this.rtxtNoiDungCauHoi.Name = "rtxtNoiDungCauHoi";
             this.rtxtNoiDungCauHoi.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
@@ -125,6 +126,7 @@
             this.btnSelectAll.Size = new System.Drawing.Size(34, 30);
             this.btnSelectAll.TabIndex = 14;
             this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // btnAdd
             // 
@@ -135,6 +137,7 @@
             this.btnAdd.Size = new System.Drawing.Size(34, 30);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -145,13 +148,14 @@
             this.btnDelete.Size = new System.Drawing.Size(34, 30);
             this.btnDelete.TabIndex = 12;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox5.Controls.Add(this.lbSelectNum);
-            this.groupBox5.Controls.Add(this.pictureBox1);
             this.groupBox5.Controls.Add(this.dgvDsXuatCauHoi);
+            this.groupBox5.Controls.Add(this.lbSelectNum);
+            this.groupBox5.Controls.Add(this.pcXoaHet);
             this.groupBox5.Location = new System.Drawing.Point(715, 12);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(403, 226);
@@ -168,23 +172,16 @@
             this.lbSelectNum.TabIndex = 5;
             this.lbSelectNum.Text = "0 Câu";
             // 
-            // pictureBox1
+            // pcXoaHet
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(373, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // dgvDsXuatCauHoi
-            // 
-            this.dgvDsXuatCauHoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDsXuatCauHoi.Location = new System.Drawing.Point(3, 32);
-            this.dgvDsXuatCauHoi.Name = "dgvDsXuatCauHoi";
-            this.dgvDsXuatCauHoi.Size = new System.Drawing.Size(394, 162);
-            this.dgvDsXuatCauHoi.TabIndex = 0;
+            this.pcXoaHet.Image = ((System.Drawing.Image)(resources.GetObject("pcXoaHet.Image")));
+            this.pcXoaHet.Location = new System.Drawing.Point(373, 5);
+            this.pcXoaHet.Name = "pcXoaHet";
+            this.pcXoaHet.Size = new System.Drawing.Size(24, 24);
+            this.pcXoaHet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pcXoaHet.TabIndex = 1;
+            this.pcXoaHet.TabStop = false;
+            this.pcXoaHet.Click += new System.EventHandler(this.pcXoaHet_Click);
             // 
             // groupBox4
             // 
@@ -225,6 +222,7 @@
             this.dgvDsCauHoi.Name = "dgvDsCauHoi";
             this.dgvDsCauHoi.Size = new System.Drawing.Size(396, 162);
             this.dgvDsCauHoi.TabIndex = 0;
+            this.dgvDsCauHoi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsCauHoi_CellClick);
             // 
             // id
             // 
@@ -294,6 +292,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // btnThemCauHoi
+            // 
+            this.btnThemCauHoi.Image = ((System.Drawing.Image)(resources.GetObject("btnThemCauHoi.Image")));
+            this.btnThemCauHoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemCauHoi.Location = new System.Drawing.Point(18, 384);
+            this.btnThemCauHoi.Name = "btnThemCauHoi";
+            this.btnThemCauHoi.Size = new System.Drawing.Size(211, 46);
+            this.btnThemCauHoi.TabIndex = 12;
+            this.btnThemCauHoi.Text = "Thêm câu hỏi";
+            this.btnThemCauHoi.UseVisualStyleBackColor = true;
+            this.btnThemCauHoi.Click += new System.EventHandler(this.btnThemCauHoi_Click);
+            // 
             // btnExport
             // 
             this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
@@ -315,6 +325,7 @@
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Sửa câu hỏi";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtSoLuong
             // 
@@ -345,6 +356,18 @@
             this.gbDangCauHoi.TabIndex = 7;
             this.gbDangCauHoi.TabStop = false;
             this.gbDangCauHoi.Text = "Dạng câu hỏi";
+            // 
+            // rbAllType
+            // 
+            this.rbAllType.AutoSize = true;
+            this.rbAllType.Location = new System.Drawing.Point(12, 23);
+            this.rbAllType.Name = "rbAllType";
+            this.rbAllType.Size = new System.Drawing.Size(56, 17);
+            this.rbAllType.TabIndex = 2;
+            this.rbAllType.TabStop = true;
+            this.rbAllType.Text = "Tất cả";
+            this.rbAllType.UseVisualStyleBackColor = true;
+            this.rbAllType.CheckedChanged += new System.EventHandler(this.rbAllType_CheckedChanged);
             // 
             // rbMultiple
             // 
@@ -383,6 +406,18 @@
             this.gbMucDoKienThuc.TabIndex = 6;
             this.gbMucDoKienThuc.TabStop = false;
             this.gbMucDoKienThuc.Text = "Mức độ kiến thức";
+            // 
+            // rbAllLevel
+            // 
+            this.rbAllLevel.AutoSize = true;
+            this.rbAllLevel.Location = new System.Drawing.Point(14, 24);
+            this.rbAllLevel.Name = "rbAllLevel";
+            this.rbAllLevel.Size = new System.Drawing.Size(56, 17);
+            this.rbAllLevel.TabIndex = 3;
+            this.rbAllLevel.TabStop = true;
+            this.rbAllLevel.Text = "Tất cả";
+            this.rbAllLevel.UseVisualStyleBackColor = true;
+            this.rbAllLevel.CheckedChanged += new System.EventHandler(this.rbAllLevel_CheckedChanged);
             // 
             // rbKho
             // 
@@ -474,40 +509,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn khoa:";
             // 
-            // btnThemCauHoi
+            // dgvDsXuatCauHoi
             // 
-            this.btnThemCauHoi.Image = ((System.Drawing.Image)(resources.GetObject("btnThemCauHoi.Image")));
-            this.btnThemCauHoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemCauHoi.Location = new System.Drawing.Point(18, 384);
-            this.btnThemCauHoi.Name = "btnThemCauHoi";
-            this.btnThemCauHoi.Size = new System.Drawing.Size(211, 46);
-            this.btnThemCauHoi.TabIndex = 12;
-            this.btnThemCauHoi.Text = "Thêm câu hỏi";
-            this.btnThemCauHoi.UseVisualStyleBackColor = true;
-            // 
-            // rbAllLevel
-            // 
-            this.rbAllLevel.AutoSize = true;
-            this.rbAllLevel.Location = new System.Drawing.Point(14, 24);
-            this.rbAllLevel.Name = "rbAllLevel";
-            this.rbAllLevel.Size = new System.Drawing.Size(56, 17);
-            this.rbAllLevel.TabIndex = 3;
-            this.rbAllLevel.TabStop = true;
-            this.rbAllLevel.Text = "Tất cả";
-            this.rbAllLevel.UseVisualStyleBackColor = true;
-            this.rbAllLevel.CheckedChanged += new System.EventHandler(this.rbAllLevel_CheckedChanged);
-            // 
-            // rbAllType
-            // 
-            this.rbAllType.AutoSize = true;
-            this.rbAllType.Location = new System.Drawing.Point(12, 23);
-            this.rbAllType.Name = "rbAllType";
-            this.rbAllType.Size = new System.Drawing.Size(56, 17);
-            this.rbAllType.TabIndex = 2;
-            this.rbAllType.TabStop = true;
-            this.rbAllType.Text = "Tất cả";
-            this.rbAllType.UseVisualStyleBackColor = true;
-            this.rbAllType.CheckedChanged += new System.EventHandler(this.rbAllType_CheckedChanged);
+            this.dgvDsXuatCauHoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDsXuatCauHoi.Location = new System.Drawing.Point(6, 32);
+            this.dgvDsXuatCauHoi.Name = "dgvDsXuatCauHoi";
+            this.dgvDsXuatCauHoi.Size = new System.Drawing.Size(391, 162);
+            this.dgvDsXuatCauHoi.TabIndex = 6;
             // 
             // FormQLCH
             // 
@@ -524,8 +532,7 @@
             this.panel1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcXoaHet)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoi)).EndInit();
@@ -535,6 +542,7 @@
             this.gbDangCauHoi.PerformLayout();
             this.gbMucDoKienThuc.ResumeLayout(false);
             this.gbMucDoKienThuc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,8 +557,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label lbSelectNum;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dgvDsXuatCauHoi;
+        private System.Windows.Forms.PictureBox pcXoaHet;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvDsCauHoi;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -582,5 +589,6 @@
         private System.Windows.Forms.Button btnThemCauHoi;
         private System.Windows.Forms.RadioButton rbAllType;
         private System.Windows.Forms.RadioButton rbAllLevel;
+        private System.Windows.Forms.DataGridView dgvDsXuatCauHoi;
     }
 }

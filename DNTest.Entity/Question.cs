@@ -14,19 +14,26 @@ namespace DNTest.Entity
         private string topicID;
         private string subjectID;
         private string levelID;
+        private string typeID;
         private string content;
         private string createDate;
 
-        public Question(string id, string topicId, String subjectId, String levelId, string content, string createDate)
+        public Question(string id, string topicId, String subjectId, String levelId, string content, string createDate, string typeId)
         {
             this.id = id;
             this.topicID = topicId;
             this.subjectID = subjectId;
             this.levelID = levelId;
+            this.levelID = levelId;
+            this.typeID = typeId;
             this.content = content;
             this.createDate = createDate;
         }
-
+        public Question(string topicId, String subjectId)
+        {
+            this.topicID = topicId;
+            this.subjectID = subjectId;
+        }
         public Question()
         {
         }
@@ -54,6 +61,18 @@ namespace DNTest.Entity
             set
             {
                 topicID = value;
+            }
+        }
+        public string TypeID
+        {
+            get
+            {
+                return typeID;
+            }
+
+            set
+            {
+                typeID = value;
             }
         }
 
@@ -118,6 +137,7 @@ namespace DNTest.Entity
             LevelID = dr["levelID"] is DBNull ? string.Empty : dr["levelID"].ToString();
             Content = dr["content"] is DBNull ? string.Empty : dr["content"].ToString();
             CreateDate = dr["createDate"] is DBNull ? "" : dr["createDate"].ToString();
+           TypeID = dr["typeID"] is DBNull ? string.Empty : dr["typeID"].ToString();
         }
     }
 }

@@ -9,39 +9,40 @@ using System.Data.SqlClient;
 
 namespace DNTest.DAL
 {
-    public class QuestionDAL: SqlDataProvider
-    { 
-     public List<Question> Question_GetByTop(string Top, string Where, string Order)
+    public class QuestionDAL : SqlDataProvider
     {
-        List<Question> list = new List<Question>();
-        using (SqlCommand dbCmd = new SqlCommand("sp_Question_getByTop", openConnection()))
+        public List<Question> Question_GetByTop(string Top, string Where, string Order)
         {
-            dbCmd.CommandType = CommandType.StoredProcedure;
-            dbCmd.Parameters.Add(new SqlParameter("@Top", Top));
-            dbCmd.Parameters.Add(new SqlParameter("@Where", Where));
-            dbCmd.Parameters.Add(new SqlParameter("@Order", Order));
-            SqlDataReader dr = dbCmd.ExecuteReader();
-            dr.Close();
-            dr = dbCmd.ExecuteReader();
-            if (dr.HasRows)
+            List<Question> list = new List<Question>();
+            using (SqlCommand dbCmd = new SqlCommand("sp_Question_getByTop", openConnection()))
             {
-                while (dr.Read())
+                dbCmd.CommandType = CommandType.StoredProcedure;
+                dbCmd.Parameters.Add(new SqlParameter("@Top", Top));
+                dbCmd.Parameters.Add(new SqlParameter("@Where", Where));
+                dbCmd.Parameters.Add(new SqlParameter("@Order", Order));
+                SqlDataReader dr = dbCmd.ExecuteReader();
+                dr.Close();
+                dr = dbCmd.ExecuteReader();
+                if (dr.HasRows)
                 {
-                    Question obj = new Question();
-                    obj.QuestionIDataReader(dr);
-                    list.Add(obj);
+                    while (dr.Read())
+                    {
+                        Question obj = new Question();
+                        obj.QuestionIDataReader(dr);
+                        list.Add(obj);
+                    }
                 }
+                dr.Close();
             }
-            dr.Close();
+            return list;
         }
-        return list;
-    }
-    public int Question_Insert(Question data)
-    {
-        int id = -1;
-        data.CreateDate = DateTime.Now.ToString();
-        try
+        public int Question_Insert(Question data)
         {
+            int id = -1;//ko th 0
+            data.CreateDate = DateTime.Now.ToString();
+            //   Console.Write(data.ToString());
+           // try
+           // {
             using (SqlCommand dbCmd = new SqlCommand("sp_Question_Insert", openConnection()))
             {
                 dbCmd.CommandType = CommandType.StoredProcedure;
@@ -49,59 +50,63 @@ namespace DNTest.DAL
                 dbCmd.Parameters.Add(new SqlParameter("@topicID", data.TopicID));
                 dbCmd.Parameters.Add(new SqlParameter("@levelID", data.LevelID));
                 dbCmd.Parameters.Add(new SqlParameter("@content", data.Content));
+                dbCmd.Parameters.Add(new SqlParameter("@typeID", data.TypeID));
                 dbCmd.Parameters.Add(new SqlParameter("@createDate", data.CreateDate));
                 dbCmd.Parameters.Add("@id", SqlDbType.Int).Direction = ParameterDirection.Output;
                 dbCmd.ExecuteNonQuery();
-                id = int.Parse(dbCmd.Parameters["@id"].Value.ToString());
-            }
-        }
-        catch
-        {
-        }
-        return id;
-    }
+                // dbCmd.ExecuteScalar();
+                id = Convert.ToInt32(dbCmd.Parameters["@id"].Value);
 
-    public bool Question_Update(Question data)
-    {
-        data.CreateDate = DateTime.Now.ToString();
-        bool check = false;
-        try
+            }
+          //   }
+           // catch(Exception e)
+          //  {
+          //     
+           // }
+            return id;
+        }
+
+        public bool Question_Update(Question data)
         {
-            using (SqlCommand dbCmd = new SqlCommand("sp_Question_Update", openConnection()))
+            data.CreateDate = DateTime.Now.ToString();
+            bool check = false;
+            try
             {
-                dbCmd.CommandType = CommandType.StoredProcedure;
-                dbCmd.Parameters.Add(new SqlParameter("@id", data.Id));
+                using (SqlCommand dbCmd = new SqlCommand("sp_Question_Update", openConnection()))
+                {
+                    dbCmd.CommandType = CommandType.StoredProcedure;
+                    dbCmd.Parameters.Add(new SqlParameter("@id", data.Id));
                     dbCmd.Parameters.Add(new SqlParameter("@topicID", data.TopicID));
                     dbCmd.Parameters.Add(new SqlParameter("@levelID", data.LevelID));
                     dbCmd.Parameters.Add(new SqlParameter("@content", data.Content));
                     dbCmd.Parameters.Add(new SqlParameter("@createDate", data.CreateDate));
                     int r = dbCmd.ExecuteNonQuery();
-                if (r > 0) check = true;
+                    if (r > 0) check = true;
+                }
             }
-        }
-        catch
-        {
-        }
-        return check;
-    }
-
-    public bool Question_Delete(string ID)
-    {
-        bool check = false;
-        try
-        {
-            using (SqlCommand dbCmd = new SqlCommand("sp_Question_Delete", openConnection()))
+            catch
             {
-                dbCmd.CommandType = CommandType.StoredProcedure;
-                dbCmd.Parameters.Add(new SqlParameter("@id", ID));
-                int r = dbCmd.ExecuteNonQuery();
-                if (r > 0) check = true;
             }
+            return check;
         }
-        catch
+
+        public bool Question_Delete(string ID)
         {
+            bool check = false;
+            try
+            {
+                using (SqlCommand dbCmd = new SqlCommand("sp_Question_Delete", openConnection()))
+                {
+                    dbCmd.CommandType = CommandType.StoredProcedure;
+                    dbCmd.Parameters.Add(new SqlParameter("@id", ID));
+                    int r = dbCmd.ExecuteNonQuery();
+                    if (r > 0) check = true;
+                }
+            }
+            catch
+            {
+            }
+            return check;
         }
-        return check;
     }
-}
 }

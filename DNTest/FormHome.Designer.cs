@@ -36,12 +36,12 @@
             this.tabRaDeThi = new System.Windows.Forms.Button();
             this.tabQLDL = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnThongTinPM = new System.Windows.Forms.Button();
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.pnContainer = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -135,6 +135,20 @@
             this.panel3.Size = new System.Drawing.Size(776, 70);
             this.panel3.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(691, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 69);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Đăng xuất";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnThongTinPM
             // 
             this.btnThongTinPM.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -197,20 +211,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(691, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 69);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Đăng xuất";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormHome
             // 

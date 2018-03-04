@@ -18,9 +18,10 @@ namespace DNTest
         private QuestionBUS questionBUS = new QuestionBUS();
         private SubQuestionBUS subQuestionBUS = new SubQuestionBUS();
         private AnswerBUS answerBUS = new AnswerBUS();
-
         private List<SimpleQuestion> lstSimple = new List<SimpleQuestion>();
         private List<MultiQuestion> lstMulti = new List<MultiQuestion>();
+
+        private static string levelQuestion = "0";
 
         public FormCNCH()
         {
@@ -52,7 +53,7 @@ namespace DNTest
             }
         }
 
-        private void BindCmbFileSubject(string t="", string w="", string o="")
+        private void BindCmbFileSubject(string t = "", string w = "", string o = "")
         {
 
             List<Subject> lst = new SubjectBUS().Subject_GetByTop(t, w, o);
@@ -107,11 +108,22 @@ namespace DNTest
                 if (temp.Trim().ToLower().Equals("<multi>"))// multi question
                 {
                     MultiQuestion qMul = new MultiQuestion();
+                    //int no_multi_ques = 0;
                     do
                     {
                         temp = docs.Paragraphs[++i].Range.Text;
                         if (temp.Trim() == "") break;
+
                         qMul.content += temp + "\r\n";
+                        //lọc công thức toán
+                        /*
+                             temp = docs.Paragraphs[++i].Range.Text;
+                             if (LocCongThucToan(temp, i, no_multi_ques))
+                             {
+                                MessageBox.Show("Chen anh answ " + i);
+                             }
+                             */
+
                     } while (temp != string.Empty);
 
                     if (temp.Trim() != "")
@@ -197,26 +209,27 @@ namespace DNTest
                         temp = Regex.Replace(temp, "^[0-9]+\\.[ ]*|^Câu [0-9]+:[ ]*|^Question [0-9]+:[ ]*", "", RegexOptions.IgnoreCase);
                         qItem = new SimpleQuestion();
                         //lọc công thức toán học
-                        if(LocCongThucToan(temp,i))
-                        {
-                            MessageBox.Show("Chen anh ");
-                        }
-                       qItem.question = temp;
+                        /*  if(LocCongThucToan(temp,i))
+                          {
+                              MessageBox.Show("Chen anh ");
+                          }*/
+                        qItem.question = temp;
                     }
                     else
                     {
                         List<string> answer = new List<string>();
                         qItem.correctAnswer = -1;
-                        int no_ans = 0;
+                        // int no_ans = 0;
                         while (temp != string.Empty)
                         {
 
                             //lọc công thức toán học
-                            no_ans++;
-                            if (LocCongThucToan(temp, i, no_ans))
-                            {
-                                MessageBox.Show("Chen anh answ "+i);
-                            }
+                            /* no_ans++;
+
+                             if (LocCongThucToan(temp, i, no_ans))
+                             {
+                                 MessageBox.Show("Chen anh answ "+i);
+                             }*/
                             //remove answer key, like A,B,C,D
                             temp = Regex.Replace(temp, "[a-z1-4](\\.|\\))[ \t]+", "", RegexOptions.IgnoreCase);
                             if (temp.EndsWith("*"))
@@ -269,31 +282,31 @@ namespace DNTest
             word.Quit();
         }
 
-        private bool LocCongThucToan(string temp, int i, int no=0)
+        private bool LocCongThucToan(string temp, int i, int no = 0)
         {
             int start = temp.IndexOf("[sct]");
             int end = temp.IndexOf("[ect]");
-            MessageBox.Show("temp=" + temp+", s="+start+", e="+end);
+            MessageBox.Show("temp=" + temp + ", s=" + start + ", e=" + end);
 
             if (start >= 0 && start < temp.Length && end > 0 && end < temp.Length)
             {
                 string text = temp.Substring(start + 5, end - 5 - start + 1);
                 string userComputer = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last(); ;
                 MessageBox.Show("Computer Name =" + userComputer);
-                string save_img_path = "C:\\Users\\" + userComputer + "\\Desktop\\DNTest_Image\\Subject" + cmbFileSubject.SelectedValue.ToString() + "_Topic" + cmbFileTopic.SelectedValue.ToString() + "_" + i + "_"+no+".png";
+                string save_img_path = "C:\\Users\\" + userComputer + "\\Desktop\\DNTest_Image\\Subject" + cmbFileSubject.SelectedValue.ToString() + "_Topic" + cmbFileTopic.SelectedValue.ToString() + "_" + i + "_" + no + ".png";
 
                 Common.DrawText(text, text.Length + 100, save_img_path);
                 MessageBox.Show("Saved success");
                 return true;
             }
             return false;
-            
+
         }
 
         private void FormCNCH_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Hide();
-            new FormHome() .Show();
+            new FormHome().Show();
         }
 
         private void btnFileUpdate_Click(object sender, EventArgs e)
@@ -308,43 +321,62 @@ namespace DNTest
                 MessageBox.Show("Bạn chưa chọn chuyên đề!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            if (levelQuestion.Trim().Equals("0"))
+            {
+                MessageBox.Show("Bạn chưa chọn mức độ kiến thức!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             int success = 0, questionId = -1, subQuestionId = -1;
+            MessageBox.Show("lstSimple = " + lstSimple.Count);
             foreach (SimpleQuestion sq in lstSimple)
             {
-                if ((questionId = questionBUS.Question_Insert(new Question(null, cmbFileTopic.SelectedValue.ToString(), cmbFileSubject.SelectedValue.ToString(),null , null, null))) > 0)
+                questionId = questionBUS.Question_Insert(new Question(null, cmbFileTopic.SelectedValue.ToString(), cmbFileSubject.SelectedValue.ToString(), levelQuestion, sq.question, null, "1"));
+                MessageBox.Show("QuestionID = " + questionId);
+                if (questionId > 0)
                 {
-                    if ((subQuestionId = subQuestionBUS.SubQuestion_Insert(new SubQuestion(null, questionId.ToString(), sq.question, "true"))) > 0)
+                    subQuestionId = subQuestionBUS.SubQuestion_Insert(new SubQuestion(null, questionId.ToString(), sq.question));
+                    MessageBox.Show("SubQuestionID = " + subQuestionId);
+                    if (subQuestionId  > 0)
                     {
-                        int count = 0;
+                        int count = sq.answer.Count;
+                        MessageBox.Show("count = " + count);
+
                         for (int i = 0; i < sq.answer.Count; i++)
                         {
+                           
                             if (sq.correctAnswer == i)
                             {
-                                if (answerBUS.Answer_Insert(new Answer(null, subQuestionId.ToString(), sq.answer.ElementAt(i), "true")))
+
+                                if (answerBUS.Answer_Insert(new Answer(null, subQuestionId.ToString(), sq.answer.ElementAt(i), "1")))
                                 {
-                                    count++;
+                                    count--;
                                 }
                             }
                             else
                             {
-                                if (answerBUS.Answer_Insert(new Answer(null, subQuestionId.ToString(), sq.answer.ElementAt(i), "false")))
+                                if (answerBUS.Answer_Insert(new Answer(null, subQuestionId.ToString(), sq.answer.ElementAt(i), "0")))
                                 {
-                                    count++;
+                                    count--;
                                 }
                             }
+                            MessageBox.Show("count = " + count);
+
                         }
-                        if (count == sq.answer.Count) success++;
+                        if (count != 0) MessageBox.Show("Đã xảy ra lỗi trong quá trình cập nhật");
                     }
+                    success++;
                 }
             }
             foreach (MultiQuestion mq in lstMulti)
             {
-                if ((questionId = questionBUS.Question_Insert(new Question(null, cmbFileTopic.SelectedValue.ToString(), cmbFileSubject.SelectedValue.ToString(), null, mq.content, null))) > 0)
+                if ((questionId = questionBUS.Question_Insert(new Question(null, cmbFileTopic.SelectedValue.ToString(), cmbFileSubject.SelectedValue.ToString(), levelQuestion, mq.content, null, "2"))) > 0)
                 {
                     foreach (SimpleQuestion sq in mq.lstQuestion)
                     {
                         int count = sq.answer.Count;
-                        if ((subQuestionId = subQuestionBUS.SubQuestion_Insert(new SubQuestion(null, questionId.ToString(), sq.question, "true"))) > 0)
+                        if ((subQuestionId = subQuestionBUS.SubQuestion_Insert(new SubQuestion(null, questionId.ToString(), sq.question))) > 0)
                         {
                             for (int i = 0; i < sq.answer.Count; ++i)
                             {
@@ -380,6 +412,36 @@ namespace DNTest
         {
             if (cmbFileSubject.SelectedIndex > 0)
                 BindCmbFileTopic("", "subjectID = " + cmbFileSubject.SelectedValue.ToString(), "");
+        }
+
+        private void rbFileDe_CheckedChanged(object sender, EventArgs e)
+        {
+            levelQuestion = "1";
+        }
+
+        private void rbFileTrungBinh_CheckedChanged(object sender, EventArgs e)
+        {
+            levelQuestion = "2";
+        }
+
+        private void rbFileKho_CheckedChanged(object sender, EventArgs e)
+        {
+            levelQuestion = "3";
+        }
+
+        private void rbFileAll_CheckedChanged(object sender, EventArgs e)
+        {
+            levelQuestion = "0";
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

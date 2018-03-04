@@ -39,22 +39,18 @@ namespace DNTest.DAL
         public int SubQuestion_Insert(SubQuestion data)
         {
             int id = -1;
-            try
+
+            using (SqlCommand dbCmd = new SqlCommand("sp_SubQuestion_Insert", openConnection()))
             {
-                using (SqlCommand dbCmd = new SqlCommand("sp_SubQuestion_Insert", openConnection()))
-                {
-                    dbCmd.CommandType = CommandType.StoredProcedure;
-                    dbCmd.Parameters.Add(new SqlParameter("@questionID", data.QuestionId));
-                    dbCmd.Parameters.Add(new SqlParameter("@content", data.Content));
-                    dbCmd.Parameters.Add(new SqlParameter("@active", data.Active));
-                    dbCmd.Parameters.Add("@id", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    dbCmd.ExecuteNonQuery();
-                    id = int.Parse(dbCmd.Parameters["@id"].Value.ToString());
-                }
+                dbCmd.CommandType = CommandType.StoredProcedure;
+                dbCmd.Parameters.Add(new SqlParameter("@questionID", data.QuestionId));
+                dbCmd.Parameters.Add(new SqlParameter("@content", data.Content));
+                //    dbCmd.Parameters.Add(new SqlParameter("@active", data.Active));
+                dbCmd.Parameters.Add("@id", SqlDbType.Int).Direction = ParameterDirection.Output;
+                dbCmd.ExecuteNonQuery();
+                id = int.Parse(dbCmd.Parameters["@id"].Value.ToString());
             }
-            catch
-            {
-            }
+
             return id;
         }
 
@@ -69,8 +65,8 @@ namespace DNTest.DAL
                     dbCmd.Parameters.Add(new SqlParameter("@id", data.Id));
                     dbCmd.Parameters.Add(new SqlParameter("@questionID", data.QuestionId));
                     dbCmd.Parameters.Add(new SqlParameter("@content", data.Content));
-                    dbCmd.Parameters.Add(new SqlParameter("@active", data.Active));
-                    dbCmd.Parameters.Add(new SqlParameter("@reportCount", data.ReportCount));
+                  //  dbCmd.Parameters.Add(new SqlParameter("@active", data.Active));
+                  //  dbCmd.Parameters.Add(new SqlParameter("@reportCount", data.ReportCount));
                     int r = dbCmd.ExecuteNonQuery();
                     if (r > 0) check = true;
                 }

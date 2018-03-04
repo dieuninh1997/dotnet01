@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCNCH));
             this.tabCNFile = new System.Windows.Forms.TabControl();
             this.tabCNTC_Container = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnLamLai = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -85,6 +85,7 @@
             this.btnFileUpdate = new System.Windows.Forms.Button();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.rbFileAll = new System.Windows.Forms.RadioButton();
             this.rbFileKho = new System.Windows.Forms.RadioButton();
             this.rbFileTrungBinh = new System.Windows.Forms.RadioButton();
             this.rbFileDe = new System.Windows.Forms.RadioButton();
@@ -120,7 +121,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.rbFileAll = new System.Windows.Forms.RadioButton();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.tabCNFile.SuspendLayout();
             this.tabCNTC_Container.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -155,13 +156,14 @@
             this.tabCNFile.Multiline = true;
             this.tabCNFile.Name = "tabCNFile";
             this.tabCNFile.SelectedIndex = 0;
-            this.tabCNFile.Size = new System.Drawing.Size(952, 646);
+            this.tabCNFile.Size = new System.Drawing.Size(919, 646);
             this.tabCNFile.TabIndex = 2;
             // 
             // tabCNTC_Container
             // 
             this.tabCNTC_Container.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.tabCNTC_Container.Controls.Add(this.button6);
+            this.tabCNTC_Container.Controls.Add(this.btnThoat);
+            this.tabCNTC_Container.Controls.Add(this.btnLamLai);
             this.tabCNTC_Container.Controls.Add(this.groupBox5);
             this.tabCNTC_Container.Controls.Add(this.button5);
             this.tabCNTC_Container.Controls.Add(this.label4);
@@ -170,20 +172,20 @@
             this.tabCNTC_Container.Location = new System.Drawing.Point(4, 22);
             this.tabCNTC_Container.Name = "tabCNTC_Container";
             this.tabCNTC_Container.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCNTC_Container.Size = new System.Drawing.Size(944, 620);
+            this.tabCNTC_Container.Size = new System.Drawing.Size(911, 620);
             this.tabCNTC_Container.TabIndex = 0;
             this.tabCNTC_Container.Text = "Cập nhật từng câu";
             // 
-            // button6
+            // btnLamLai
             // 
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(589, 553);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(211, 46);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "Làm lại";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnLamLai.Image = ((System.Drawing.Image)(resources.GetObject("btnLamLai.Image")));
+            this.btnLamLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLamLai.Location = new System.Drawing.Point(475, 556);
+            this.btnLamLai.Name = "btnLamLai";
+            this.btnLamLai.Size = new System.Drawing.Size(211, 46);
+            this.btnLamLai.TabIndex = 19;
+            this.btnLamLai.Text = "Làm lại";
+            this.btnLamLai.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -478,7 +480,7 @@
             // 
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(372, 553);
+            this.button5.Location = new System.Drawing.Point(258, 556);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(211, 46);
             this.button5.TabIndex = 18;
@@ -641,6 +643,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 21);
             this.comboBox1.TabIndex = 11;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -762,6 +765,18 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Mức độ kiến thức";
             // 
+            // rbFileAll
+            // 
+            this.rbFileAll.AutoSize = true;
+            this.rbFileAll.Location = new System.Drawing.Point(11, 29);
+            this.rbFileAll.Name = "rbFileAll";
+            this.rbFileAll.Size = new System.Drawing.Size(56, 17);
+            this.rbFileAll.TabIndex = 3;
+            this.rbFileAll.TabStop = true;
+            this.rbFileAll.Text = "Tất cả";
+            this.rbFileAll.UseVisualStyleBackColor = true;
+            this.rbFileAll.CheckedChanged += new System.EventHandler(this.rbFileAll_CheckedChanged);
+            // 
             // rbFileKho
             // 
             this.rbFileKho.AutoSize = true;
@@ -772,6 +787,7 @@
             this.rbFileKho.TabStop = true;
             this.rbFileKho.Text = "Khó";
             this.rbFileKho.UseVisualStyleBackColor = true;
+            this.rbFileKho.CheckedChanged += new System.EventHandler(this.rbFileKho_CheckedChanged);
             // 
             // rbFileTrungBinh
             // 
@@ -783,6 +799,7 @@
             this.rbFileTrungBinh.TabStop = true;
             this.rbFileTrungBinh.Text = "Trung bình";
             this.rbFileTrungBinh.UseVisualStyleBackColor = true;
+            this.rbFileTrungBinh.CheckedChanged += new System.EventHandler(this.rbFileTrungBinh_CheckedChanged);
             // 
             // rbFileDe
             // 
@@ -794,6 +811,7 @@
             this.rbFileDe.TabStop = true;
             this.rbFileDe.Text = "Dễ";
             this.rbFileDe.UseVisualStyleBackColor = true;
+            this.rbFileDe.CheckedChanged += new System.EventHandler(this.rbFileDe_CheckedChanged);
             // 
             // cmbFileTopic
             // 
@@ -860,7 +878,7 @@
             this.tabXemSuaCH.Location = new System.Drawing.Point(4, 22);
             this.tabXemSuaCH.Name = "tabXemSuaCH";
             this.tabXemSuaCH.Padding = new System.Windows.Forms.Padding(3);
-            this.tabXemSuaCH.Size = new System.Drawing.Size(913, 614);
+            this.tabXemSuaCH.Size = new System.Drawing.Size(944, 620);
             this.tabXemSuaCH.TabIndex = 2;
             this.tabXemSuaCH.Text = "Xem/Sửa dữ liệu câu hỏi";
             // 
@@ -1124,24 +1142,26 @@
             this.label15.TabIndex = 10;
             this.label15.Text = "Chọn khối lớp";
             // 
-            // rbFileAll
+            // btnThoat
             // 
-            this.rbFileAll.AutoSize = true;
-            this.rbFileAll.Location = new System.Drawing.Point(11, 29);
-            this.rbFileAll.Name = "rbFileAll";
-            this.rbFileAll.Size = new System.Drawing.Size(56, 17);
-            this.rbFileAll.TabIndex = 3;
-            this.rbFileAll.TabStop = true;
-            this.rbFileAll.Text = "Tất cả";
-            this.rbFileAll.UseVisualStyleBackColor = true;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Location = new System.Drawing.Point(691, 556);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(211, 46);
+            this.btnThoat.TabIndex = 21;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // FormCNCH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 646);
+            this.ClientSize = new System.Drawing.Size(919, 646);
             this.Controls.Add(this.tabCNFile);
             this.Name = "FormCNCH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cập nhật câu hỏi";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCNCH_FormClosed);
             this.Load += new System.EventHandler(this.FormCNCH_Load);
@@ -1186,7 +1206,7 @@
 
         private System.Windows.Forms.TabControl tabCNFile;
         private System.Windows.Forms.TabPage tabCNTC_Container;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnLamLai;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button4;
@@ -1276,5 +1296,6 @@
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RadioButton rbFileAll;
+        private System.Windows.Forms.Button btnThoat;
     }
 }
