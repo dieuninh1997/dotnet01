@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DNTest.Entity
 {
-    public class Question
+    public class Question:IComparable<Question>
     {
         private string id;
         private string topicID;
@@ -138,6 +138,12 @@ namespace DNTest.Entity
             Content = dr["content"] is DBNull ? string.Empty : dr["content"].ToString();
             CreateDate = dr["createDate"] is DBNull ? "" : dr["createDate"].ToString();
            TypeID = dr["typeID"] is DBNull ? string.Empty : dr["typeID"].ToString();
+        }
+
+        public int CompareTo(Question other)
+        {
+           // throw new NotImplementedException();
+            return this.Id.CompareTo(other.Id);
         }
     }
 }

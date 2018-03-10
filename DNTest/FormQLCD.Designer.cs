@@ -220,6 +220,7 @@
             this.Name = "FormQLCD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý chuyên đề";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormQLCD_FormClosed);
             this.Load += new System.EventHandler(this.FormQLCD_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

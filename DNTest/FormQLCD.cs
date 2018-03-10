@@ -134,5 +134,11 @@ namespace DNTest
 
             }
         }
+
+        private void FormQLCD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            new FormHome().Show();
+        }
     }
 }

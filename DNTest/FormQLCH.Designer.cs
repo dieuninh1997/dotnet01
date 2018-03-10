@@ -36,6 +36,14 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgvDsXuatCauHoi = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbSelectNum = new System.Windows.Forms.Label();
             this.pcXoaHet = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -69,16 +77,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbFaculty = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvDsXuatCauHoi = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcXoaHet)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbDangCauHoi.SuspendLayout();
             this.gbMucDoKienThuc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -162,6 +169,70 @@
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Câu hỏi muốn xuất ra";
+            // 
+            // dgvDsXuatCauHoi
+            // 
+            this.dgvDsXuatCauHoi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDsXuatCauHoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDsXuatCauHoi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.dgvDsXuatCauHoi.Location = new System.Drawing.Point(3, 35);
+            this.dgvDsXuatCauHoi.Name = "dgvDsXuatCauHoi";
+            this.dgvDsXuatCauHoi.Size = new System.Drawing.Size(396, 162);
+            this.dgvDsXuatCauHoi.TabIndex = 2;
+            this.dgvDsXuatCauHoi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsXuatCauHoi_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã câu hỏi";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "typeID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Dạng câu hỏi";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "subjectID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Mã môn học";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "topicID";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Mã chuyên đề";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "levelID";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Mã mức độ";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "content";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nội dung";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "createDate";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Ngày tạo";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // lbSelectNum
             // 
@@ -314,6 +385,7 @@
             this.btnExport.TabIndex = 11;
             this.btnExport.Text = "Xuất tài liệu ôn tập";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnEdit
             // 
@@ -509,14 +581,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Chọn khoa:";
             // 
-            // dgvDsXuatCauHoi
-            // 
-            this.dgvDsXuatCauHoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDsXuatCauHoi.Location = new System.Drawing.Point(6, 32);
-            this.dgvDsXuatCauHoi.Name = "dgvDsXuatCauHoi";
-            this.dgvDsXuatCauHoi.Size = new System.Drawing.Size(391, 162);
-            this.dgvDsXuatCauHoi.TabIndex = 6;
-            // 
             // FormQLCH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,6 +596,7 @@
             this.panel1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcXoaHet)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -542,7 +607,6 @@
             this.gbDangCauHoi.PerformLayout();
             this.gbMucDoKienThuc.ResumeLayout(false);
             this.gbMucDoKienThuc.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -590,5 +654,12 @@
         private System.Windows.Forms.RadioButton rbAllType;
         private System.Windows.Forms.RadioButton rbAllLevel;
         private System.Windows.Forms.DataGridView dgvDsXuatCauHoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

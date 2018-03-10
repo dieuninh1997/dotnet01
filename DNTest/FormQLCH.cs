@@ -25,9 +25,11 @@ namespace DNTest
         static int level = 0;
         static int type = 0;
         private List<Question> lst = new List<Question>();
-        private List<Question> lstDsXuatCauHoi = new List<Question>();
-
-        private static Question tmp ;
+        // private List<Question> lstDsXuatCauHoi = new List<Question>();
+        private SortedSet<Question> lstDsXuatCauHoi = new SortedSet<Question>();
+        private static Question tmpAdd;
+        private static Question tmpDel;
+        private static int indexTmpDel = -1;
 
 
         public FormQLCH()
@@ -35,6 +37,14 @@ namespace DNTest
             InitializeComponent();
         }
 
+
+        private void Clear()
+        {
+            BindDataDsXuatCauHoi();
+            rtxtNoiDungCauHoi.Text = "";
+            dgvDsXuatCauHoi.Enabled = false;
+            ///  lstDsXuatCauHoi.Clear();
+        }
         private void BindDataFaculty(String t = "", String w = "", String o = "")
         {
             List<Faculty> lst = new FacultyBUS().Faculty_GetByTop(t, w, o);
@@ -103,14 +113,17 @@ namespace DNTest
 
         private void cmbFaculty_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Clear();
             if (cmbFaculty.SelectedValue.ToString() != "DNTest.Entity.Faculty")
             {
                 BindDataSubject("", " facultyID = " + cmbFaculty.SelectedValue.ToString(), " ");
             }
+
         }
 
         private void cmbSubject_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Clear();
             if (cmbSubject.SelectedValue.ToString() != "DNTest.Entity.Subject")
             {
                 BindDataTopic("", " subjectID = " + cmbSubject.SelectedValue.ToString(), " ");
@@ -131,6 +144,7 @@ namespace DNTest
 
         private void cmbTopic_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Clear();
             if (cmbTopic.SelectedValue.ToString() != "DNTest.Entity.Topic")
                 BindDataQuestion("", " topicID = " + cmbTopic.SelectedValue.ToString(), "");
         }
@@ -206,20 +220,27 @@ namespace DNTest
 
         private void dgvDsCauHoi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string question = "";
+            dgvDsXuatCauHoi.Enabled = true;
             int row = e.RowIndex;
-            if (row < 0) return;
-            string _qid = dgvDsCauHoi.Rows[row].Cells["id"].Value.ToString();
-            string subjectId= dgvDsCauHoi.Rows[row].Cells["subjectID"].Value.ToString();
-            string topicId= dgvDsCauHoi.Rows[row].Cells["topicID"].Value.ToString();
-            string levelId= dgvDsCauHoi.Rows[row].Cells["levelID"].Value.ToString();
-            string typeId = dgvDsCauHoi.Rows[row].Cells["typeID"].Value.ToString();
-            string content= dgvDsCauHoi.Rows[row].Cells["content"].Value.ToString();
-            string createDate= dgvDsCauHoi.Rows[row].Cells["createDate"].Value.ToString();
+            showItem(dgvDsCauHoi, row, ref tmpAdd);
 
-            // tmp = new Question(_qid, topicId, subjectId, levelId, content, createDate, typeId);
-           
-            MessageBox.Show("tmp=" + tmp);
+        }
+
+        private void showItem(DataGridView dgv, int row, ref Question tmp)
+        {
+            string question = "";
+            if (row < 0) return;
+            string _qid = dgv.Rows[row].Cells["id"].Value.ToString();
+            string subjectId = dgv.Rows[row].Cells["subjectID"].Value.ToString();
+            string topicId = dgv.Rows[row].Cells["topicID"].Value.ToString();
+            string levelId = dgv.Rows[row].Cells["levelID"].Value.ToString();
+            string typeId = dgv.Rows[row].Cells["typeID"].Value.ToString();
+            string content = dgv.Rows[row].Cells["content"].Value.ToString();
+            string createDate = dgv.Rows[row].Cells["createDate"].Value.ToString();
+
+            tmp = new Question(_qid, topicId, subjectId, levelId, content, createDate, typeId);
+
+            //    MessageBox.Show("tmp=" + tmp);
 
             //List<Answer> lstAns = new List<Answer>();
             if (content != "")
@@ -288,6 +309,34 @@ namespace DNTest
 
         }
 
+        private void showSimpleQuestionInRichTextBox(Question q)
+        {
+            string question = "";
+            List<SubQuestion> lstSub = subQuestionBUS.SubQuestion_GetByTop("", " questionID = " + q.Id, "");
+
+            foreach (SubQuestion sq in lstSub)
+            {
+                question += "Question: " + sq.Content + "\r\n";
+                List<Answer> lst = answerBUS.Answer_GetByTop("", " subQuestionID = " + sq.Id, "");
+                for (int i = 0; i < lst.Count; i++)
+                {
+                    Answer ans = lst.ElementAt(i);
+                    //  lstAns.Add(ans);
+                    if (bool.Parse(ans.IsCorrect))
+                    {
+                        question += "    " + (char)(65 + i) + ". " + ans.Answers + " *\r\n";
+                    }
+                    else
+                    {
+                        question += "    " + (char)(65 + i) + ". " + ans.Answers + "\r\n";
+
+                    }
+                }
+                question += "\r\n";
+            }
+            rtxtNoiDungCauHoi.Text = question;
+        }
+
         private void btnThemCauHoi_Click(object sender, EventArgs e)
         {
             FormCNCH f = new FormCNCH();
@@ -305,61 +354,35 @@ namespace DNTest
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (lstDsXuatCauHoi.Count > 0)
+            if (tmpDel != null)
             {
-                lstDsXuatCauHoi.Remove(tmp);
-                BindDataDsXuatCauHoi();
+              //  MessageBox.Show("size=" + lstDsXuatCauHoi.Count + "  tmpDel =" + tmpDel.Id);
+                if (indexTmpDel >= 0)
+                {
+                    lstDsXuatCauHoi.Remove(tmpDel);
+                    //lstDsXuatCauHoi.RemoveAt(indexTmpDel);
+                  //  MessageBox.Show("del success size=" + lstDsXuatCauHoi.Count);
+                    DataTable tb = new DataTable();
+                    tb = Common.ConvertListToDataTable(lstDsXuatCauHoi);
+                    dgvDsXuatCauHoi.DataSource = tb;
+                }
             }
+            lbSelectNum.Text = lstDsXuatCauHoi.Count + " Câu";
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            /*if (tmp != null)
+            if (tmpAdd != null)
             {
-              
-                lstDsXuatCauHoi.Add(tmp);
-                MessageBox.Show("Size=" + lstDsXuatCauHoi.Count+" tmp="+tmp.ToString());
-                BindDataDsXuatCauHoi();
-            }*/
 
-
-
-        }
-
-        private DataGridView copy(DataGridView dgv1,DataGridView dgv2)
-        {
-            try
-            {
-               if( dgv2.Columns.Count ==0)
-                {
-                    foreach(DataGridViewColumn c in dgv1.Columns)
-                    {
-                        dgv2.Columns.Add(c.Clone() as DataGridViewColumn);
-                    }
-                }
-                DataGridViewRow r = new DataGridViewRow();
-                for(int i=0; i<dgv1.Rows.Count; i++)
-                {
-                    r = (DataGridViewRow) dgv1.Rows[i].Clone();
-                    int intColIndex = 0;
-                    foreach(DataGridViewCell cell in dgv1.Rows[i].Cells)
-                    {
-                        r.Cells[intColIndex].Value = cell.Value;
-                        intColIndex++;
-                    }
-                    dgv2.Rows.Add(r);
-
-                }
-                dgv2.AllowUserToAddRows = false;
-                dgv2.Refresh();
+                lstDsXuatCauHoi.Add(tmpAdd);
+                DataTable tb = new DataTable();
+                tb = Common.ConvertListToDataTable(lstDsXuatCauHoi);
+                dgvDsXuatCauHoi.DataSource = tb;
             }
-            catch (Exception ex)
-            {
-                
-            }
-            return dgv2;
+            lbSelectNum.Text = lstDsXuatCauHoi.Count + " Câu";
         }
-
 
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
@@ -368,14 +391,38 @@ namespace DNTest
             MessageBox.Show("Size=" + lstDsXuatCauHoi.Count);
             if (lstDsXuatCauHoi.Count > 0)
             {
-
-                BindDataDsXuatCauHoi();
+                DataTable tb = new DataTable();
+                tb = Common.ConvertListToDataTable(lstDsXuatCauHoi);
+                dgvDsXuatCauHoi.DataSource = tb;
+                lbSelectNum.Text = lstDsXuatCauHoi.Count + " Câu";
             }
         }
 
         private void pcXoaHet_Click(object sender, EventArgs e)
         {
             lstDsXuatCauHoi.Clear();
+        }
+
+        private void dgvDsXuatCauHoi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int row = e.RowIndex;
+            foreach (var item in lstDsXuatCauHoi)
+            {
+                if (item.Id.Equals(lstDsXuatCauHoi.ElementAt(row).Id))
+                {
+                    tmpDel = new Question(item.Id, item.TopicID, item.SubjectID, item.LevelID, item.Content, item.CreateDate, item.TypeID);
+                    indexTmpDel = row;
+                    showSimpleQuestionInRichTextBox(item);
+                    break;
+                }
+            }
+            // MessageBox.Show("size=" + lstDsXuatCauHoi.Count + " tmp=" + lstDsXuatCauHoi.ElementAt(row).Id);
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            //xuat ra file word
         }
     }
 }
