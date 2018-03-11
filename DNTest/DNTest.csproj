@@ -148,6 +148,7 @@
     <Compile Include="UcRaDeThi.Designer.cs">
       <DependentUpon>UcRaDeThi.cs</DependentUpon>
     </Compile>
+    <Compile Include="WordUtil.cs" />
     <EmbeddedResource Include="FormCNCH.resx">
       <DependentUpon>FormCNCH.cs</DependentUpon>
     </EmbeddedResource>

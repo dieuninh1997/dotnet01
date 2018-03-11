@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DNTest.BUS;
 using DNTest.Entity;
+using System.IO;
 
 namespace DNTest
 {
@@ -30,6 +31,7 @@ namespace DNTest
         private static Question tmpAdd;
         private static Question tmpDel;
         private static int indexTmpDel = -1;
+        private static int indexDgvCH = -1;
 
 
         public FormQLCH()
@@ -108,28 +110,29 @@ namespace DNTest
             rbAllLevel.Checked = true;
             rbAllType.Checked = true;
             txtSoLuong.Text = lst.Count.ToString();
+            rtxtNoiDungCauHoi.Text = "";
 
         }
 
-        private void cmbFaculty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Clear();
-            if (cmbFaculty.SelectedValue.ToString() != "DNTest.Entity.Faculty")
+        /*    private void cmbFaculty_SelectedIndexChanged(object sender, EventArgs e)
             {
-                BindDataSubject("", " facultyID = " + cmbFaculty.SelectedValue.ToString(), " ");
+                Clear();
+                if (cmbFaculty.SelectedValue.ToString() != "DNTest.Entity.Faculty")
+                {
+                    BindDataSubject("", " facultyID = " + cmbFaculty.SelectedValue.ToString(), " ");
+                }
+
             }
-
-        }
-
-        private void cmbSubject_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Clear();
-            if (cmbSubject.SelectedValue.ToString() != "DNTest.Entity.Subject")
-            {
-                BindDataTopic("", " subjectID = " + cmbSubject.SelectedValue.ToString(), " ");
-            }
-        }
-
+            */
+        /*  private void cmbSubject_SelectedIndexChanged(object sender, EventArgs e)
+          {
+              Clear();
+              if (cmbSubject.SelectedValue.ToString() != "DNTest.Entity.Subject")
+              {
+                  BindDataTopic("", " subjectID = " + cmbSubject.SelectedValue.ToString(), " ");
+              }
+          }
+          */
         private void ckbHienThiTatCa_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbHienThiTatCa.Checked)
@@ -142,13 +145,13 @@ namespace DNTest
             }
         }
 
-        private void cmbTopic_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Clear();
-            if (cmbTopic.SelectedValue.ToString() != "DNTest.Entity.Topic")
-                BindDataQuestion("", " topicID = " + cmbTopic.SelectedValue.ToString(), "");
-        }
-
+        /*   private void cmbTopic_SelectedIndexChanged(object sender, EventArgs e)
+           {
+               Clear();
+               if (cmbTopic.SelectedValue.ToString() != "DNTest.Entity.Topic")
+                   BindDataQuestion("", " topicID = " + cmbTopic.SelectedValue.ToString(), "");
+           }
+           */
         private void rbDe_CheckedChanged(object sender, EventArgs e)
         {
             if (rbDe.Checked)
@@ -222,6 +225,7 @@ namespace DNTest
         {
             dgvDsXuatCauHoi.Enabled = true;
             int row = e.RowIndex;
+            indexDgvCH = row;
             showItem(dgvDsCauHoi, row, ref tmpAdd);
 
         }
@@ -311,7 +315,7 @@ namespace DNTest
 
         private void showSimpleQuestionInRichTextBox(Question q)
         {
-            string question = "";
+           string question = "";
             List<SubQuestion> lstSub = subQuestionBUS.SubQuestion_GetByTop("", " questionID = " + q.Id, "");
 
             foreach (SubQuestion sq in lstSub)
@@ -334,7 +338,7 @@ namespace DNTest
                 }
                 question += "\r\n";
             }
-            rtxtNoiDungCauHoi.Text = question;
+            rtxtNoiDungCauHoi.Text += question;
         }
 
         private void btnThemCauHoi_Click(object sender, EventArgs e)
@@ -354,58 +358,73 @@ namespace DNTest
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (tmpDel != null)
+            if (indexTmpDel == -1)
             {
-              //  MessageBox.Show("size=" + lstDsXuatCauHoi.Count + "  tmpDel =" + tmpDel.Id);
-                if (indexTmpDel >= 0)
-                {
-                    lstDsXuatCauHoi.Remove(tmpDel);
-                    //lstDsXuatCauHoi.RemoveAt(indexTmpDel);
-                  //  MessageBox.Show("del success size=" + lstDsXuatCauHoi.Count);
-                    DataTable tb = new DataTable();
-                    tb = Common.ConvertListToDataTable(lstDsXuatCauHoi);
-                    dgvDsXuatCauHoi.DataSource = tb;
-                }
+                MessageBox.Show("Bạn đã chưa chọn câu hỏi trong danh sách!");
+                return;
             }
-            lbSelectNum.Text = lstDsXuatCauHoi.Count + " Câu";
+            else
+            {
+                if (tmpDel != null)
+                {
+                    //  MessageBox.Show("size=" + lstDsXuatCauHoi.Count + "  tmpDel =" + tmpDel.Id);
+                    if (indexTmpDel >= 0)
+                    {
+                        lstDsXuatCauHoi.Remove(tmpDel);
+                        //lstDsXuatCauHoi.RemoveAt(indexTmpDel);
+                        //  MessageBox.Show("del success size=" + lstDsXuatCauHoi.Count);
+                        DataTable tb = new DataTable();
+                        tb = Common.ConverSortedtListToDataTable(lstDsXuatCauHoi);
+                        dgvDsXuatCauHoi.DataSource = tb;
+                    }
+                }
+                lbSelectNum.Text = lstDsXuatCauHoi.Count + " Câu";
 
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (tmpAdd != null)
+            if (indexDgvCH == -1)
             {
-
-                lstDsXuatCauHoi.Add(tmpAdd);
-                DataTable tb = new DataTable();
-                tb = Common.ConvertListToDataTable(lstDsXuatCauHoi);
-                dgvDsXuatCauHoi.DataSource = tb;
+                MessageBox.Show("Bạn đã chưa chọn câu hỏi trong danh sách!");
+                return;
             }
-            lbSelectNum.Text = lstDsXuatCauHoi.Count + " Câu";
+            else
+            {
+                if (tmpAdd != null)
+                {
+
+                    bool rs = lstDsXuatCauHoi.Add(tmpAdd);
+                    if(!rs)
+                    {
+                        MessageBox.Show("Câu hỏi này đã được thêm vào danh sách xuất!");
+                        return;
+                    }
+                    DataTable tb = new DataTable();
+                    tb = Common.ConverSortedtListToDataTable(lstDsXuatCauHoi);
+                    dgvDsXuatCauHoi.DataSource = tb;
+                }
+                lbSelectNum.Text = lstDsXuatCauHoi.Count + " Câu";
+            }
         }
 
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
             foreach (Question i in lst)
                 lstDsXuatCauHoi.Add(i);
-            MessageBox.Show("Size=" + lstDsXuatCauHoi.Count);
+            //MessageBox.Show("Size=" + lstDsXuatCauHoi.Count);
             if (lstDsXuatCauHoi.Count > 0)
             {
                 DataTable tb = new DataTable();
-                tb = Common.ConvertListToDataTable(lstDsXuatCauHoi);
+                tb = Common.ConverSortedtListToDataTable(lstDsXuatCauHoi);
                 dgvDsXuatCauHoi.DataSource = tb;
                 lbSelectNum.Text = lstDsXuatCauHoi.Count + " Câu";
             }
         }
 
-        private void pcXoaHet_Click(object sender, EventArgs e)
-        {
-            lstDsXuatCauHoi.Clear();
-        }
-
         private void dgvDsXuatCauHoi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             int row = e.RowIndex;
             foreach (var item in lstDsXuatCauHoi)
             {
@@ -413,16 +432,110 @@ namespace DNTest
                 {
                     tmpDel = new Question(item.Id, item.TopicID, item.SubjectID, item.LevelID, item.Content, item.CreateDate, item.TypeID);
                     indexTmpDel = row;
-                    showSimpleQuestionInRichTextBox(item);
                     break;
                 }
             }
-            // MessageBox.Show("size=" + lstDsXuatCauHoi.Count + " tmp=" + lstDsXuatCauHoi.ElementAt(row).Id);
         }
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            //xuat ra file word
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.Filter = " RichTextFile |*.rtf|Text file (*.txt)|*.txt|XML file (*.xml)|*.xml|All files (*.*)|*.*";//"Word document(*.doc/*.docx)|*.doc*";//
+            saveFileDialog.AddExtension = true;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.Title = "Chọn đường dẫn lưu";
+            saveFileDialog.InitialDirectory = @"C:/";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // MessageBox.Show("You selected the file: " + saveFileDialog.FileName);
+                if(ckbXemDsXuat.Checked)
+                {
+                    rtxtNoiDungCauHoi.SaveFile(saveFileDialog.FileName);
+                    MessageBox.Show("Xuất file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                        rtxtNoiDungCauHoi.Text = "";
+                        foreach (var item in lstDsXuatCauHoi)
+                        {
+                            showSimpleQuestionInRichTextBox(item);
+                        }
+
+                    rtxtNoiDungCauHoi.SaveFile(saveFileDialog.FileName);
+                    MessageBox.Show("Xuất file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Xuất file thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // MessageBox.Show("You hit cancel or closed the dialog.");
+            }
+            saveFileDialog.Dispose();
+            saveFileDialog = null;
+            /* Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
+             Microsoft.Office.Interop.Word.Document doc = app.Documents.Open(@"e:\tênfile.docx");
+             object missing = System.Reflection.Missing.Value;
+             doc.Content.Text += "Nội dung file";
+             app.Visible = true;    //Optional
+             doc.Save();
+             this.Close();
+             */
+        }
+
+        private void cmbFaculty_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            Clear();
+            if (cmbFaculty.SelectedValue.ToString() != "DNTest.Entity.Faculty")
+            {
+                BindDataSubject("", " facultyID = " + cmbFaculty.SelectedValue.ToString(), " ");
+            }
+
+        }
+
+        private void cmbSubject_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            Clear();
+            if (cmbSubject.SelectedValue.ToString() != "DNTest.Entity.Subject")
+            {
+                BindDataTopic("", " subjectID = " + cmbSubject.SelectedValue.ToString(), " ");
+            }
+        }
+
+        private void cmbTopic_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            Clear();
+            if (cmbTopic.SelectedValue.ToString() != "DNTest.Entity.Topic")
+                BindDataQuestion("", " topicID = " + cmbTopic.SelectedValue.ToString(), "");
+
+        }
+
+        private void btnXoaHet_Click(object sender, EventArgs e)
+        {
+            lstDsXuatCauHoi.Clear();
+            DataTable tb = new DataTable();
+            tb = Common.ConverSortedtListToDataTable(lstDsXuatCauHoi);
+            dgvDsXuatCauHoi.DataSource = tb;
+            lbSelectNum.Text = lstDsXuatCauHoi.Count + " Câu";
+        }
+
+        private void ckbXemDsXuat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbXemDsXuat.Checked)
+            {
+                rtxtNoiDungCauHoi.Text = "";
+                string ques = "";
+                foreach (var item in lstDsXuatCauHoi)
+                {
+                    showSimpleQuestionInRichTextBox(item);
+                }
+               
+            }
+            else
+                rtxtNoiDungCauHoi.Text = "";
         }
     }
 }

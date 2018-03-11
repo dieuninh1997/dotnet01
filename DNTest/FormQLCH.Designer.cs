@@ -45,7 +45,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbSelectNum = new System.Windows.Forms.Label();
-            this.pcXoaHet = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.ckbHienThiTatCa = new System.Windows.Forms.CheckBox();
             this.dgvDsCauHoi = new System.Windows.Forms.DataGridView();
@@ -57,9 +56,7 @@
             this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnThemCauHoi = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gbDangCauHoi = new System.Windows.Forms.GroupBox();
@@ -77,13 +74,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbFaculty = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnThemCauHoi = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnXoaHet = new System.Windows.Forms.Button();
+            this.ckbXemDsXuat = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcXoaHet)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoi)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.gbDangCauHoi.SuspendLayout();
             this.gbMucDoKienThuc.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +93,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.ckbXemDsXuat);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.rtxtNoiDungCauHoi);
             this.panel1.Controls.Add(this.btnSelectAll);
@@ -108,7 +111,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(274, 253);
+            this.label6.Location = new System.Drawing.Point(266, 253);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 13);
             this.label6.TabIndex = 16;
@@ -120,7 +123,7 @@
             this.rtxtNoiDungCauHoi.Location = new System.Drawing.Point(267, 269);
             this.rtxtNoiDungCauHoi.Name = "rtxtNoiDungCauHoi";
             this.rtxtNoiDungCauHoi.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.rtxtNoiDungCauHoi.Size = new System.Drawing.Size(848, 325);
+            this.rtxtNoiDungCauHoi.Size = new System.Drawing.Size(846, 325);
             this.rtxtNoiDungCauHoi.TabIndex = 15;
             this.rtxtNoiDungCauHoi.Text = "";
             // 
@@ -160,9 +163,9 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox5.Controls.Add(this.btnXoaHet);
             this.groupBox5.Controls.Add(this.dgvDsXuatCauHoi);
             this.groupBox5.Controls.Add(this.lbSelectNum);
-            this.groupBox5.Controls.Add(this.pcXoaHet);
             this.groupBox5.Location = new System.Drawing.Point(715, 12);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(403, 226);
@@ -242,17 +245,6 @@
             this.lbSelectNum.Size = new System.Drawing.Size(35, 13);
             this.lbSelectNum.TabIndex = 5;
             this.lbSelectNum.Text = "0 Câu";
-            // 
-            // pcXoaHet
-            // 
-            this.pcXoaHet.Image = ((System.Drawing.Image)(resources.GetObject("pcXoaHet.Image")));
-            this.pcXoaHet.Location = new System.Drawing.Point(373, 5);
-            this.pcXoaHet.Name = "pcXoaHet";
-            this.pcXoaHet.Size = new System.Drawing.Size(24, 24);
-            this.pcXoaHet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pcXoaHet.TabIndex = 1;
-            this.pcXoaHet.TabStop = false;
-            this.pcXoaHet.Click += new System.EventHandler(this.pcXoaHet_Click);
             // 
             // groupBox4
             // 
@@ -344,24 +336,207 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.btnThemCauHoi);
             this.groupBox1.Controls.Add(this.btnExport);
             this.groupBox1.Controls.Add(this.btnEdit);
-            this.groupBox1.Controls.Add(this.txtSoLuong);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.gbDangCauHoi);
-            this.groupBox1.Controls.Add(this.gbMucDoKienThuc);
-            this.groupBox1.Controls.Add(this.cmbTopic);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cmbSubject);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cmbFaculty);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(247, 582);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtSoLuong);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.gbDangCauHoi);
+            this.panel2.Controls.Add(this.gbMucDoKienThuc);
+            this.panel2.Controls.Add(this.cmbTopic);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.cmbSubject);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.cmbFaculty);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(6, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(235, 373);
+            this.panel2.TabIndex = 13;
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Enabled = false;
+            this.txtSoLuong.Location = new System.Drawing.Point(163, 333);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(61, 20);
+            this.txtSoLuong.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 339);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 13);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Số câu hỏi trong chuyên đề: ";
+            // 
+            // gbDangCauHoi
+            // 
+            this.gbDangCauHoi.BackColor = System.Drawing.Color.SteelBlue;
+            this.gbDangCauHoi.Controls.Add(this.rbAllType);
+            this.gbDangCauHoi.Controls.Add(this.rbMultiple);
+            this.gbDangCauHoi.Controls.Add(this.rbSingle);
+            this.gbDangCauHoi.Location = new System.Drawing.Point(15, 244);
+            this.gbDangCauHoi.Name = "gbDangCauHoi";
+            this.gbDangCauHoi.Size = new System.Drawing.Size(209, 73);
+            this.gbDangCauHoi.TabIndex = 17;
+            this.gbDangCauHoi.TabStop = false;
+            this.gbDangCauHoi.Text = "Dạng câu hỏi";
+            // 
+            // rbAllType
+            // 
+            this.rbAllType.AutoSize = true;
+            this.rbAllType.Location = new System.Drawing.Point(12, 23);
+            this.rbAllType.Name = "rbAllType";
+            this.rbAllType.Size = new System.Drawing.Size(56, 17);
+            this.rbAllType.TabIndex = 2;
+            this.rbAllType.TabStop = true;
+            this.rbAllType.Text = "Tất cả";
+            this.rbAllType.UseVisualStyleBackColor = true;
+            // 
+            // rbMultiple
+            // 
+            this.rbMultiple.AutoSize = true;
+            this.rbMultiple.Location = new System.Drawing.Point(84, 50);
+            this.rbMultiple.Name = "rbMultiple";
+            this.rbMultiple.Size = new System.Drawing.Size(73, 17);
+            this.rbMultiple.TabIndex = 1;
+            this.rbMultiple.TabStop = true;
+            this.rbMultiple.Text = "Câu chùm";
+            this.rbMultiple.UseVisualStyleBackColor = true;
+            // 
+            // rbSingle
+            // 
+            this.rbSingle.AutoSize = true;
+            this.rbSingle.Location = new System.Drawing.Point(12, 50);
+            this.rbSingle.Name = "rbSingle";
+            this.rbSingle.Size = new System.Drawing.Size(66, 17);
+            this.rbSingle.TabIndex = 0;
+            this.rbSingle.TabStop = true;
+            this.rbSingle.Text = "Câu đơn";
+            this.rbSingle.UseVisualStyleBackColor = true;
+            // 
+            // gbMucDoKienThuc
+            // 
+            this.gbMucDoKienThuc.BackColor = System.Drawing.Color.SteelBlue;
+            this.gbMucDoKienThuc.Controls.Add(this.rbAllLevel);
+            this.gbMucDoKienThuc.Controls.Add(this.rbKho);
+            this.gbMucDoKienThuc.Controls.Add(this.rbTrungBinh);
+            this.gbMucDoKienThuc.Controls.Add(this.rbDe);
+            this.gbMucDoKienThuc.Location = new System.Drawing.Point(13, 151);
+            this.gbMucDoKienThuc.Name = "gbMucDoKienThuc";
+            this.gbMucDoKienThuc.Size = new System.Drawing.Size(209, 78);
+            this.gbMucDoKienThuc.TabIndex = 16;
+            this.gbMucDoKienThuc.TabStop = false;
+            this.gbMucDoKienThuc.Text = "Mức độ kiến thức";
+            // 
+            // rbAllLevel
+            // 
+            this.rbAllLevel.AutoSize = true;
+            this.rbAllLevel.Location = new System.Drawing.Point(14, 24);
+            this.rbAllLevel.Name = "rbAllLevel";
+            this.rbAllLevel.Size = new System.Drawing.Size(56, 17);
+            this.rbAllLevel.TabIndex = 3;
+            this.rbAllLevel.TabStop = true;
+            this.rbAllLevel.Text = "Tất cả";
+            this.rbAllLevel.UseVisualStyleBackColor = true;
+            // 
+            // rbKho
+            // 
+            this.rbKho.AutoSize = true;
+            this.rbKho.Location = new System.Drawing.Point(154, 52);
+            this.rbKho.Name = "rbKho";
+            this.rbKho.Size = new System.Drawing.Size(44, 17);
+            this.rbKho.TabIndex = 2;
+            this.rbKho.TabStop = true;
+            this.rbKho.Text = "Khó";
+            this.rbKho.UseVisualStyleBackColor = true;
+            // 
+            // rbTrungBinh
+            // 
+            this.rbTrungBinh.AutoSize = true;
+            this.rbTrungBinh.Location = new System.Drawing.Point(72, 52);
+            this.rbTrungBinh.Name = "rbTrungBinh";
+            this.rbTrungBinh.Size = new System.Drawing.Size(76, 17);
+            this.rbTrungBinh.TabIndex = 1;
+            this.rbTrungBinh.TabStop = true;
+            this.rbTrungBinh.Text = "Trung bình";
+            this.rbTrungBinh.UseVisualStyleBackColor = true;
+            // 
+            // rbDe
+            // 
+            this.rbDe.AutoSize = true;
+            this.rbDe.Location = new System.Drawing.Point(14, 52);
+            this.rbDe.Name = "rbDe";
+            this.rbDe.Size = new System.Drawing.Size(39, 17);
+            this.rbDe.TabIndex = 0;
+            this.rbDe.TabStop = true;
+            this.rbDe.Text = "Dễ";
+            this.rbDe.UseVisualStyleBackColor = true;
+            // 
+            // cmbTopic
+            // 
+            this.cmbTopic.FormattingEnabled = true;
+            this.cmbTopic.Location = new System.Drawing.Point(13, 115);
+            this.cmbTopic.Name = "cmbTopic";
+            this.cmbTopic.Size = new System.Drawing.Size(209, 21);
+            this.cmbTopic.TabIndex = 15;
+            this.cmbTopic.SelectedIndexChanged += new System.EventHandler(this.cmbTopic_SelectedIndexChanged_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Chuyên đề kiến thức";
+            // 
+            // cmbSubject
+            // 
+            this.cmbSubject.FormattingEnabled = true;
+            this.cmbSubject.Location = new System.Drawing.Point(13, 75);
+            this.cmbSubject.Name = "cmbSubject";
+            this.cmbSubject.Size = new System.Drawing.Size(209, 21);
+            this.cmbSubject.TabIndex = 13;
+            this.cmbSubject.SelectedIndexChanged += new System.EventHandler(this.cmbSubject_SelectedIndexChanged_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Chọn môn học";
+            // 
+            // cmbFaculty
+            // 
+            this.cmbFaculty.FormattingEnabled = true;
+            this.cmbFaculty.Location = new System.Drawing.Point(13, 35);
+            this.cmbFaculty.Name = "cmbFaculty";
+            this.cmbFaculty.Size = new System.Drawing.Size(209, 21);
+            this.cmbFaculty.TabIndex = 11;
+            this.cmbFaculty.SelectedIndexChanged += new System.EventHandler(this.cmbFaculty_SelectedIndexChanged_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Chọn khoa:";
             // 
             // btnThemCauHoi
             // 
@@ -399,187 +574,27 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // txtSoLuong
+            // btnXoaHet
             // 
-            this.txtSoLuong.Enabled = false;
-            this.txtSoLuong.Location = new System.Drawing.Point(168, 330);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(61, 20);
-            this.txtSoLuong.TabIndex = 9;
+            this.btnXoaHet.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaHet.Image")));
+            this.btnXoaHet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaHet.Location = new System.Drawing.Point(364, 4);
+            this.btnXoaHet.Name = "btnXoaHet";
+            this.btnXoaHet.Size = new System.Drawing.Size(34, 30);
+            this.btnXoaHet.TabIndex = 17;
+            this.btnXoaHet.UseVisualStyleBackColor = true;
+            this.btnXoaHet.Click += new System.EventHandler(this.btnXoaHet_Click);
             // 
-            // label4
+            // ckbXemDsXuat
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 336);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Số câu hỏi trong chuyên đề: ";
-            // 
-            // gbDangCauHoi
-            // 
-            this.gbDangCauHoi.BackColor = System.Drawing.Color.SteelBlue;
-            this.gbDangCauHoi.Controls.Add(this.rbAllType);
-            this.gbDangCauHoi.Controls.Add(this.rbMultiple);
-            this.gbDangCauHoi.Controls.Add(this.rbSingle);
-            this.gbDangCauHoi.Location = new System.Drawing.Point(20, 241);
-            this.gbDangCauHoi.Name = "gbDangCauHoi";
-            this.gbDangCauHoi.Size = new System.Drawing.Size(209, 73);
-            this.gbDangCauHoi.TabIndex = 7;
-            this.gbDangCauHoi.TabStop = false;
-            this.gbDangCauHoi.Text = "Dạng câu hỏi";
-            // 
-            // rbAllType
-            // 
-            this.rbAllType.AutoSize = true;
-            this.rbAllType.Location = new System.Drawing.Point(12, 23);
-            this.rbAllType.Name = "rbAllType";
-            this.rbAllType.Size = new System.Drawing.Size(56, 17);
-            this.rbAllType.TabIndex = 2;
-            this.rbAllType.TabStop = true;
-            this.rbAllType.Text = "Tất cả";
-            this.rbAllType.UseVisualStyleBackColor = true;
-            this.rbAllType.CheckedChanged += new System.EventHandler(this.rbAllType_CheckedChanged);
-            // 
-            // rbMultiple
-            // 
-            this.rbMultiple.AutoSize = true;
-            this.rbMultiple.Location = new System.Drawing.Point(84, 50);
-            this.rbMultiple.Name = "rbMultiple";
-            this.rbMultiple.Size = new System.Drawing.Size(73, 17);
-            this.rbMultiple.TabIndex = 1;
-            this.rbMultiple.TabStop = true;
-            this.rbMultiple.Text = "Câu chùm";
-            this.rbMultiple.UseVisualStyleBackColor = true;
-            this.rbMultiple.CheckedChanged += new System.EventHandler(this.rbMultiple_CheckedChanged);
-            // 
-            // rbSingle
-            // 
-            this.rbSingle.AutoSize = true;
-            this.rbSingle.Location = new System.Drawing.Point(12, 50);
-            this.rbSingle.Name = "rbSingle";
-            this.rbSingle.Size = new System.Drawing.Size(66, 17);
-            this.rbSingle.TabIndex = 0;
-            this.rbSingle.TabStop = true;
-            this.rbSingle.Text = "Câu đơn";
-            this.rbSingle.UseVisualStyleBackColor = true;
-            this.rbSingle.CheckedChanged += new System.EventHandler(this.rbSingle_CheckedChanged);
-            // 
-            // gbMucDoKienThuc
-            // 
-            this.gbMucDoKienThuc.BackColor = System.Drawing.Color.SteelBlue;
-            this.gbMucDoKienThuc.Controls.Add(this.rbAllLevel);
-            this.gbMucDoKienThuc.Controls.Add(this.rbKho);
-            this.gbMucDoKienThuc.Controls.Add(this.rbTrungBinh);
-            this.gbMucDoKienThuc.Controls.Add(this.rbDe);
-            this.gbMucDoKienThuc.Location = new System.Drawing.Point(18, 148);
-            this.gbMucDoKienThuc.Name = "gbMucDoKienThuc";
-            this.gbMucDoKienThuc.Size = new System.Drawing.Size(209, 78);
-            this.gbMucDoKienThuc.TabIndex = 6;
-            this.gbMucDoKienThuc.TabStop = false;
-            this.gbMucDoKienThuc.Text = "Mức độ kiến thức";
-            // 
-            // rbAllLevel
-            // 
-            this.rbAllLevel.AutoSize = true;
-            this.rbAllLevel.Location = new System.Drawing.Point(14, 24);
-            this.rbAllLevel.Name = "rbAllLevel";
-            this.rbAllLevel.Size = new System.Drawing.Size(56, 17);
-            this.rbAllLevel.TabIndex = 3;
-            this.rbAllLevel.TabStop = true;
-            this.rbAllLevel.Text = "Tất cả";
-            this.rbAllLevel.UseVisualStyleBackColor = true;
-            this.rbAllLevel.CheckedChanged += new System.EventHandler(this.rbAllLevel_CheckedChanged);
-            // 
-            // rbKho
-            // 
-            this.rbKho.AutoSize = true;
-            this.rbKho.Location = new System.Drawing.Point(154, 52);
-            this.rbKho.Name = "rbKho";
-            this.rbKho.Size = new System.Drawing.Size(44, 17);
-            this.rbKho.TabIndex = 2;
-            this.rbKho.TabStop = true;
-            this.rbKho.Text = "Khó";
-            this.rbKho.UseVisualStyleBackColor = true;
-            this.rbKho.CheckedChanged += new System.EventHandler(this.rbKho_CheckedChanged);
-            // 
-            // rbTrungBinh
-            // 
-            this.rbTrungBinh.AutoSize = true;
-            this.rbTrungBinh.Location = new System.Drawing.Point(72, 52);
-            this.rbTrungBinh.Name = "rbTrungBinh";
-            this.rbTrungBinh.Size = new System.Drawing.Size(76, 17);
-            this.rbTrungBinh.TabIndex = 1;
-            this.rbTrungBinh.TabStop = true;
-            this.rbTrungBinh.Text = "Trung bình";
-            this.rbTrungBinh.UseVisualStyleBackColor = true;
-            this.rbTrungBinh.CheckedChanged += new System.EventHandler(this.rbTrungBinh_CheckedChanged);
-            // 
-            // rbDe
-            // 
-            this.rbDe.AutoSize = true;
-            this.rbDe.Location = new System.Drawing.Point(14, 52);
-            this.rbDe.Name = "rbDe";
-            this.rbDe.Size = new System.Drawing.Size(39, 17);
-            this.rbDe.TabIndex = 0;
-            this.rbDe.TabStop = true;
-            this.rbDe.Text = "Dễ";
-            this.rbDe.UseVisualStyleBackColor = true;
-            this.rbDe.CheckedChanged += new System.EventHandler(this.rbDe_CheckedChanged);
-            // 
-            // cmbTopic
-            // 
-            this.cmbTopic.FormattingEnabled = true;
-            this.cmbTopic.Location = new System.Drawing.Point(18, 112);
-            this.cmbTopic.Name = "cmbTopic";
-            this.cmbTopic.Size = new System.Drawing.Size(209, 21);
-            this.cmbTopic.TabIndex = 5;
-            this.cmbTopic.SelectedIndexChanged += new System.EventHandler(this.cmbTopic_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Chuyên đề kiến thức";
-            // 
-            // cmbSubject
-            // 
-            this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(18, 72);
-            this.cmbSubject.Name = "cmbSubject";
-            this.cmbSubject.Size = new System.Drawing.Size(209, 21);
-            this.cmbSubject.TabIndex = 3;
-            this.cmbSubject.SelectedIndexChanged += new System.EventHandler(this.cmbSubject_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Chọn môn học";
-            // 
-            // cmbFaculty
-            // 
-            this.cmbFaculty.FormattingEnabled = true;
-            this.cmbFaculty.Location = new System.Drawing.Point(18, 32);
-            this.cmbFaculty.Name = "cmbFaculty";
-            this.cmbFaculty.Size = new System.Drawing.Size(209, 21);
-            this.cmbFaculty.TabIndex = 1;
-            this.cmbFaculty.SelectedIndexChanged += new System.EventHandler(this.cmbFaculty_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Chọn khoa:";
+            this.ckbXemDsXuat.AutoSize = true;
+            this.ckbXemDsXuat.Location = new System.Drawing.Point(911, 251);
+            this.ckbXemDsXuat.Name = "ckbXemDsXuat";
+            this.ckbXemDsXuat.Size = new System.Drawing.Size(202, 17);
+            this.ckbXemDsXuat.TabIndex = 17;
+            this.ckbXemDsXuat.Text = "Xem danh sách câu hỏi muốn xuất ra";
+            this.ckbXemDsXuat.UseVisualStyleBackColor = true;
+            this.ckbXemDsXuat.CheckedChanged += new System.EventHandler(this.ckbXemDsXuat_CheckedChanged);
             // 
             // FormQLCH
             // 
@@ -597,12 +612,12 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcXoaHet)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoi)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.gbDangCauHoi.ResumeLayout(false);
             this.gbDangCauHoi.PerformLayout();
             this.gbMucDoKienThuc.ResumeLayout(false);
@@ -621,27 +636,11 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label lbSelectNum;
-        private System.Windows.Forms.PictureBox pcXoaHet;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgvDsCauHoi;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox gbDangCauHoi;
-        private System.Windows.Forms.RadioButton rbMultiple;
-        private System.Windows.Forms.RadioButton rbSingle;
-        private System.Windows.Forms.GroupBox gbMucDoKienThuc;
-        private System.Windows.Forms.RadioButton rbKho;
-        private System.Windows.Forms.RadioButton rbTrungBinh;
-        private System.Windows.Forms.RadioButton rbDe;
-        private System.Windows.Forms.ComboBox cmbTopic;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbSubject;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbFaculty;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox ckbHienThiTatCa;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeID;
@@ -651,8 +650,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn content;
         private System.Windows.Forms.DataGridViewTextBoxColumn createDate;
         private System.Windows.Forms.Button btnThemCauHoi;
-        private System.Windows.Forms.RadioButton rbAllType;
-        private System.Windows.Forms.RadioButton rbAllLevel;
         private System.Windows.Forms.DataGridView dgvDsXuatCauHoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -661,5 +658,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox gbDangCauHoi;
+        private System.Windows.Forms.RadioButton rbAllType;
+        private System.Windows.Forms.RadioButton rbMultiple;
+        private System.Windows.Forms.RadioButton rbSingle;
+        private System.Windows.Forms.GroupBox gbMucDoKienThuc;
+        private System.Windows.Forms.RadioButton rbAllLevel;
+        private System.Windows.Forms.RadioButton rbKho;
+        private System.Windows.Forms.RadioButton rbTrungBinh;
+        private System.Windows.Forms.RadioButton rbDe;
+        private System.Windows.Forms.ComboBox cmbTopic;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbSubject;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbFaculty;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnXoaHet;
+        private System.Windows.Forms.CheckBox ckbXemDsXuat;
     }
 }

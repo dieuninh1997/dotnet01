@@ -15,6 +15,11 @@ namespace DNTest.BUS
         {
             return obj.Question_GetByTop(Top, Where, Order);
         }
+        public List<Question> QuestionAnswer_GetByTop(string Top, string Where, string Order)
+        {
+            return obj.QuestionAnswer_GetByTop(Top, Where, Order);
+        }
+
         public int Question_Insert(Question data)
         {
             return obj.Question_Insert(data);

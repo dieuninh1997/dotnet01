@@ -36,6 +36,34 @@ namespace DNTest.DAL
             }
             return list;
         }
+
+        public List<Question> QuestionAnswer_GetByTop(string Top, string Where, string Order)
+        {
+            List<Question> list = new List<Question>();
+            using (SqlCommand dbCmd = new SqlCommand("sp_QuestionAnswer_getByTop", openConnection()))
+            {
+                dbCmd.CommandType = CommandType.StoredProcedure;
+                dbCmd.Parameters.Add(new SqlParameter("@Top", Top));
+                dbCmd.Parameters.Add(new SqlParameter("@Where", Where));
+                dbCmd.Parameters.Add(new SqlParameter("@Order", Order));
+                SqlDataReader dr = dbCmd.ExecuteReader();
+                dr.Close();
+                dr = dbCmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Question obj = new Question();
+                        obj.QuestionIDataReader(dr);
+                        list.Add(obj);
+                    }
+                }
+                dr.Close();
+            }
+            return list;
+        }
+
+
         public int Question_Insert(Question data)
         {
             int id = -1;//ko th 0

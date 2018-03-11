@@ -23,7 +23,7 @@ namespace DNTest.Entity
         public static string subject_facultyID;
 
         //
-        public static DataTable ConvertListToDataTable<T> (SortedSet<T> lst)
+        public static DataTable ConverSortedtListToDataTable<T> (SortedSet<T> lst)
         {
             DataTable dt = new DataTable(typeof(T).Name);
             //get all properties
@@ -49,6 +49,31 @@ namespace DNTest.Entity
             return dt;
         }
 
+        public static DataTable ConvertListToDataTable<T>(List<T> lst)
+        {
+            DataTable dt = new DataTable(typeof(T).Name);
+            //get all properties
+            PropertyInfo[] Pros = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (PropertyInfo prop in Pros)
+            {
+                //set col names as property names
+                dt.Columns.Add(prop.Name);
+
+            }
+
+            foreach (T item in lst)
+            {
+                var values = new object[Pros.Length];
+                for (int i = 0; i < Pros.Length; i++)
+                {
+                    //insert property values to datatable rows
+                    values[i] = Pros[i].GetValue(item, null);
+                }
+                dt.Rows.Add(values);
+            }
+
+            return dt;
+        }
 
 
         //convert text to image png
