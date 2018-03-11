@@ -18,10 +18,19 @@ namespace DNTest
         private QuestionBUS questionBUS = new QuestionBUS();
         private SubQuestionBUS subQuestionBUS = new SubQuestionBUS();
         private AnswerBUS answerBUS = new AnswerBUS();
+        private SubjectBUS subjectBUS = new SubjectBUS();
+
         private List<SimpleQuestion> lstSimple = new List<SimpleQuestion>();
         private List<MultiQuestion> lstMulti = new List<MultiQuestion>();
 
         private static string levelQuestion = "0";
+        private Question _question;
+        public FormCNCH(Question q)
+        {
+            this._question = q;
+            //  MessageBox.Show("id = " + _question.Id + " content= " + _question.Content);
+            InitializeComponent();
+        }
 
         public FormCNCH()
         {
@@ -31,10 +40,82 @@ namespace DNTest
         private void FormCNCH_Load(object sender, EventArgs e)
         {
             rtxtFileNoiDung.Text = "";
+            rbFileAll.Checked = true;
             BindCmbFileTopic();
             BindCmbFileSubject();
             BindCmbFileFaculty();
-            rbFileAll.Checked = true;
+            //
+            BindCmbTopic();
+            BindCmbSubject();
+            BindCmbFaculty();
+            //
+            LoadQuestionToEdit();
+        }
+
+        private void LoadQuestionToEdit()
+        {
+            if (_question != null)
+            {
+                var subject = subjectBUS.Subject_GetByTop("", " id = " + _question.SubjectID, "");
+                cmbKhoa.SelectedValue = subject.ElementAt(0).FacultyID;
+                cmbMon.SelectedValue = _question.SubjectID;
+                cmbChuDe.SelectedValue = _question.TopicID;
+                if (_question.LevelID.Equals("1"))
+                {
+                    rbDe.Checked = true;
+                }
+                else if (_question.LevelID.Equals("2"))
+                {
+                    rbTB.Checked = true;
+                }
+                else if (_question.LevelID.Equals("3"))
+                {
+                    rbKho.Checked = true;
+                }
+
+                if (_question.TypeID.Equals("1"))
+                {
+                    rbCauDon.Checked = true;
+
+                    var subQues = subQuestionBUS.SubQuestion_GetByTop("", " questionID = " + _question.Id, "");
+                    var answers = answerBUS.Answer_GetByTop("", " subQuestionID = " + subQues.ElementAt(0).Id, "");
+                    rtxtDA1.Text = answers.ElementAt(0).Answers;
+                    rtxtDA2.Text = answers.ElementAt(1).Answers;
+                    rtxtDA3.Text = answers.ElementAt(2).Answers;
+                    rtxtDA4.Text = answers.ElementAt(3).Answers;
+
+
+                    if (bool.Parse(answers.ElementAt(0).IsCorrect))
+                    {
+                        rbDA1.Checked = true;
+                    }
+                    else if (bool.Parse(answers.ElementAt(1).IsCorrect))
+                    {
+                        rbDA2.Checked = true;
+                    }
+                    else if (bool.Parse(answers.ElementAt(2).IsCorrect))
+                    {
+                        rbDA3.Checked = true;
+                    }
+                    else if (bool.Parse(answers.ElementAt(3).IsCorrect))
+                    {
+                        rbDA4.Checked = true;
+                    }
+
+
+
+
+
+                }
+                else if (_question.TypeID.Equals("2"))
+                {
+                    rbCauChum.Checked = true;
+                }
+
+                rtxtNoiDungCauHoi.Text = _question.Content;
+
+
+            }
         }
 
         private void btnOpenFile_Click(object sender, EventArgs e)
@@ -64,6 +145,19 @@ namespace DNTest
             cmbFileSubject.SelectedIndex = 0;
 
         }
+
+        private void BindCmbSubject(string t = "", string w = "", string o = "")
+        {
+
+            List<Subject> lst = new SubjectBUS().Subject_GetByTop(t, w, o);
+            lst.Insert(0, new Subject("0", "Select an option"));
+            cmbMon.DataSource = lst;
+            cmbMon.DisplayMember = "subjectName";
+            cmbMon.ValueMember = "Id";
+            cmbMon.SelectedIndex = 0;
+
+        }
+
         private void BindCmbFileFaculty(string t = "", string w = "", string o = "")
         {
 
@@ -73,6 +167,18 @@ namespace DNTest
             cmbFileFaculty.DisplayMember = "facultyName";
             cmbFileFaculty.ValueMember = "Id";
             cmbFileFaculty.SelectedIndex = 0;
+
+        }
+
+        private void BindCmbFaculty(string t = "", string w = "", string o = "")
+        {
+
+            List<Faculty> lst = new FacultyBUS().Faculty_GetByTop(t, w, o);
+            lst.Insert(0, new Faculty("0", "Select an option"));
+            cmbKhoa.DataSource = lst;
+            cmbKhoa.DisplayMember = "facultyName";
+            cmbKhoa.ValueMember = "Id";
+            cmbKhoa.SelectedIndex = 0;
 
         }
 
@@ -87,6 +193,19 @@ namespace DNTest
             cmbFileTopic.SelectedIndex = 0;
 
         }
+
+        private void BindCmbTopic(string t = "", string w = "", string o = "")
+        {
+
+            List<Topic> lst = new TopicBUS().Topic_GetByTop(t, w, o);
+            lst.Insert(0, new Topic("0", "Select an option"));
+            cmbChuDe.DataSource = lst;
+            cmbChuDe.DisplayMember = "topicName";
+            cmbChuDe.ValueMember = "Id";
+            cmbChuDe.SelectedIndex = 0;
+
+        }
+
 
         private void GetData(object path)
         {
@@ -338,14 +457,14 @@ namespace DNTest
                 {
                     subQuestionId = subQuestionBUS.SubQuestion_Insert(new SubQuestion(null, questionId.ToString(), sq.question));
                     MessageBox.Show("SubQuestionID = " + subQuestionId);
-                    if (subQuestionId  > 0)
+                    if (subQuestionId > 0)
                     {
                         int count = sq.answer.Count;
                         MessageBox.Show("count = " + count);
 
                         for (int i = 0; i < sq.answer.Count; i++)
                         {
-                           
+
                             if (sq.correctAnswer == i)
                             {
 
@@ -439,7 +558,7 @@ namespace DNTest
             this.Hide();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -31,50 +31,51 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCNCH));
             this.tabCNFile = new System.Windows.Forms.TabControl();
             this.tabCNTC_Container = new System.Windows.Forms.TabPage();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnLamLai = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.pcZoom4 = new System.Windows.Forms.PictureBox();
+            this.btnXoa4 = new System.Windows.Forms.Button();
+            this.ckbMix4 = new System.Windows.Forms.CheckBox();
+            this.rtxtDA4 = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.rbDA4 = new System.Windows.Forms.RadioButton();
+            this.pcZoom3 = new System.Windows.Forms.PictureBox();
+            this.btnXoa3 = new System.Windows.Forms.Button();
+            this.ckbMix3 = new System.Windows.Forms.CheckBox();
+            this.rtxtDA3 = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.rbDA3 = new System.Windows.Forms.RadioButton();
+            this.pcZoom2 = new System.Windows.Forms.PictureBox();
+            this.btnXoa2 = new System.Windows.Forms.Button();
+            this.ckbMix2 = new System.Windows.Forms.CheckBox();
+            this.rtxtDA2 = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.rbDA2 = new System.Windows.Forms.RadioButton();
+            this.pcZoom1 = new System.Windows.Forms.PictureBox();
+            this.btnXoa1 = new System.Windows.Forms.Button();
+            this.ckbMix1 = new System.Windows.Forms.CheckBox();
+            this.rtxtDA1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.rbDA1 = new System.Windows.Forms.RadioButton();
+            this.txtSoDapAn = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxtNoiDungCauHoi = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.rbCauChum = new System.Windows.Forms.RadioButton();
+            this.rbCauDon = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.rbKho = new System.Windows.Forms.RadioButton();
+            this.rbTB = new System.Windows.Forms.RadioButton();
+            this.rbDe = new System.Windows.Forms.RadioButton();
+            this.cmbChuDe = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbMon = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbKhoa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCNTF_Container = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -121,14 +122,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.tabCNFile.SuspendLayout();
             this.tabCNTC_Container.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcZoom4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcZoom3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcZoom2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcZoom1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -165,9 +165,9 @@
             this.tabCNTC_Container.Controls.Add(this.btnThoat);
             this.tabCNTC_Container.Controls.Add(this.btnLamLai);
             this.tabCNTC_Container.Controls.Add(this.groupBox5);
-            this.tabCNTC_Container.Controls.Add(this.button5);
+            this.tabCNTC_Container.Controls.Add(this.btnOk);
             this.tabCNTC_Container.Controls.Add(this.label4);
-            this.tabCNTC_Container.Controls.Add(this.richTextBox1);
+            this.tabCNTC_Container.Controls.Add(this.rtxtNoiDungCauHoi);
             this.tabCNTC_Container.Controls.Add(this.groupBox1);
             this.tabCNTC_Container.Location = new System.Drawing.Point(4, 22);
             this.tabCNTC_Container.Name = "tabCNTC_Container";
@@ -175,6 +175,18 @@
             this.tabCNTC_Container.Size = new System.Drawing.Size(911, 620);
             this.tabCNTC_Container.TabIndex = 0;
             this.tabCNTC_Container.Text = "Cập nhật từng câu";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Location = new System.Drawing.Point(691, 556);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(211, 46);
+            this.btnThoat.TabIndex = 21;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLamLai
             // 
@@ -190,31 +202,31 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox5.Controls.Add(this.pictureBox4);
-            this.groupBox5.Controls.Add(this.button4);
-            this.groupBox5.Controls.Add(this.checkBox4);
-            this.groupBox5.Controls.Add(this.richTextBox5);
+            this.groupBox5.Controls.Add(this.pcZoom4);
+            this.groupBox5.Controls.Add(this.btnXoa4);
+            this.groupBox5.Controls.Add(this.ckbMix4);
+            this.groupBox5.Controls.Add(this.rtxtDA4);
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Controls.Add(this.radioButton9);
-            this.groupBox5.Controls.Add(this.pictureBox3);
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.checkBox3);
-            this.groupBox5.Controls.Add(this.richTextBox4);
+            this.groupBox5.Controls.Add(this.rbDA4);
+            this.groupBox5.Controls.Add(this.pcZoom3);
+            this.groupBox5.Controls.Add(this.btnXoa3);
+            this.groupBox5.Controls.Add(this.ckbMix3);
+            this.groupBox5.Controls.Add(this.rtxtDA3);
             this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.radioButton8);
-            this.groupBox5.Controls.Add(this.pictureBox2);
-            this.groupBox5.Controls.Add(this.button2);
-            this.groupBox5.Controls.Add(this.checkBox2);
-            this.groupBox5.Controls.Add(this.richTextBox3);
+            this.groupBox5.Controls.Add(this.rbDA3);
+            this.groupBox5.Controls.Add(this.pcZoom2);
+            this.groupBox5.Controls.Add(this.btnXoa2);
+            this.groupBox5.Controls.Add(this.ckbMix2);
+            this.groupBox5.Controls.Add(this.rtxtDA2);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Controls.Add(this.radioButton7);
-            this.groupBox5.Controls.Add(this.pictureBox1);
-            this.groupBox5.Controls.Add(this.button1);
-            this.groupBox5.Controls.Add(this.checkBox1);
-            this.groupBox5.Controls.Add(this.richTextBox2);
+            this.groupBox5.Controls.Add(this.rbDA2);
+            this.groupBox5.Controls.Add(this.pcZoom1);
+            this.groupBox5.Controls.Add(this.btnXoa1);
+            this.groupBox5.Controls.Add(this.ckbMix1);
+            this.groupBox5.Controls.Add(this.rtxtDA1);
             this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.radioButton4);
-            this.groupBox5.Controls.Add(this.textBox2);
+            this.groupBox5.Controls.Add(this.rbDA1);
+            this.groupBox5.Controls.Add(this.txtSoDapAn);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Location = new System.Drawing.Point(258, 258);
             this.groupBox5.Name = "groupBox5";
@@ -223,45 +235,45 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Đáp án";
             // 
-            // pictureBox4
+            // pcZoom4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(461, 221);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 35;
-            this.pictureBox4.TabStop = false;
+            this.pcZoom4.Image = ((System.Drawing.Image)(resources.GetObject("pcZoom4.Image")));
+            this.pcZoom4.Location = new System.Drawing.Point(461, 221);
+            this.pcZoom4.Name = "pcZoom4";
+            this.pcZoom4.Size = new System.Drawing.Size(16, 16);
+            this.pcZoom4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pcZoom4.TabIndex = 35;
+            this.pcZoom4.TabStop = false;
             // 
-            // button4
+            // btnXoa4
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(572, 211);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(66, 34);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Xóa";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnXoa4.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa4.Image")));
+            this.btnXoa4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa4.Location = new System.Drawing.Point(572, 211);
+            this.btnXoa4.Name = "btnXoa4";
+            this.btnXoa4.Size = new System.Drawing.Size(66, 34);
+            this.btnXoa4.TabIndex = 34;
+            this.btnXoa4.Text = "Xóa";
+            this.btnXoa4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa4.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // ckbMix4
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(493, 221);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(73, 17);
-            this.checkBox4.TabIndex = 33;
-            this.checkBox4.Text = "Được trộn";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.ckbMix4.AutoSize = true;
+            this.ckbMix4.Location = new System.Drawing.Point(493, 221);
+            this.ckbMix4.Name = "ckbMix4";
+            this.ckbMix4.Size = new System.Drawing.Size(73, 17);
+            this.ckbMix4.TabIndex = 33;
+            this.ckbMix4.Text = "Được trộn";
+            this.ckbMix4.UseVisualStyleBackColor = true;
             // 
-            // richTextBox5
+            // rtxtDA4
             // 
-            this.richTextBox5.Location = new System.Drawing.Point(99, 207);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(356, 47);
-            this.richTextBox5.TabIndex = 32;
-            this.richTextBox5.Text = "";
+            this.rtxtDA4.Location = new System.Drawing.Point(99, 207);
+            this.rtxtDA4.Name = "rtxtDA4";
+            this.rtxtDA4.Size = new System.Drawing.Size(356, 47);
+            this.rtxtDA4.TabIndex = 32;
+            this.rtxtDA4.Text = "";
             // 
             // label9
             // 
@@ -272,55 +284,55 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "Đáp án 1:";
             // 
-            // radioButton9
+            // rbDA4
             // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(8, 221);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(14, 13);
-            this.radioButton9.TabIndex = 30;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.rbDA4.AutoSize = true;
+            this.rbDA4.Location = new System.Drawing.Point(8, 221);
+            this.rbDA4.Name = "rbDA4";
+            this.rbDA4.Size = new System.Drawing.Size(14, 13);
+            this.rbDA4.TabIndex = 30;
+            this.rbDA4.TabStop = true;
+            this.rbDA4.UseVisualStyleBackColor = true;
             // 
-            // pictureBox3
+            // pcZoom3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(461, 168);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
+            this.pcZoom3.Image = ((System.Drawing.Image)(resources.GetObject("pcZoom3.Image")));
+            this.pcZoom3.Location = new System.Drawing.Point(461, 168);
+            this.pcZoom3.Name = "pcZoom3";
+            this.pcZoom3.Size = new System.Drawing.Size(16, 16);
+            this.pcZoom3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pcZoom3.TabIndex = 29;
+            this.pcZoom3.TabStop = false;
             // 
-            // button3
+            // btnXoa3
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(572, 158);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(66, 34);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Xóa";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnXoa3.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa3.Image")));
+            this.btnXoa3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa3.Location = new System.Drawing.Point(572, 158);
+            this.btnXoa3.Name = "btnXoa3";
+            this.btnXoa3.Size = new System.Drawing.Size(66, 34);
+            this.btnXoa3.TabIndex = 28;
+            this.btnXoa3.Text = "Xóa";
+            this.btnXoa3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa3.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // ckbMix3
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(493, 168);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(73, 17);
-            this.checkBox3.TabIndex = 27;
-            this.checkBox3.Text = "Được trộn";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.ckbMix3.AutoSize = true;
+            this.ckbMix3.Location = new System.Drawing.Point(493, 168);
+            this.ckbMix3.Name = "ckbMix3";
+            this.ckbMix3.Size = new System.Drawing.Size(73, 17);
+            this.ckbMix3.TabIndex = 27;
+            this.ckbMix3.Text = "Được trộn";
+            this.ckbMix3.UseVisualStyleBackColor = true;
             // 
-            // richTextBox4
+            // rtxtDA3
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(99, 154);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(356, 47);
-            this.richTextBox4.TabIndex = 26;
-            this.richTextBox4.Text = "";
+            this.rtxtDA3.Location = new System.Drawing.Point(99, 154);
+            this.rtxtDA3.Name = "rtxtDA3";
+            this.rtxtDA3.Size = new System.Drawing.Size(356, 47);
+            this.rtxtDA3.TabIndex = 26;
+            this.rtxtDA3.Text = "";
             // 
             // label8
             // 
@@ -331,55 +343,55 @@
             this.label8.TabIndex = 25;
             this.label8.Text = "Đáp án 1:";
             // 
-            // radioButton8
+            // rbDA3
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(8, 168);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(14, 13);
-            this.radioButton8.TabIndex = 24;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.rbDA3.AutoSize = true;
+            this.rbDA3.Location = new System.Drawing.Point(8, 168);
+            this.rbDA3.Name = "rbDA3";
+            this.rbDA3.Size = new System.Drawing.Size(14, 13);
+            this.rbDA3.TabIndex = 24;
+            this.rbDA3.TabStop = true;
+            this.rbDA3.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
+            // pcZoom2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(460, 115);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
+            this.pcZoom2.Image = ((System.Drawing.Image)(resources.GetObject("pcZoom2.Image")));
+            this.pcZoom2.Location = new System.Drawing.Point(460, 115);
+            this.pcZoom2.Name = "pcZoom2";
+            this.pcZoom2.Size = new System.Drawing.Size(16, 16);
+            this.pcZoom2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pcZoom2.TabIndex = 23;
+            this.pcZoom2.TabStop = false;
             // 
-            // button2
+            // btnXoa2
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(571, 105);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(66, 34);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Xóa";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnXoa2.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa2.Image")));
+            this.btnXoa2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa2.Location = new System.Drawing.Point(571, 105);
+            this.btnXoa2.Name = "btnXoa2";
+            this.btnXoa2.Size = new System.Drawing.Size(66, 34);
+            this.btnXoa2.TabIndex = 22;
+            this.btnXoa2.Text = "Xóa";
+            this.btnXoa2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa2.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // ckbMix2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(492, 115);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(73, 17);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "Được trộn";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckbMix2.AutoSize = true;
+            this.ckbMix2.Location = new System.Drawing.Point(492, 115);
+            this.ckbMix2.Name = "ckbMix2";
+            this.ckbMix2.Size = new System.Drawing.Size(73, 17);
+            this.ckbMix2.TabIndex = 21;
+            this.ckbMix2.Text = "Được trộn";
+            this.ckbMix2.UseVisualStyleBackColor = true;
             // 
-            // richTextBox3
+            // rtxtDA2
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(98, 101);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(356, 47);
-            this.richTextBox3.TabIndex = 20;
-            this.richTextBox3.Text = "";
+            this.rtxtDA2.Location = new System.Drawing.Point(98, 101);
+            this.rtxtDA2.Name = "rtxtDA2";
+            this.rtxtDA2.Size = new System.Drawing.Size(356, 47);
+            this.rtxtDA2.TabIndex = 20;
+            this.rtxtDA2.Text = "";
             // 
             // label7
             // 
@@ -390,55 +402,55 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Đáp án 1:";
             // 
-            // radioButton7
+            // rbDA2
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(7, 115);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(14, 13);
-            this.radioButton7.TabIndex = 18;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.rbDA2.AutoSize = true;
+            this.rbDA2.Location = new System.Drawing.Point(7, 115);
+            this.rbDA2.Name = "rbDA2";
+            this.rbDA2.Size = new System.Drawing.Size(14, 13);
+            this.rbDA2.TabIndex = 18;
+            this.rbDA2.TabStop = true;
+            this.rbDA2.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pcZoom1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(461, 62);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.pcZoom1.Image = ((System.Drawing.Image)(resources.GetObject("pcZoom1.Image")));
+            this.pcZoom1.Location = new System.Drawing.Point(461, 62);
+            this.pcZoom1.Name = "pcZoom1";
+            this.pcZoom1.Size = new System.Drawing.Size(16, 16);
+            this.pcZoom1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pcZoom1.TabIndex = 17;
+            this.pcZoom1.TabStop = false;
             // 
-            // button1
+            // btnXoa1
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(572, 52);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 34);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Xóa";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnXoa1.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa1.Image")));
+            this.btnXoa1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa1.Location = new System.Drawing.Point(572, 52);
+            this.btnXoa1.Name = "btnXoa1";
+            this.btnXoa1.Size = new System.Drawing.Size(66, 34);
+            this.btnXoa1.TabIndex = 16;
+            this.btnXoa1.Text = "Xóa";
+            this.btnXoa1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa1.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // ckbMix1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(493, 62);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Được trộn";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbMix1.AutoSize = true;
+            this.ckbMix1.Location = new System.Drawing.Point(493, 62);
+            this.ckbMix1.Name = "ckbMix1";
+            this.ckbMix1.Size = new System.Drawing.Size(73, 17);
+            this.ckbMix1.TabIndex = 15;
+            this.ckbMix1.Text = "Được trộn";
+            this.ckbMix1.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // rtxtDA1
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(99, 48);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(356, 47);
-            this.richTextBox2.TabIndex = 14;
-            this.richTextBox2.Text = "";
+            this.rtxtDA1.Location = new System.Drawing.Point(99, 48);
+            this.rtxtDA1.Name = "rtxtDA1";
+            this.rtxtDA1.Size = new System.Drawing.Size(356, 47);
+            this.rtxtDA1.TabIndex = 14;
+            this.rtxtDA1.Text = "";
             // 
             // label5
             // 
@@ -449,23 +461,24 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Đáp án 1:";
             // 
-            // radioButton4
+            // rbDA1
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(8, 62);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(14, 13);
-            this.radioButton4.TabIndex = 12;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbDA1.AutoSize = true;
+            this.rbDA1.Location = new System.Drawing.Point(8, 62);
+            this.rbDA1.Name = "rbDA1";
+            this.rbDA1.Size = new System.Drawing.Size(14, 13);
+            this.rbDA1.TabIndex = 12;
+            this.rbDA1.TabStop = true;
+            this.rbDA1.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtSoDapAn
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(99, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(61, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtSoDapAn.Enabled = false;
+            this.txtSoDapAn.Location = new System.Drawing.Point(99, 22);
+            this.txtSoDapAn.Name = "txtSoDapAn";
+            this.txtSoDapAn.Size = new System.Drawing.Size(61, 20);
+            this.txtSoDapAn.TabIndex = 11;
+            this.txtSoDapAn.Text = "4";
             // 
             // label6
             // 
@@ -476,16 +489,16 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Số đáp án:";
             // 
-            // button5
+            // btnOk
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(258, 556);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(211, 46);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Hoàn thành";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnOk.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.Image")));
+            this.btnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOk.Location = new System.Drawing.Point(258, 556);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(211, 46);
+            this.btnOk.TabIndex = 18;
+            this.btnOk.Text = "Hoàn thành";
+            this.btnOk.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -496,24 +509,24 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Nội dung câu hỏi";
             // 
-            // richTextBox1
+            // rtxtNoiDungCauHoi
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(258, 22);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(647, 230);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.rtxtNoiDungCauHoi.Location = new System.Drawing.Point(258, 22);
+            this.rtxtNoiDungCauHoi.Name = "rtxtNoiDungCauHoi";
+            this.rtxtNoiDungCauHoi.Size = new System.Drawing.Size(647, 230);
+            this.rtxtNoiDungCauHoi.TabIndex = 1;
+            this.rtxtNoiDungCauHoi.Text = "";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.cmbChuDe);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cmbMon);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbKhoa);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
@@ -525,8 +538,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.SteelBlue;
-            this.groupBox3.Controls.Add(this.radioButton5);
-            this.groupBox3.Controls.Add(this.radioButton6);
+            this.groupBox3.Controls.Add(this.rbCauChum);
+            this.groupBox3.Controls.Add(this.rbCauDon);
             this.groupBox3.Location = new System.Drawing.Point(16, 216);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(209, 57);
@@ -534,34 +547,34 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dạng câu hỏi";
             // 
-            // radioButton5
+            // rbCauChum
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(84, 29);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(73, 17);
-            this.radioButton5.TabIndex = 1;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Câu chùm";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rbCauChum.AutoSize = true;
+            this.rbCauChum.Location = new System.Drawing.Point(84, 29);
+            this.rbCauChum.Name = "rbCauChum";
+            this.rbCauChum.Size = new System.Drawing.Size(73, 17);
+            this.rbCauChum.TabIndex = 1;
+            this.rbCauChum.TabStop = true;
+            this.rbCauChum.Text = "Câu chùm";
+            this.rbCauChum.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rbCauDon
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(12, 29);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(66, 17);
-            this.radioButton6.TabIndex = 0;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Câu đơn";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rbCauDon.AutoSize = true;
+            this.rbCauDon.Location = new System.Drawing.Point(12, 29);
+            this.rbCauDon.Name = "rbCauDon";
+            this.rbCauDon.Size = new System.Drawing.Size(66, 17);
+            this.rbCauDon.TabIndex = 0;
+            this.rbCauDon.TabStop = true;
+            this.rbCauDon.Text = "Câu đơn";
+            this.rbCauDon.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.SteelBlue;
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.rbKho);
+            this.groupBox2.Controls.Add(this.rbTB);
+            this.groupBox2.Controls.Add(this.rbDe);
             this.groupBox2.Location = new System.Drawing.Point(16, 152);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(209, 57);
@@ -569,46 +582,46 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mức độ kiến thức";
             // 
-            // radioButton3
+            // rbKho
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(152, 29);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(44, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Khó";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbKho.AutoSize = true;
+            this.rbKho.Location = new System.Drawing.Point(152, 29);
+            this.rbKho.Name = "rbKho";
+            this.rbKho.Size = new System.Drawing.Size(44, 17);
+            this.rbKho.TabIndex = 2;
+            this.rbKho.TabStop = true;
+            this.rbKho.Text = "Khó";
+            this.rbKho.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbTB
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(70, 29);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Trung bình";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbTB.AutoSize = true;
+            this.rbTB.Location = new System.Drawing.Point(70, 29);
+            this.rbTB.Name = "rbTB";
+            this.rbTB.Size = new System.Drawing.Size(76, 17);
+            this.rbTB.TabIndex = 1;
+            this.rbTB.TabStop = true;
+            this.rbTB.Text = "Trung bình";
+            this.rbTB.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbDe
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Dễ";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbDe.AutoSize = true;
+            this.rbDe.Location = new System.Drawing.Point(12, 29);
+            this.rbDe.Name = "rbDe";
+            this.rbDe.Size = new System.Drawing.Size(39, 17);
+            this.rbDe.TabIndex = 0;
+            this.rbDe.TabStop = true;
+            this.rbDe.Text = "Dễ";
+            this.rbDe.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // cmbChuDe
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(16, 124);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(209, 21);
-            this.comboBox3.TabIndex = 15;
+            this.cmbChuDe.FormattingEnabled = true;
+            this.cmbChuDe.Location = new System.Drawing.Point(16, 124);
+            this.cmbChuDe.Name = "cmbChuDe";
+            this.cmbChuDe.Size = new System.Drawing.Size(209, 21);
+            this.cmbChuDe.TabIndex = 15;
             // 
             // label3
             // 
@@ -619,13 +632,13 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Chuyên đề kiến thức";
             // 
-            // comboBox2
+            // cmbMon
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(16, 84);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(209, 21);
-            this.comboBox2.TabIndex = 13;
+            this.cmbMon.FormattingEnabled = true;
+            this.cmbMon.Location = new System.Drawing.Point(16, 84);
+            this.cmbMon.Name = "cmbMon";
+            this.cmbMon.Size = new System.Drawing.Size(209, 21);
+            this.cmbMon.TabIndex = 13;
             // 
             // label2
             // 
@@ -636,23 +649,23 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Chọn môn học";
             // 
-            // comboBox1
+            // cmbKhoa
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 21);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbKhoa.FormattingEnabled = true;
+            this.cmbKhoa.Location = new System.Drawing.Point(16, 44);
+            this.cmbKhoa.Name = "cmbKhoa";
+            this.cmbKhoa.Size = new System.Drawing.Size(209, 21);
+            this.cmbKhoa.TabIndex = 11;
+            this.cmbKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Chọn khối lớp";
+            this.label1.Text = "Chọn khoa";
             // 
             // tabCNTF_Container
             // 
@@ -662,7 +675,7 @@
             this.tabCNTF_Container.Location = new System.Drawing.Point(4, 22);
             this.tabCNTF_Container.Name = "tabCNTF_Container";
             this.tabCNTF_Container.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCNTF_Container.Size = new System.Drawing.Size(944, 620);
+            this.tabCNTF_Container.Size = new System.Drawing.Size(911, 620);
             this.tabCNTF_Container.TabIndex = 1;
             this.tabCNTF_Container.Text = "Cập nhật từ file";
             // 
@@ -878,7 +891,7 @@
             this.tabXemSuaCH.Location = new System.Drawing.Point(4, 22);
             this.tabXemSuaCH.Name = "tabXemSuaCH";
             this.tabXemSuaCH.Padding = new System.Windows.Forms.Padding(3);
-            this.tabXemSuaCH.Size = new System.Drawing.Size(944, 620);
+            this.tabXemSuaCH.Size = new System.Drawing.Size(911, 620);
             this.tabXemSuaCH.TabIndex = 2;
             this.tabXemSuaCH.Text = "Xem/Sửa dữ liệu câu hỏi";
             // 
@@ -1142,18 +1155,6 @@
             this.label15.TabIndex = 10;
             this.label15.Text = "Chọn khối lớp";
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(691, 556);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(211, 46);
-            this.btnThoat.TabIndex = 21;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // FormCNCH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1170,10 +1171,10 @@
             this.tabCNTC_Container.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcZoom4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcZoom3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcZoom2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcZoom1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1208,48 +1209,48 @@
         private System.Windows.Forms.TabPage tabCNTC_Container;
         private System.Windows.Forms.Button btnLamLai;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.PictureBox pcZoom4;
+        private System.Windows.Forms.Button btnXoa4;
+        private System.Windows.Forms.CheckBox ckbMix4;
+        private System.Windows.Forms.RichTextBox rtxtDA4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RadioButton rbDA4;
+        private System.Windows.Forms.PictureBox pcZoom3;
+        private System.Windows.Forms.Button btnXoa3;
+        private System.Windows.Forms.CheckBox ckbMix3;
+        private System.Windows.Forms.RichTextBox rtxtDA3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RadioButton rbDA3;
+        private System.Windows.Forms.PictureBox pcZoom2;
+        private System.Windows.Forms.Button btnXoa2;
+        private System.Windows.Forms.CheckBox ckbMix2;
+        private System.Windows.Forms.RichTextBox rtxtDA2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RadioButton rbDA2;
+        private System.Windows.Forms.PictureBox pcZoom1;
+        private System.Windows.Forms.Button btnXoa1;
+        private System.Windows.Forms.CheckBox ckbMix1;
+        private System.Windows.Forms.RichTextBox rtxtDA1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RadioButton rbDA1;
+        private System.Windows.Forms.TextBox txtSoDapAn;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtxtNoiDungCauHoi;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton rbCauChum;
+        private System.Windows.Forms.RadioButton rbCauDon;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.RadioButton rbKho;
+        private System.Windows.Forms.RadioButton rbTB;
+        private System.Windows.Forms.RadioButton rbDe;
+        private System.Windows.Forms.ComboBox cmbChuDe;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbMon;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbKhoa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabCNTF_Container;
         private System.Windows.Forms.GroupBox groupBox6;

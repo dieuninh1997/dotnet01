@@ -25,7 +25,7 @@ namespace DNTest
 
         static int level = 0;
         static int type = 0;
-        private List<Question> lst = new List<Question>();
+        private List<Question> lstQues = new List<Question>();
         // private List<Question> lstDsXuatCauHoi = new List<Question>();
         private SortedSet<Question> lstDsXuatCauHoi = new SortedSet<Question>();
         private static Question tmpAdd;
@@ -58,6 +58,8 @@ namespace DNTest
         }
         private void BindDataSubject(String t = "", String w = "", String o = "")
         {
+
+            //TODO: tại bảng vẫn hiện đủ các cột => mong muốn chỉ hiện 3 cột id, content, createDate
             List<Subject> lst = new SubjectBUS().Subject_GetByTop(t, w, o);
             lst.Insert(0, new Subject("0", "Select an option"));
             cmbSubject.DataSource = lst;
@@ -77,9 +79,9 @@ namespace DNTest
 
         private void BindDataQuestion(String t = "", String w = "", String o = "")
         {
-            lst = questionBUS.Question_GetByTop(t, w, o);
-            dgvDsCauHoi.DataSource = lst;
-            txtSoLuong.Text = lst.Count.ToString();
+            lstQues = questionBUS.Question_GetByTop(t, w, o);
+            dgvDsCauHoi.DataSource = lstQues;
+            txtSoLuong.Text = lstQues.Count.ToString();
 
         }
 
@@ -109,30 +111,11 @@ namespace DNTest
 
             rbAllLevel.Checked = true;
             rbAllType.Checked = true;
-            txtSoLuong.Text = lst.Count.ToString();
+            txtSoLuong.Text = lstQues.Count.ToString();
             rtxtNoiDungCauHoi.Text = "";
 
         }
 
-        /*    private void cmbFaculty_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                Clear();
-                if (cmbFaculty.SelectedValue.ToString() != "DNTest.Entity.Faculty")
-                {
-                    BindDataSubject("", " facultyID = " + cmbFaculty.SelectedValue.ToString(), " ");
-                }
-
-            }
-            */
-        /*  private void cmbSubject_SelectedIndexChanged(object sender, EventArgs e)
-          {
-              Clear();
-              if (cmbSubject.SelectedValue.ToString() != "DNTest.Entity.Subject")
-              {
-                  BindDataTopic("", " subjectID = " + cmbSubject.SelectedValue.ToString(), " ");
-              }
-          }
-          */
         private void ckbHienThiTatCa_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbHienThiTatCa.Checked)
@@ -145,13 +128,6 @@ namespace DNTest
             }
         }
 
-        /*   private void cmbTopic_SelectedIndexChanged(object sender, EventArgs e)
-           {
-               Clear();
-               if (cmbTopic.SelectedValue.ToString() != "DNTest.Entity.Topic")
-                   BindDataQuestion("", " topicID = " + cmbTopic.SelectedValue.ToString(), "");
-           }
-           */
         private void rbDe_CheckedChanged(object sender, EventArgs e)
         {
             if (rbDe.Checked)
@@ -350,10 +326,18 @@ namespace DNTest
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            FormCNCH f = new FormCNCH();
-            f.Text = "Sửa câu hỏi";
-            f.ControlBox = false;
-            f.Show();
+            if (indexDgvCH == -1)
+            {
+                MessageBox.Show("Bạn chưa chọn câu hỏi muốn sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                
+                FormCNCH f = new FormCNCH(tmpAdd);
+                f.Text = "Sửa câu hỏi";
+                f.ControlBox = false;
+                f.ShowDialog();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -411,7 +395,7 @@ namespace DNTest
 
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
-            foreach (Question i in lst)
+            foreach (Question i in lstQues)
                 lstDsXuatCauHoi.Add(i);
             //MessageBox.Show("Size=" + lstDsXuatCauHoi.Count);
             if (lstDsXuatCauHoi.Count > 0)
@@ -476,14 +460,7 @@ namespace DNTest
             }
             saveFileDialog.Dispose();
             saveFileDialog = null;
-            /* Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
-             Microsoft.Office.Interop.Word.Document doc = app.Documents.Open(@"e:\tênfile.docx");
-             object missing = System.Reflection.Missing.Value;
-             doc.Content.Text += "Nội dung file";
-             app.Visible = true;    //Optional
-             doc.Save();
-             this.Close();
-             */
+           
         }
 
         private void cmbFaculty_SelectedIndexChanged_1(object sender, EventArgs e)
