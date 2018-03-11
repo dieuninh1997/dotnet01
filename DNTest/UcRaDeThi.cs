@@ -16,5 +16,17 @@ namespace DNTest
         {
             InitializeComponent();
         }
+
+        private void btnRaDeThiTronTungCau_Click(object sender, EventArgs e)
+        {
+            new FormRaDeThi().Show();
+            this.ParentForm.Hide();
+        }
+
+        private void btnRaDeThiTronTuFile_Click(object sender, EventArgs e)
+        {
+            new FormRaDeThi().Show();
+            this.ParentForm.Hide();
+        }
     }
 }

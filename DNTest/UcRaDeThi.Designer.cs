@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcRaDeThi));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRaDeThiTronTuFile = new System.Windows.Forms.Button();
+            this.btnRaDeThiTronTungCau = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -39,31 +39,33 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnRaDeThiTronTuFile);
+            this.panel1.Controls.Add(this.btnRaDeThiTronTungCau);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(199, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(341, 391);
             this.panel1.TabIndex = 1;
             // 
-            // button2
+            // btnRaDeThiTronTuFile
             // 
-            this.button2.Location = new System.Drawing.Point(87, 147);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(167, 51);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Trộn từ file";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRaDeThiTronTuFile.Location = new System.Drawing.Point(87, 147);
+            this.btnRaDeThiTronTuFile.Name = "btnRaDeThiTronTuFile";
+            this.btnRaDeThiTronTuFile.Size = new System.Drawing.Size(167, 51);
+            this.btnRaDeThiTronTuFile.TabIndex = 2;
+            this.btnRaDeThiTronTuFile.Text = "Trộn từ file";
+            this.btnRaDeThiTronTuFile.UseVisualStyleBackColor = true;
+            this.btnRaDeThiTronTuFile.Click += new System.EventHandler(this.btnRaDeThiTronTuFile_Click);
             // 
-            // button1
+            // btnRaDeThiTronTungCau
             // 
-            this.button1.Location = new System.Drawing.Point(87, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 51);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Trộn từng câu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRaDeThiTronTungCau.Location = new System.Drawing.Point(87, 73);
+            this.btnRaDeThiTronTungCau.Name = "btnRaDeThiTronTungCau";
+            this.btnRaDeThiTronTungCau.Size = new System.Drawing.Size(167, 51);
+            this.btnRaDeThiTronTungCau.TabIndex = 1;
+            this.btnRaDeThiTronTungCau.Text = "Trộn từng câu";
+            this.btnRaDeThiTronTungCau.UseVisualStyleBackColor = true;
+            this.btnRaDeThiTronTungCau.Click += new System.EventHandler(this.btnRaDeThiTronTungCau_Click);
             // 
             // label1
             // 
@@ -94,8 +96,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRaDeThiTronTuFile;
+        private System.Windows.Forms.Button btnRaDeThiTronTungCau;
         private System.Windows.Forms.Label label1;
     }
 }
