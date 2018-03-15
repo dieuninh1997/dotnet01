@@ -504,7 +504,6 @@ namespace DNTest
             if (ckbXemDsXuat.Checked)
             {
                 rtxtNoiDungCauHoi.Text = "";
-                string ques = "";
                 foreach (var item in lstDsXuatCauHoi)
                 {
                     showSimpleQuestionInRichTextBox(item);

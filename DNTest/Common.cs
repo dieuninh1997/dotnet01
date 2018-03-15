@@ -21,6 +21,11 @@ namespace DNTest.Entity
         public static string subjectID;
         public static string subjectName;
         public static string subject_facultyID;
+        //-----------
+        public static string permuteStyle="-1";
+        public static SortedSet<Question> lstDsCauHoiDaChon = new SortedSet<Question>();
+
+
 
         //
         public static DataTable ConverSortedtListToDataTable<T> (SortedSet<T> lst)

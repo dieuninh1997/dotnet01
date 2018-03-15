@@ -16,5 +16,17 @@ namespace DNTest
         {
             InitializeComponent();
         }
+
+
+        private void FormTronDeThi_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            new FormRaDeThi().Show();
+        }
+
+        private void FormTronDeThi_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
