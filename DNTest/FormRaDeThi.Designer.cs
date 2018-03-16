@@ -75,6 +75,9 @@
             this.cmbFaculty = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvDsCauHoiPhu = new System.Windows.Forms.DataGridView();
+            this.lbSoCauHoiPhu = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,6 +90,8 @@
             this.groupBox2.SuspendLayout();
             this.gbDangCauHoi.SuspendLayout();
             this.gbMucDoKienThuc.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoiPhu)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -114,6 +119,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.btnTiepTuc);
             this.panel1.Controls.Add(this.ckbXemDsXuat);
             this.panel1.Controls.Add(this.label6);
@@ -167,7 +173,6 @@
             this.rtxtNoiDungCauHoi.Enabled = false;
             this.rtxtNoiDungCauHoi.Location = new System.Drawing.Point(267, 269);
             this.rtxtNoiDungCauHoi.Name = "rtxtNoiDungCauHoi";
-            this.rtxtNoiDungCauHoi.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.rtxtNoiDungCauHoi.Size = new System.Drawing.Size(846, 227);
             this.rtxtNoiDungCauHoi.TabIndex = 15;
             this.rtxtNoiDungCauHoi.Text = "";
@@ -176,7 +181,7 @@
             // 
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(675, 108);
+            this.btnAdd.Location = new System.Drawing.Point(838, 105);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(34, 30);
             this.btnAdd.TabIndex = 13;
@@ -187,7 +192,7 @@
             // 
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(675, 68);
+            this.btnDelete.Location = new System.Drawing.Point(838, 65);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(34, 30);
             this.btnDelete.TabIndex = 12;
@@ -200,9 +205,9 @@
             this.groupBox5.Controls.Add(this.btnXoaHet);
             this.groupBox5.Controls.Add(this.dgvDsCauHoiDaChon);
             this.groupBox5.Controls.Add(this.lbSelectNum);
-            this.groupBox5.Location = new System.Drawing.Point(715, 12);
+            this.groupBox5.Location = new System.Drawing.Point(888, 12);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(403, 226);
+            this.groupBox5.Size = new System.Drawing.Size(230, 226);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Câu hỏi đã chọn";
@@ -211,7 +216,7 @@
             // 
             this.btnXoaHet.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaHet.Image")));
             this.btnXoaHet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaHet.Location = new System.Drawing.Point(364, 4);
+            this.btnXoaHet.Location = new System.Drawing.Point(188, 7);
             this.btnXoaHet.Name = "btnXoaHet";
             this.btnXoaHet.Size = new System.Drawing.Size(34, 30);
             this.btnXoaHet.TabIndex = 17;
@@ -230,9 +235,9 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.dgvDsCauHoiDaChon.Location = new System.Drawing.Point(3, 35);
+            this.dgvDsCauHoiDaChon.Location = new System.Drawing.Point(6, 38);
             this.dgvDsCauHoiDaChon.Name = "dgvDsCauHoiDaChon";
-            this.dgvDsCauHoiDaChon.Size = new System.Drawing.Size(396, 162);
+            this.dgvDsCauHoiDaChon.Size = new System.Drawing.Size(217, 162);
             this.dgvDsCauHoiDaChon.TabIndex = 2;
             this.dgvDsCauHoiDaChon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsCauHoiDaChon_CellClick);
             // 
@@ -286,7 +291,7 @@
             // lbSelectNum
             // 
             this.lbSelectNum.AutoSize = true;
-            this.lbSelectNum.Location = new System.Drawing.Point(179, 204);
+            this.lbSelectNum.Location = new System.Drawing.Point(95, 204);
             this.lbSelectNum.Name = "lbSelectNum";
             this.lbSelectNum.Size = new System.Drawing.Size(35, 13);
             this.lbSelectNum.TabIndex = 5;
@@ -299,7 +304,7 @@
             this.groupBox4.Controls.Add(this.dgvDsCauHoi);
             this.groupBox4.Location = new System.Drawing.Point(265, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(404, 226);
+            this.groupBox4.Size = new System.Drawing.Size(289, 226);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách câu hỏi theo chuyên đề";
@@ -307,7 +312,7 @@
             // ckbHienThiTatCa
             // 
             this.ckbHienThiTatCa.AutoSize = true;
-            this.ckbHienThiTatCa.Location = new System.Drawing.Point(306, 5);
+            this.ckbHienThiTatCa.Location = new System.Drawing.Point(191, 0);
             this.ckbHienThiTatCa.Name = "ckbHienThiTatCa";
             this.ckbHienThiTatCa.Size = new System.Drawing.Size(92, 17);
             this.ckbHienThiTatCa.TabIndex = 1;
@@ -318,9 +323,9 @@
             // 
             this.dgvDsCauHoi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDsCauHoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDsCauHoi.Location = new System.Drawing.Point(4, 32);
+            this.dgvDsCauHoi.Location = new System.Drawing.Point(4, 29);
             this.dgvDsCauHoi.Name = "dgvDsCauHoi";
-            this.dgvDsCauHoi.Size = new System.Drawing.Size(396, 162);
+            this.dgvDsCauHoi.Size = new System.Drawing.Size(279, 185);
             this.dgvDsCauHoi.TabIndex = 0;
             this.dgvDsCauHoi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsCauHoi_CellClick);
             // 
@@ -573,6 +578,37 @@
             this.tabPage2.Text = "Trộn từ file";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox3.Controls.Add(this.lbSoCauHoiPhu);
+            this.groupBox3.Controls.Add(this.dgvDsCauHoiPhu);
+            this.groupBox3.Location = new System.Drawing.Point(560, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(263, 226);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh sách câu hỏi phụ";
+            // 
+            // dgvDsCauHoiPhu
+            // 
+            this.dgvDsCauHoiPhu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDsCauHoiPhu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDsCauHoiPhu.Location = new System.Drawing.Point(4, 29);
+            this.dgvDsCauHoiPhu.Name = "dgvDsCauHoiPhu";
+            this.dgvDsCauHoiPhu.Size = new System.Drawing.Size(251, 171);
+            this.dgvDsCauHoiPhu.TabIndex = 0;
+            this.dgvDsCauHoiPhu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsCauHoiPhu_CellClick);
+            // 
+            // lbSoCauHoiPhu
+            // 
+            this.lbSoCauHoiPhu.AutoSize = true;
+            this.lbSoCauHoiPhu.Location = new System.Drawing.Point(115, 204);
+            this.lbSoCauHoiPhu.Name = "lbSoCauHoiPhu";
+            this.lbSoCauHoiPhu.Size = new System.Drawing.Size(35, 13);
+            this.lbSoCauHoiPhu.TabIndex = 6;
+            this.lbSoCauHoiPhu.Text = "0 Câu";
+            // 
             // FormRaDeThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,6 +639,9 @@
             this.gbDangCauHoi.PerformLayout();
             this.gbMucDoKienThuc.ResumeLayout(false);
             this.gbMucDoKienThuc.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoiPhu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -655,5 +694,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Button btnTiepTuc;
         private System.Windows.Forms.RadioButton rbHoanViAll;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dgvDsCauHoiPhu;
+        private System.Windows.Forms.Label lbSoCauHoiPhu;
     }
 }

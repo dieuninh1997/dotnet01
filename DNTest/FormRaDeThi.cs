@@ -26,8 +26,10 @@ namespace DNTest
         private SortedSet<Question> lstDsCauHoiDaChon = new SortedSet<Question>();
         private static Question tmpAdd;
         private static Question tmpDel;
+        private static Question tmp;
         private static int indexTmpDel = -1;
         private static int indexDgvCH = -1;
+        private static int indexDgvCHP = -1;
 
 
 
@@ -126,6 +128,25 @@ namespace DNTest
             }
         }
 
+        private void BindDataSubQuestion(String t = "", String w = "", String o = "")
+        {
+            var lstSubQues= subQuestionBUS.SubQuestion_GetByTop(t, w, o);
+            dgvDsCauHoiPhu.DataSource = lstSubQues;
+            lbSoCauHoiPhu.Text = lstSubQues.Count.ToString()+" Cau";
+
+            dgvDsCauHoiPhu.Columns["id"].HeaderText = "Mã câu hỏi";
+            dgvDsCauHoiPhu.Columns["id"].Visible = true;
+
+            dgvDsCauHoiPhu.Columns["questionID"].HeaderText = "Mã câu hỏi";
+            dgvDsCauHoiPhu.Columns["questionID"].Visible = true;
+
+            dgvDsCauHoiPhu.Columns["content"].HeaderText = "Nội dung";
+            dgvDsCauHoiPhu.Columns["content"].Visible = true;
+
+        }
+
+
+
         private void BindDataQuestion(String t = "", String w = "", String o = "")
         {
             lstQues = questionBUS.Question_GetByTop(t, w, o);
@@ -166,7 +187,41 @@ namespace DNTest
                 BindDataQuestion("", " topicID = " + cmbTopic.SelectedValue.ToString(), "");
 
         }
+        private void showItem(DataGridView dgv, int row)
+        {
+            string sub_question = "";
+            if (row < 0) return;
+            string _qid = dgv.Rows[row].Cells["id"].Value.ToString();
+            string questionId = dgv.Rows[row].Cells["questionID"].Value.ToString();
+            string content = dgv.Rows[row].Cells["content"].Value.ToString();
 
+      //      tmp = new SubQuestion(_qid, topicId, subjectId, levelId, content, createDate, typeId);
+
+        
+            List<SubQuestion> lstSub = subQuestionBUS.SubQuestion_GetByTop("", " id = " + _qid, "");
+
+            foreach (SubQuestion sq in lstSub)
+            {
+                sub_question += "Question: " + sq.Content + "\r\n";
+                List<Answer> lst = answerBUS.Answer_GetByTop("", " subQuestionID = " + sq.Id, "");
+                for (int i = 0; i < lst.Count; i++)
+                {
+                    Answer ans = lst.ElementAt(i);
+                    if (bool.Parse(ans.IsCorrect))
+                    {
+                        sub_question += "    " + (char)(65 + i) + ". " + ans.Answers + " *\r\n";
+                    }
+                    else
+                    {
+                        sub_question += "    " + (char)(65 + i) + ". " + ans.Answers + "\r\n";
+
+                    }
+                }
+                sub_question += "\r\n";
+            }
+            rtxtNoiDungCauHoi.Text = sub_question;
+
+        }
         private void showItem(DataGridView dgv, int row, ref Question tmp)
         {
             string question = "";
@@ -249,8 +304,10 @@ namespace DNTest
         private void dgvDsCauHoi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvDsCauHoiDaChon.Enabled = true;
+            rtxtNoiDungCauHoi.Enabled = true;
             int row = e.RowIndex;
             indexDgvCH = row;
+            BindDataSubQuestion("", " questionID=" + dgvDsCauHoi.Rows[row].Cells["id"].Value.ToString(), "");
             showItem(dgvDsCauHoi, row, ref tmpAdd);
 
         }
@@ -386,6 +443,14 @@ namespace DNTest
                 Common.permuteStyle = "1";
             else
                 Common.permuteStyle = "-1";
+        }
+
+        private void dgvDsCauHoiPhu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            indexDgvCHP = row;
+            showItem(dgvDsCauHoiPhu, row);
+
         }
     }
 }
