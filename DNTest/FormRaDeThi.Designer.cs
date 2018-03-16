@@ -52,16 +52,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.ckbHienThiTatCa = new System.Windows.Forms.CheckBox();
             this.dgvDsCauHoi = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.topicID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.levelID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbHoanViAll = new System.Windows.Forms.RadioButton();
             this.rbNone = new System.Windows.Forms.RadioButton();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -81,7 +75,6 @@
             this.cmbFaculty = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rbHoanViAll = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -325,66 +318,11 @@
             // 
             this.dgvDsCauHoi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDsCauHoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDsCauHoi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.typeID,
-            this.subjectID,
-            this.topicID,
-            this.levelID,
-            this.content,
-            this.createDate});
             this.dgvDsCauHoi.Location = new System.Drawing.Point(4, 32);
             this.dgvDsCauHoi.Name = "dgvDsCauHoi";
             this.dgvDsCauHoi.Size = new System.Drawing.Size(396, 162);
             this.dgvDsCauHoi.TabIndex = 0;
             this.dgvDsCauHoi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsCauHoi_CellClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Mã câu hỏi";
-            this.id.Name = "id";
-            // 
-            // typeID
-            // 
-            this.typeID.DataPropertyName = "typeID";
-            this.typeID.HeaderText = "Dạng câu hỏi";
-            this.typeID.Name = "typeID";
-            this.typeID.Visible = false;
-            // 
-            // subjectID
-            // 
-            this.subjectID.DataPropertyName = "subjectID";
-            this.subjectID.HeaderText = "Mã môn học";
-            this.subjectID.Name = "subjectID";
-            this.subjectID.Visible = false;
-            // 
-            // topicID
-            // 
-            this.topicID.DataPropertyName = "topicID";
-            this.topicID.HeaderText = "Mã chuyên đề";
-            this.topicID.Name = "topicID";
-            this.topicID.Visible = false;
-            // 
-            // levelID
-            // 
-            this.levelID.DataPropertyName = "levelID";
-            this.levelID.HeaderText = "Mã mức độ";
-            this.levelID.Name = "levelID";
-            this.levelID.Visible = false;
-            // 
-            // content
-            // 
-            this.content.DataPropertyName = "content";
-            this.content.HeaderText = "Nội dung";
-            this.content.Name = "content";
-            // 
-            // createDate
-            // 
-            this.createDate.DataPropertyName = "createDate";
-            this.createDate.HeaderText = "Ngày tạo";
-            this.createDate.Name = "createDate";
-            this.createDate.Visible = false;
             // 
             // groupBox1
             // 
@@ -425,6 +363,18 @@
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kiểu trộn";
+            // 
+            // rbHoanViAll
+            // 
+            this.rbHoanViAll.AutoSize = true;
+            this.rbHoanViAll.Location = new System.Drawing.Point(12, 46);
+            this.rbHoanViAll.Name = "rbHoanViAll";
+            this.rbHoanViAll.Size = new System.Drawing.Size(92, 17);
+            this.rbHoanViAll.TabIndex = 3;
+            this.rbHoanViAll.TabStop = true;
+            this.rbHoanViAll.Text = "Hoán vị tất cả";
+            this.rbHoanViAll.UseVisualStyleBackColor = true;
+            this.rbHoanViAll.CheckedChanged += new System.EventHandler(this.rbHoanViAll_CheckedChanged);
             // 
             // rbNone
             // 
@@ -623,18 +573,6 @@
             this.tabPage2.Text = "Trộn từ file";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // rbHoanViAll
-            // 
-            this.rbHoanViAll.AutoSize = true;
-            this.rbHoanViAll.Location = new System.Drawing.Point(12, 46);
-            this.rbHoanViAll.Name = "rbHoanViAll";
-            this.rbHoanViAll.Size = new System.Drawing.Size(92, 17);
-            this.rbHoanViAll.TabIndex = 3;
-            this.rbHoanViAll.TabStop = true;
-            this.rbHoanViAll.Text = "Hoán vị tất cả";
-            this.rbHoanViAll.UseVisualStyleBackColor = true;
-            this.rbHoanViAll.CheckedChanged += new System.EventHandler(this.rbHoanViAll_CheckedChanged);
-            // 
             // FormRaDeThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -715,13 +653,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subjectID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn topicID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn levelID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn content;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createDate;
         private System.Windows.Forms.Button btnTiepTuc;
         private System.Windows.Forms.RadioButton rbHoanViAll;
     }
