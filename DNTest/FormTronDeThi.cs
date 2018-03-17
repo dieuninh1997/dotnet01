@@ -14,7 +14,9 @@ namespace DNTest
 {
     public partial class FormTronDeThi : Form
     {
+        QuizBUS quizBUS = new QuizBUS();
         AnswerBUS answerBUS = new AnswerBUS();
+        QuestionBUS questionBUS = new QuestionBUS();
         SubQuestionBUS subQuestionBUS = new SubQuestionBUS();
         SortedDictionary<string, Question> ds = Common.lstDsCauHoiTrongDeThi;
         SortedSet<Question> dsCH = Common.lstDsCauHoiDaChon;
@@ -34,7 +36,13 @@ namespace DNTest
         private void FormTronDeThi_Load(object sender, EventArgs e)
         {
             BindDataDsCauHoiDaChon();
-
+            nudSoDeCanTao.Value = 1;
+            Random ran = new Random();
+            int so = ran.Next(1, 1000);
+            nudMaDe.Minimum = 1;
+            nudMaDe.Maximum = 1000;
+            nudMaDe.Value = so;
+            BindDataCmbMaDe();
         }
 
         private void BindDataDsCauHoiDaChon()
@@ -76,10 +84,10 @@ namespace DNTest
 
         private void dgvDsCauHoiDaChon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-         
+
             int row = e.RowIndex;
-         //   indexDgvCH = row;
-         //   BindDataSubQuestion("", " questionID=" + dgvDsCauHoi.Rows[row].Cells["id"].Value.ToString(), "");
+            //   indexDgvCH = row;
+            //   BindDataSubQuestion("", " questionID=" + dgvDsCauHoi.Rows[row].Cells["id"].Value.ToString(), "");
             showItem(dgvDsCauHoiDaChon, row);
 
         }
@@ -146,7 +154,7 @@ namespace DNTest
         private void btnChiaDeu_Click(object sender, EventArgs e)
         {
             double val = Int16.Parse(txtThangDiem.Text) / ((dsCH.Count) * 1.0);
-            MessageBox.Show("Diem=" + Math.Round(val,2));
+            MessageBox.Show("Diem=" + Math.Round(val, 2));
 
             for (int i = 0; i < dsCH.Count; i++)
             {
@@ -201,6 +209,138 @@ namespace DNTest
             {
                 rtxtNoiDungCauHoi.Text = "";
             }
+        }
+
+        private void btnTronDe_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtTieuDe.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập tiêu đề!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (nudThoiGianThi.Value.ToString().Equals("0"))
+            {
+                MessageBox.Show("Bạn chưa chọn thời gian thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string time_thi = nudThoiGianThi.Value.ToString();
+            string title_de = txtTieuDe.Text;
+            int soDe = int.Parse(nudSoDeCanTao.Value.ToString());
+             List<string> dsDeThi = createExam(soDe);
+            Quiz quiz = new Quiz();
+            quiz.SubjectID = Common.subjectID_raDeThi;
+            quiz.QuestionList = dsDeThi.ElementAt(0);
+            quiz.QuizName = title_de;
+            quiz.QuestionCount = dsCH.Count.ToString();
+            quiz.CreateDate = DateTime.Now.ToString();
+            quiz.Time = time_thi;
+            int quizID = -1;
+            int success = 0;
+            if ((quizID = quizBUS.Quiz_Insert(quiz))>0)
+            {
+                MessageBox.Show("Insert De Thi Thanh Cong");
+                success++;
+            }else
+                MessageBox.Show("Insert De Thi Fail");
+            if (success > 0)
+            {
+                for (int i = 0; i < soDe; i++)
+                {
+                    if (dsDeThi.ElementAt(i) != null)
+                    {
+                        ckbXemDsXuat.Checked = true;
+                        int maDe = int.Parse(nudMaDe.Value.ToString());
+                        string path ="MaDe"+maDe+i+".docx";
+                        string userComputer = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last(); ;
+                        string save_doc_path = "C:\\Users\\" + userComputer + "\\Desktop\\"+path;
+
+                        writeToDoc(save_doc_path);
+                        MessageBox.Show("Tạo đề thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+        }
+        private void writeToDoc(string path)
+        {
+            MessageBox.Show("MaDe=" + path);
+            object missing = System.Reflection.Missing.Value;
+            Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
+            Microsoft.Office.Interop.Word.Document doc = app.Documents.Add(ref missing, ref missing, ref missing, ref missing);
+            object filename = path;
+            doc.Content.Text += rtxtNoiDungCauHoi.Text;
+            app.Visible = true;    //Optional
+            doc.SaveAs2(ref filename);
+            doc.Close(ref missing, ref missing, ref missing);
+            doc = null;
+            app.Quit(ref missing, ref missing, ref missing);
+            app = null;
+           
+        }
+
+
+        private List<string> createExam(int n)
+        {
+            List<string> arr = new List<string>();
+            while (n > 0)
+            {
+                //copy to List
+                List<Question> lstCH = new List<Question>();
+                foreach (Question q in dsCH)
+                {
+                    lstCH.Add(q);
+                }
+
+                string questionList = "";
+                Random rd = new Random();
+                int rdVal = -1;
+               while(lstCH.Count>0)
+                {
+                    rdVal = rd.Next(0, lstCH.Count - 1);//can tren
+                    if (questionList == "")
+                    {
+                        questionList += lstCH.ElementAt(rdVal).Id;
+                    }
+                    else
+                    {
+                        questionList += ";" + lstCH.ElementAt(rdVal).Id;
+                    }
+                    lstCH.RemoveAt(rdVal);
+                }
+              //  MessageBox.Show("quesList=" + questionList);
+                arr.Add(questionList);
+                n--;
+            }
+            return arr;
+        }
+
+
+        private void nudSoDeCanTao_ValueChanged(object sender, EventArgs e)
+        {
+            BindDataCmbMaDe();
+        }
+
+        private void BindDataCmbMaDe()
+        {
+            Dictionary<string, string> val = new Dictionary<string, string>();
+
+            int so = int.Parse(nudMaDe.Value.ToString());
+
+            for (int i = 0; i < nudSoDeCanTao.Value; i++)
+            {
+                int k = so + i;
+                val.Add(k.ToString(), k.ToString());
+            }
+            cmbMaDe.DataSource = new BindingSource(val, null);
+            cmbMaDe.DisplayMember = "Value";
+            cmbMaDe.ValueMember = "Key";
+        }
+
+        private void nudMaDe_ValueChanged(object sender, EventArgs e)
+        {
+            BindDataCmbMaDe();
         }
     }
 }

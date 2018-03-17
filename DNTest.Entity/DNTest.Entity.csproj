@@ -44,6 +44,7 @@
     <Compile Include="Faculty.cs" />
     <Compile Include="MultiQuestion.cs" />
     <Compile Include="Question.cs" />
+    <Compile Include="Quiz.cs" />
     <Compile Include="SimpleQuestion.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

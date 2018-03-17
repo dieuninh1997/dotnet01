@@ -74,6 +74,7 @@ namespace DNTest
                  Common.lstDsCauHoiDaChon.Add(i);
                 Common.lstDsCauHoiTrongDeThi.Add(i.Id, i);
             }
+            Common.subjectID_raDeThi = cmbSubject.SelectedValue.ToString();
             this.Hide();
             new FormTronDeThi().Show();
         }

@@ -136,6 +136,7 @@
             this.btnTronDe.Text = "Trộn đề";
             this.btnTronDe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTronDe.UseVisualStyleBackColor = true;
+            this.btnTronDe.Click += new System.EventHandler(this.btnTronDe_Click);
             // 
             // btnBack
             // 
@@ -243,6 +244,7 @@
             this.nudMaDe.Name = "nudMaDe";
             this.nudMaDe.Size = new System.Drawing.Size(85, 20);
             this.nudMaDe.TabIndex = 35;
+            this.nudMaDe.ValueChanged += new System.EventHandler(this.nudMaDe_ValueChanged);
             // 
             // nudSoDeCanTao
             // 
@@ -250,6 +252,7 @@
             this.nudSoDeCanTao.Name = "nudSoDeCanTao";
             this.nudSoDeCanTao.Size = new System.Drawing.Size(200, 20);
             this.nudSoDeCanTao.TabIndex = 34;
+            this.nudSoDeCanTao.ValueChanged += new System.EventHandler(this.nudSoDeCanTao_ValueChanged);
             // 
             // label3
             // 

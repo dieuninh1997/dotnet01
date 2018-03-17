@@ -27,6 +27,8 @@ namespace DNTest.Entity
 
         public static SortedDictionary<string, Question> lstDsCauHoiTrongDeThi = new SortedDictionary<string, Question>();
 
+        public static string subjectID_raDeThi;
+
         //
         public static DataTable ConverSortedtListToDataTable<T> (SortedSet<T> lst)
         {
