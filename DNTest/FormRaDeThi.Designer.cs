@@ -32,6 +32,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbSoCauHoiPhu = new System.Windows.Forms.Label();
+            this.dgvDsCauHoiPhu = new System.Windows.Forms.DataGridView();
             this.btnTiepTuc = new System.Windows.Forms.Button();
             this.ckbXemDsXuat = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -75,12 +78,11 @@
             this.cmbFaculty = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvDsCauHoiPhu = new System.Windows.Forms.DataGridView();
-            this.lbSoCauHoiPhu = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoiPhu)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoiDaChon)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -90,8 +92,6 @@
             this.groupBox2.SuspendLayout();
             this.gbDangCauHoi.SuspendLayout();
             this.gbMucDoKienThuc.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoiPhu)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -102,7 +102,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1144, 593);
+            this.tabControl1.Size = new System.Drawing.Size(1145, 593);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -111,7 +111,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1136, 567);
+            this.tabPage1.Size = new System.Drawing.Size(1137, 567);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trộn từng câu";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -132,8 +132,39 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1130, 561);
+            this.panel1.Size = new System.Drawing.Size(1131, 561);
             this.panel1.TabIndex = 2;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox3.Controls.Add(this.lbSoCauHoiPhu);
+            this.groupBox3.Controls.Add(this.dgvDsCauHoiPhu);
+            this.groupBox3.Location = new System.Drawing.Point(560, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(263, 226);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh sách câu hỏi phụ";
+            // 
+            // lbSoCauHoiPhu
+            // 
+            this.lbSoCauHoiPhu.AutoSize = true;
+            this.lbSoCauHoiPhu.Location = new System.Drawing.Point(115, 204);
+            this.lbSoCauHoiPhu.Name = "lbSoCauHoiPhu";
+            this.lbSoCauHoiPhu.Size = new System.Drawing.Size(35, 13);
+            this.lbSoCauHoiPhu.TabIndex = 6;
+            this.lbSoCauHoiPhu.Text = "0 Câu";
+            // 
+            // dgvDsCauHoiPhu
+            // 
+            this.dgvDsCauHoiPhu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDsCauHoiPhu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDsCauHoiPhu.Location = new System.Drawing.Point(4, 29);
+            this.dgvDsCauHoiPhu.Name = "dgvDsCauHoiPhu";
+            this.dgvDsCauHoiPhu.Size = new System.Drawing.Size(251, 171);
+            this.dgvDsCauHoiPhu.TabIndex = 0;
+            this.dgvDsCauHoiPhu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsCauHoiPhu_CellClick);
             // 
             // btnTiepTuc
             // 
@@ -578,42 +609,11 @@
             this.tabPage2.Text = "Trộn từ file";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox3.Controls.Add(this.lbSoCauHoiPhu);
-            this.groupBox3.Controls.Add(this.dgvDsCauHoiPhu);
-            this.groupBox3.Location = new System.Drawing.Point(560, 12);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(263, 226);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Danh sách câu hỏi phụ";
-            // 
-            // dgvDsCauHoiPhu
-            // 
-            this.dgvDsCauHoiPhu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDsCauHoiPhu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDsCauHoiPhu.Location = new System.Drawing.Point(4, 29);
-            this.dgvDsCauHoiPhu.Name = "dgvDsCauHoiPhu";
-            this.dgvDsCauHoiPhu.Size = new System.Drawing.Size(251, 171);
-            this.dgvDsCauHoiPhu.TabIndex = 0;
-            this.dgvDsCauHoiPhu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsCauHoiPhu_CellClick);
-            // 
-            // lbSoCauHoiPhu
-            // 
-            this.lbSoCauHoiPhu.AutoSize = true;
-            this.lbSoCauHoiPhu.Location = new System.Drawing.Point(115, 204);
-            this.lbSoCauHoiPhu.Name = "lbSoCauHoiPhu";
-            this.lbSoCauHoiPhu.Size = new System.Drawing.Size(35, 13);
-            this.lbSoCauHoiPhu.TabIndex = 6;
-            this.lbSoCauHoiPhu.Text = "0 Câu";
-            // 
             // FormRaDeThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 593);
+            this.ClientSize = new System.Drawing.Size(1145, 593);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormRaDeThi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -624,6 +624,9 @@
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoiPhu)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoiDaChon)).EndInit();
@@ -639,9 +642,6 @@
             this.gbDangCauHoi.PerformLayout();
             this.gbMucDoKienThuc.ResumeLayout(false);
             this.gbMucDoKienThuc.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDsCauHoiPhu)).EndInit();
             this.ResumeLayout(false);
 
         }

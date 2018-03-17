@@ -25,7 +25,7 @@ namespace DNTest.Entity
         public static string permuteStyle="-1";
         public static SortedSet<Question> lstDsCauHoiDaChon = new SortedSet<Question>();
 
-
+        public static SortedDictionary<string, Question> lstDsCauHoiTrongDeThi = new SortedDictionary<string, Question>();
 
         //
         public static DataTable ConverSortedtListToDataTable<T> (SortedSet<T> lst)
@@ -82,7 +82,6 @@ namespace DNTest.Entity
 
 
         //convert text to image png
-
         public static void DrawText(string text, int maxWidth, String path)
         {
             Font font = new Font("Arial", 25, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);

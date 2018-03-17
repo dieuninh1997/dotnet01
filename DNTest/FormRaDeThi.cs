@@ -71,7 +71,8 @@ namespace DNTest
         {
             foreach (Question i in lstDsCauHoiDaChon)
             {
-                Common.lstDsCauHoiDaChon.Add(i);
+                 Common.lstDsCauHoiDaChon.Add(i);
+                Common.lstDsCauHoiTrongDeThi.Add(i.Id, i);
             }
             this.Hide();
             new FormTronDeThi().Show();
@@ -314,6 +315,11 @@ namespace DNTest
         private void showSimpleQuestionInRichTextBox(Question q)
         {
             string question = "";
+            if(q.TypeID.Equals("2"))
+            {
+                question += " " + q.Content + "\r\n";
+            }
+
             List<SubQuestion> lstSub = subQuestionBUS.SubQuestion_GetByTop("", " questionID = " + q.Id, "");
 
             foreach (SubQuestion sq in lstSub)
@@ -452,5 +458,7 @@ namespace DNTest
             showItem(dgvDsCauHoiPhu, row);
 
         }
+
+        //TODO: chuyển form trộn đề -> lưu ds câu hỏi đã chọn theo dạng key value
     }
 }

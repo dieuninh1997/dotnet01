@@ -39,8 +39,6 @@
             this.gbDsCauHoi = new System.Windows.Forms.GroupBox();
             this.btnChiaDeu = new System.Windows.Forms.Button();
             this.dgvDsCauHoiDaChon = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckbNhapDiem = new System.Windows.Forms.CheckBox();
             this.txtThangDiem = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -84,6 +82,7 @@
             this.ckbXemDsXuat.TabIndex = 17;
             this.ckbXemDsXuat.Text = "Xem tất cả câu hỏi";
             this.ckbXemDsXuat.UseVisualStyleBackColor = true;
+            this.ckbXemDsXuat.CheckedChanged += new System.EventHandler(this.ckbXemDsXuat_CheckedChanged);
             // 
             // label6
             // 
@@ -96,10 +95,8 @@
             // 
             // rtxtNoiDungCauHoi
             // 
-            this.rtxtNoiDungCauHoi.Enabled = false;
             this.rtxtNoiDungCauHoi.Location = new System.Drawing.Point(340, 35);
             this.rtxtNoiDungCauHoi.Name = "rtxtNoiDungCauHoi";
-            this.rtxtNoiDungCauHoi.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.rtxtNoiDungCauHoi.Size = new System.Drawing.Size(680, 565);
             this.rtxtNoiDungCauHoi.TabIndex = 15;
             this.rtxtNoiDungCauHoi.Text = "";
@@ -151,6 +148,7 @@
             this.btnBack.Text = "Trở lại";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // gbDsCauHoi
             // 
@@ -175,28 +173,17 @@
             this.btnChiaDeu.Text = "Chia đều";
             this.btnChiaDeu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChiaDeu.UseVisualStyleBackColor = true;
+            this.btnChiaDeu.Click += new System.EventHandler(this.btnChiaDeu_Click);
             // 
             // dgvDsCauHoiDaChon
             // 
             this.dgvDsCauHoiDaChon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDsCauHoiDaChon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDsCauHoiDaChon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.Diem});
             this.dgvDsCauHoiDaChon.Location = new System.Drawing.Point(5, 49);
             this.dgvDsCauHoiDaChon.Name = "dgvDsCauHoiDaChon";
             this.dgvDsCauHoiDaChon.Size = new System.Drawing.Size(308, 193);
             this.dgvDsCauHoiDaChon.TabIndex = 34;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // Diem
-            // 
-            this.Diem.HeaderText = "Điểm";
-            this.Diem.Name = "Diem";
+            this.dgvDsCauHoiDaChon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDsCauHoiDaChon_CellClick);
             // 
             // ckbNhapDiem
             // 
@@ -207,6 +194,7 @@
             this.ckbNhapDiem.TabIndex = 28;
             this.ckbNhapDiem.Text = "Nhập điểm";
             this.ckbNhapDiem.UseVisualStyleBackColor = true;
+            this.ckbNhapDiem.CheckedChanged += new System.EventHandler(this.ckbNhapDiem_CheckedChanged);
             // 
             // txtThangDiem
             // 
@@ -334,8 +322,6 @@
         private System.Windows.Forms.GroupBox gbDsCauHoi;
         private System.Windows.Forms.Button btnChiaDeu;
         private System.Windows.Forms.DataGridView dgvDsCauHoiDaChon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Diem;
         private System.Windows.Forms.CheckBox ckbNhapDiem;
         private System.Windows.Forms.TextBox txtThangDiem;
         private System.Windows.Forms.Label label7;
