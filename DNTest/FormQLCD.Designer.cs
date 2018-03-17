@@ -54,7 +54,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.gbMH);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -65,7 +65,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox2.Controls.Add(this.ckbHienThiTatCa);
             this.groupBox2.Controls.Add(this.btnRefresh);
             this.groupBox2.Controls.Add(this.btnDelete);
@@ -168,7 +168,7 @@
             // 
             // gbMH
             // 
-            this.gbMH.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gbMH.BackColor = System.Drawing.Color.CornflowerBlue;
             this.gbMH.Controls.Add(this.dgvMonHoc);
             this.gbMH.Location = new System.Drawing.Point(12, 12);
             this.gbMH.Name = "gbMH";

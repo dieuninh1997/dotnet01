@@ -39,7 +39,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Navy;
             this.panel1.Controls.Add(this.btnQLCH);
             this.panel1.Controls.Add(this.btnQLCD);
             this.panel1.Controls.Add(this.btnQLMH);
@@ -88,7 +88,7 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 28);
+            this.label1.Size = new System.Drawing.Size(341, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "    Các chức năng quản lý ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

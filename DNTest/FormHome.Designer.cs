@@ -71,7 +71,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tabCNCH);
             this.panel2.Controls.Add(this.tabRaDeThi);
@@ -84,7 +84,8 @@
             // 
             // tabCNCH
             // 
-            this.tabCNCH.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabCNCH.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tabCNCH.ForeColor = System.Drawing.SystemColors.Control;
             this.tabCNCH.Image = ((System.Drawing.Image)(resources.GetObject("tabCNCH.Image")));
             this.tabCNCH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tabCNCH.Location = new System.Drawing.Point(0, 181);
@@ -97,7 +98,8 @@
             // 
             // tabRaDeThi
             // 
-            this.tabRaDeThi.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabRaDeThi.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tabRaDeThi.ForeColor = System.Drawing.SystemColors.Control;
             this.tabRaDeThi.Image = ((System.Drawing.Image)(resources.GetObject("tabRaDeThi.Image")));
             this.tabRaDeThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tabRaDeThi.Location = new System.Drawing.Point(0, 85);
@@ -110,7 +112,8 @@
             // 
             // tabQLDL
             // 
-            this.tabQLDL.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabQLDL.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tabQLDL.ForeColor = System.Drawing.SystemColors.Control;
             this.tabQLDL.Image = ((System.Drawing.Image)(resources.GetObject("tabQLDL.Image")));
             this.tabQLDL.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tabQLDL.Location = new System.Drawing.Point(0, 133);
@@ -123,7 +126,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.btnThongTinPM);
@@ -137,7 +140,8 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.Location = new System.Drawing.Point(691, 0);
@@ -151,7 +155,8 @@
             // 
             // btnThongTinPM
             // 
-            this.btnThongTinPM.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnThongTinPM.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnThongTinPM.ForeColor = System.Drawing.SystemColors.Control;
             this.btnThongTinPM.Image = ((System.Drawing.Image)(resources.GetObject("btnThongTinPM.Image")));
             this.btnThongTinPM.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnThongTinPM.Location = new System.Drawing.Point(607, -1);
@@ -165,7 +170,8 @@
             // 
             // btnDoiMatKhau
             // 
-            this.btnDoiMatKhau.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnDoiMatKhau.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnDoiMatKhau.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDoiMatKhau.Location = new System.Drawing.Point(428, -1);
@@ -179,7 +185,8 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnHelp.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnHelp.ForeColor = System.Drawing.SystemColors.Control;
             this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnHelp.Location = new System.Drawing.Point(516, -1);

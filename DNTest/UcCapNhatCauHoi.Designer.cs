@@ -38,7 +38,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Navy;
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnCapNhatTuFile);
             this.panel1.Controls.Add(this.label1);
@@ -49,6 +49,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(84, 115);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(167, 51);
@@ -75,7 +76,7 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 28);
+            this.label1.Size = new System.Drawing.Size(341, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "    Các chức năng cập nhật";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

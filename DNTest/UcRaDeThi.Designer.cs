@@ -38,7 +38,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Navy;
             this.panel1.Controls.Add(this.btnRaDeThiTronTuFile);
             this.panel1.Controls.Add(this.btnRaDeThiTronTungCau);
             this.panel1.Controls.Add(this.label1);
@@ -49,6 +49,7 @@
             // 
             // btnRaDeThiTronTuFile
             // 
+            this.btnRaDeThiTronTuFile.Enabled = false;
             this.btnRaDeThiTronTuFile.Location = new System.Drawing.Point(87, 147);
             this.btnRaDeThiTronTuFile.Name = "btnRaDeThiTronTuFile";
             this.btnRaDeThiTronTuFile.Size = new System.Drawing.Size(167, 51);
@@ -74,9 +75,9 @@
             this.label1.ForeColor = System.Drawing.Color.DeepPink;
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 28);
+            this.label1.Size = new System.Drawing.Size(352, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "    Các chức năng ra đề thi";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

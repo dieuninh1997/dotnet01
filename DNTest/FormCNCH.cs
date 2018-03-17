@@ -36,7 +36,12 @@ namespace DNTest
         {
             InitializeComponent();
         }
-
+        public FormCNCH(int tabIndex)
+        {
+            InitializeComponent();
+            tabCNFile.SelectedTab = tabCNTF_Container;
+         
+        }
         private void FormCNCH_Load(object sender, EventArgs e)
         {
             rtxtFileNoiDung.Text = "";
@@ -448,23 +453,23 @@ namespace DNTest
             }
 
             int success = 0, questionId = -1, subQuestionId = -1;
-         //   MessageBox.Show("lstSimple = " + lstSimple.Count);
+            //   MessageBox.Show("lstSimple = " + lstSimple.Count);
             foreach (SimpleQuestion sq in lstSimple)
             {
                 questionId = questionBUS.Question_Insert(new Question(null, cmbFileTopic.SelectedValue.ToString(), cmbFileSubject.SelectedValue.ToString(), levelQuestion, sq.question, null, "1"));
-              //  MessageBox.Show("QuestionID = " + questionId);
+                //  MessageBox.Show("QuestionID = " + questionId);
                 if (questionId > 0)
                 {
                     subQuestionId = subQuestionBUS.SubQuestion_Insert(new SubQuestion(null, questionId.ToString(), sq.question));
-                   //     MessageBox.Show("SubQuestionID = " + subQuestionId);
+                    //     MessageBox.Show("SubQuestionID = " + subQuestionId);
                     if (subQuestionId > 0)
                     {
                         int count = sq.answer.Count;
-                     //         MessageBox.Show("count = " + count);
+                        //         MessageBox.Show("count = " + count);
 
                         for (int i = 0; i < sq.answer.Count; i++)
                         {
-                           // MessageBox.Show("i = " + i);
+                            // MessageBox.Show("i = " + i);
                             if (sq.correctAnswer == i)
                             {
 
@@ -480,11 +485,11 @@ namespace DNTest
                                     count--;
                                 }
                             }
-                           // MessageBox.Show("count = " + count);
+                            // MessageBox.Show("count = " + count);
 
                         }
 
-                    //    MessageBox.Show("out count = " + count);
+                        //    MessageBox.Show("out count = " + count);
                         if (count != 0)
                         {
                             MessageBox.Show("Đã xảy ra lỗi trong quá trình cập nhật 1");
@@ -494,16 +499,16 @@ namespace DNTest
                     success++;
                 }
             }
-         //   MessageBox.Show("2 lstMulti = " + lstMulti.Count);
+            //   MessageBox.Show("2 lstMulti = " + lstMulti.Count);
             foreach (MultiQuestion mq in lstMulti)
             {
                 if ((questionId = questionBUS.Question_Insert(new Question(null, cmbFileTopic.SelectedValue.ToString(), cmbFileSubject.SelectedValue.ToString(), levelQuestion, mq.content, null, "2"))) > 0)
                 {
-                  //  MessageBox.Show("2 lstQues = " + mq.lstQuestion.Count);
+                    //  MessageBox.Show("2 lstQues = " + mq.lstQuestion.Count);
                     foreach (SimpleQuestion sq in mq.lstQuestion)
                     {
                         int count = sq.answer.Count;
-                     //   MessageBox.Show("2 count = " + count);
+                        //   MessageBox.Show("2 count = " + count);
                         if ((subQuestionId = subQuestionBUS.SubQuestion_Insert(new SubQuestion(null, questionId.ToString(), sq.question))) > 0)
                         {
                             for (int i = 0; i < sq.answer.Count; i++)
@@ -519,11 +524,11 @@ namespace DNTest
                                     if (answerBUS.Answer_Insert(new Answer(null, subQuestionId.ToString(), sq.answer.ElementAt(i), "0")))
                                         count--;
                                 }
-                             //   MessageBox.Show("2 tru count = " + count);
+                                //   MessageBox.Show("2 tru count = " + count);
                             }
-                            
+
                         }
-                      //  MessageBox.Show("2 out count = " + count);
+                        //  MessageBox.Show("2 out count = " + count);
                         if (count != 0)
                         {
                             MessageBox.Show("Đã xảy ra lỗi trong quá trình cập nhật 2");

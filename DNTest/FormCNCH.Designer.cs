@@ -686,7 +686,7 @@
             this.groupBox6.Controls.Add(this.rtxtFileNoiDung);
             this.groupBox6.Location = new System.Drawing.Point(258, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(678, 600);
+            this.groupBox6.Size = new System.Drawing.Size(647, 600);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Nội dung";
@@ -705,7 +705,7 @@
             // 
             this.rtxtFileNoiDung.Location = new System.Drawing.Point(6, 51);
             this.rtxtFileNoiDung.Name = "rtxtFileNoiDung";
-            this.rtxtFileNoiDung.Size = new System.Drawing.Size(666, 543);
+            this.rtxtFileNoiDung.Size = new System.Drawing.Size(628, 543);
             this.rtxtFileNoiDung.TabIndex = 3;
             this.rtxtFileNoiDung.Text = "";
             // 

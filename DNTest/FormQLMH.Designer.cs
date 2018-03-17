@@ -51,7 +51,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.gbKhoa);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -62,7 +62,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox2.Controls.Add(this.btnRefresh);
             this.groupBox2.Controls.Add(this.ckbHienThiTatCa);
             this.groupBox2.Controls.Add(this.btnDelete);
@@ -164,7 +164,7 @@
             // 
             // gbKhoa
             // 
-            this.gbKhoa.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.gbKhoa.BackColor = System.Drawing.Color.CornflowerBlue;
             this.gbKhoa.Controls.Add(this.dgvFaculty);
             this.gbKhoa.Location = new System.Drawing.Point(12, 12);
             this.gbKhoa.Name = "gbKhoa";
@@ -187,6 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(931, 503);
             this.Controls.Add(this.panel1);
             this.Name = "FormQLMH";

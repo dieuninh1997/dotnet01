@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQLCH));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ckbXemDsXuat = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.rtxtNoiDungCauHoi = new System.Windows.Forms.RichTextBox();
             this.btnSelectAll = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnXoaHet = new System.Windows.Forms.Button();
             this.dgvDsXuatCauHoi = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,8 +79,6 @@
             this.btnThemCauHoi = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnXoaHet = new System.Windows.Forms.Button();
-            this.ckbXemDsXuat = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDsXuatCauHoi)).BeginInit();
@@ -92,7 +92,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel1.Controls.Add(this.ckbXemDsXuat);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.rtxtNoiDungCauHoi);
@@ -108,9 +108,22 @@
             this.panel1.Size = new System.Drawing.Size(1127, 606);
             this.panel1.TabIndex = 1;
             // 
+            // ckbXemDsXuat
+            // 
+            this.ckbXemDsXuat.AutoSize = true;
+            this.ckbXemDsXuat.ForeColor = System.Drawing.SystemColors.Control;
+            this.ckbXemDsXuat.Location = new System.Drawing.Point(911, 251);
+            this.ckbXemDsXuat.Name = "ckbXemDsXuat";
+            this.ckbXemDsXuat.Size = new System.Drawing.Size(202, 17);
+            this.ckbXemDsXuat.TabIndex = 17;
+            this.ckbXemDsXuat.Text = "Xem danh sách câu hỏi muốn xuất ra";
+            this.ckbXemDsXuat.UseVisualStyleBackColor = true;
+            this.ckbXemDsXuat.CheckedChanged += new System.EventHandler(this.ckbXemDsXuat_CheckedChanged);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Location = new System.Drawing.Point(266, 253);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(152, 13);
@@ -119,10 +132,8 @@
             // 
             // rtxtNoiDungCauHoi
             // 
-            this.rtxtNoiDungCauHoi.Enabled = false;
             this.rtxtNoiDungCauHoi.Location = new System.Drawing.Point(267, 269);
             this.rtxtNoiDungCauHoi.Name = "rtxtNoiDungCauHoi";
-            this.rtxtNoiDungCauHoi.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
             this.rtxtNoiDungCauHoi.Size = new System.Drawing.Size(846, 325);
             this.rtxtNoiDungCauHoi.TabIndex = 15;
             this.rtxtNoiDungCauHoi.Text = "";
@@ -162,7 +173,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox5.BackColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox5.Controls.Add(this.btnXoaHet);
             this.groupBox5.Controls.Add(this.dgvDsXuatCauHoi);
             this.groupBox5.Controls.Add(this.lbSelectNum);
@@ -172,6 +183,17 @@
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Câu hỏi muốn xuất ra";
+            // 
+            // btnXoaHet
+            // 
+            this.btnXoaHet.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaHet.Image")));
+            this.btnXoaHet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaHet.Location = new System.Drawing.Point(364, 4);
+            this.btnXoaHet.Name = "btnXoaHet";
+            this.btnXoaHet.Size = new System.Drawing.Size(34, 30);
+            this.btnXoaHet.TabIndex = 17;
+            this.btnXoaHet.UseVisualStyleBackColor = true;
+            this.btnXoaHet.Click += new System.EventHandler(this.btnXoaHet_Click);
             // 
             // dgvDsXuatCauHoi
             // 
@@ -248,7 +270,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox4.BackColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox4.Controls.Add(this.ckbHienThiTatCa);
             this.groupBox4.Controls.Add(this.dgvDsCauHoi);
             this.groupBox4.Location = new System.Drawing.Point(265, 12);
@@ -335,7 +357,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.btnThemCauHoi);
             this.groupBox1.Controls.Add(this.btnExport);
@@ -573,28 +595,6 @@
             this.btnEdit.Text = "Sửa câu hỏi";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnXoaHet
-            // 
-            this.btnXoaHet.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaHet.Image")));
-            this.btnXoaHet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaHet.Location = new System.Drawing.Point(364, 4);
-            this.btnXoaHet.Name = "btnXoaHet";
-            this.btnXoaHet.Size = new System.Drawing.Size(34, 30);
-            this.btnXoaHet.TabIndex = 17;
-            this.btnXoaHet.UseVisualStyleBackColor = true;
-            this.btnXoaHet.Click += new System.EventHandler(this.btnXoaHet_Click);
-            // 
-            // ckbXemDsXuat
-            // 
-            this.ckbXemDsXuat.AutoSize = true;
-            this.ckbXemDsXuat.Location = new System.Drawing.Point(911, 251);
-            this.ckbXemDsXuat.Name = "ckbXemDsXuat";
-            this.ckbXemDsXuat.Size = new System.Drawing.Size(202, 17);
-            this.ckbXemDsXuat.TabIndex = 17;
-            this.ckbXemDsXuat.Text = "Xem danh sách câu hỏi muốn xuất ra";
-            this.ckbXemDsXuat.UseVisualStyleBackColor = true;
-            this.ckbXemDsXuat.CheckedChanged += new System.EventHandler(this.ckbXemDsXuat_CheckedChanged);
             // 
             // FormQLCH
             // 

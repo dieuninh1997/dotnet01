@@ -19,8 +19,8 @@ namespace DNTest
 
         private void btnCapNhatTuFile_Click(object sender, EventArgs e)
         {
-
-            new FormCNCH().Show();
+            
+            new FormCNCH(1).Show();
            
             this.ParentForm.Hide();
         }

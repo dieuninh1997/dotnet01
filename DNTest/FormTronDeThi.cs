@@ -20,7 +20,7 @@ namespace DNTest
         SubQuestionBUS subQuestionBUS = new SubQuestionBUS();
         SortedDictionary<string, Question> ds = Common.lstDsCauHoiTrongDeThi;
         SortedSet<Question> dsCH = Common.lstDsCauHoiDaChon;
-
+      
         public FormTronDeThi()
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace DNTest
 
         private void BindDataDsCauHoiDaChon()
         {
-            MessageBox.Show("size=" + dsCH.Count);
+            // MessageBox.Show("size=" + dsCH.Count);
             var source = new BindingSource();
             source.DataSource = dsCH;
             dgvDsCauHoiDaChon.DataSource = source;
@@ -154,7 +154,7 @@ namespace DNTest
         private void btnChiaDeu_Click(object sender, EventArgs e)
         {
             double val = Int16.Parse(txtThangDiem.Text) / ((dsCH.Count) * 1.0);
-            MessageBox.Show("Diem=" + Math.Round(val, 2));
+            //       MessageBox.Show("Diem=" + Math.Round(val, 2));
 
             for (int i = 0; i < dsCH.Count; i++)
             {
@@ -228,7 +228,7 @@ namespace DNTest
             string time_thi = nudThoiGianThi.Value.ToString();
             string title_de = txtTieuDe.Text;
             int soDe = int.Parse(nudSoDeCanTao.Value.ToString());
-             List<string> dsDeThi = createExam(soDe);
+            SortedSet<string> dsDeThi = createExam(soDe);
             Quiz quiz = new Quiz();
             quiz.SubjectID = Common.subjectID_raDeThi;
             quiz.QuestionList = dsDeThi.ElementAt(0);
@@ -238,11 +238,12 @@ namespace DNTest
             quiz.Time = time_thi;
             int quizID = -1;
             int success = 0;
-            if ((quizID = quizBUS.Quiz_Insert(quiz))>0)
+            if ((quizID = quizBUS.Quiz_Insert(quiz)) > 0)
             {
                 MessageBox.Show("Insert De Thi Thanh Cong");
                 success++;
-            }else
+            }
+            else
                 MessageBox.Show("Insert De Thi Fail");
             if (success > 0)
             {
@@ -250,41 +251,73 @@ namespace DNTest
                 {
                     if (dsDeThi.ElementAt(i) != null)
                     {
+                        //   MessageBox.Show("dsDeThi=" + dsDeThi.ElementAt(i));
                         ckbXemDsXuat.Checked = true;
+                        rtxtNoiDungCauHoi.Text = "";
+                        rtxtNoiDungCauHoi.Text += viewQuiz(dsDeThi.ElementAt(i));
                         int maDe = int.Parse(nudMaDe.Value.ToString());
-                        string path ="MaDe"+maDe+i+".docx";
+                        string path = "MaDe" + (maDe + i) + ".docx";
                         string userComputer = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last(); ;
-                        string save_doc_path = "C:\\Users\\" + userComputer + "\\Desktop\\"+path;
-
+                        string save_doc_path = "C:\\Users\\" + userComputer + "\\Desktop\\" + path;
                         writeToDoc(save_doc_path);
-                        MessageBox.Show("Tạo đề thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+                MessageBox.Show("Tạo đề thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
             }
         }
+        private string viewQuiz(string ds)
+        {
+            string content = "";
+            string[] singleQuestion = ds.Split(';');
+            int questionNumber = 0;
+            foreach (string item in singleQuestion)
+            {
+                SubQuestion sq = subQuestionBUS.SubQuestion_GetByTop("", "questionID = '" + item.Trim() + "'", "").ElementAt(0);
+                content += "Question " + (++questionNumber) + ". " + sq.Content + "\r\n";
+                List<Answer> lst = answerBUS.Answer_GetByTop("", " subQuestionID = '" + sq.Id + "'", "");
+                for (int i = 0; i < lst.Count; ++i)
+                {
+                    Answer a = lst.ElementAt(i);
+                    if (bool.Parse(a.IsCorrect))
+                    {
+                        content += (char)(65 + i) + ". " + a.Answers + " *\r\n";
+                    }
+                    else
+                    {
+                        content += (char)(65 + i) + ". " + a.Answers + "\r\n";
+                    }
+                }
+                content += "\r\n";
+            }
+            return content;
+
+        }
+
         private void writeToDoc(string path)
         {
-            MessageBox.Show("MaDe=" + path);
+            //   MessageBox.Show("MaDe=" + path);
             object missing = System.Reflection.Missing.Value;
             Microsoft.Office.Interop.Word.Application app = new Microsoft.Office.Interop.Word.Application();
             Microsoft.Office.Interop.Word.Document doc = app.Documents.Add(ref missing, ref missing, ref missing, ref missing);
             object filename = path;
             doc.Content.Text += rtxtNoiDungCauHoi.Text;
-            app.Visible = true;    //Optional
+            //  app.Visible = true;    //Optional
             doc.SaveAs2(ref filename);
             doc.Close(ref missing, ref missing, ref missing);
             doc = null;
             app.Quit(ref missing, ref missing, ref missing);
             app = null;
-           
+
         }
 
 
-        private List<string> createExam(int n)
+        private SortedSet<string> createExam(int n)
         {
-            List<string> arr = new List<string>();
-            while (n > 0)
+            SortedSet<string> arr = new SortedSet<string>();
+            int i = n;
+            while (n > 0 && arr.Count < i)
             {
                 //copy to List
                 List<Question> lstCH = new List<Question>();
@@ -296,7 +329,7 @@ namespace DNTest
                 string questionList = "";
                 Random rd = new Random();
                 int rdVal = -1;
-               while(lstCH.Count>0)
+                while (lstCH.Count > 0)
                 {
                     rdVal = rd.Next(0, lstCH.Count - 1);//can tren
                     if (questionList == "")
@@ -309,8 +342,11 @@ namespace DNTest
                     }
                     lstCH.RemoveAt(rdVal);
                 }
-              //  MessageBox.Show("quesList=" + questionList);
-                arr.Add(questionList);
+                //     MessageBox.Show("quesList=" + questionList);
+                if(arr.Add(questionList))
+                {
+                    MessageBox.Show("size=" + arr.Count);
+                }
                 n--;
             }
             return arr;
